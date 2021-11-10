@@ -2,4 +2,10 @@
     <string name="app_name">waste_drug</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_phone">전화번호</string>
+    <string name="text_address">서울특별시 OO구</string>
+    <string name="text_name">OO 약국</string>
+    <string name="text_drugBox">수거함 정보</string>
+    <string name="text_info_pharmacy">약국 정보</string>
+    <string name="text_time">주말 / 공휴일</string>
 </resources>
