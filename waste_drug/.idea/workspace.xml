@@ -23,7 +23,7 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/search/adapter/PharmacyAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/search/adapter/PharmacyAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/search/pharmacy/PharmacyFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/search/pharmacy/PharmacyFragment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -185,22 +185,22 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1636622713632" />
-    <state width="1183" height="228" key="GridCell.Tab.0.bottom" timestamp="1636638258474">
+    <state width="971" height="245" key="GridCell.Tab.0.bottom" timestamp="1636640832762">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1183" height="228" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1636638258474" />
-    <state width="1183" height="228" key="GridCell.Tab.0.center" timestamp="1636638258473">
+    <state width="971" height="245" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1636640832762" />
+    <state width="971" height="245" key="GridCell.Tab.0.center" timestamp="1636640832762">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1183" height="228" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1636638258473" />
-    <state width="1183" height="228" key="GridCell.Tab.0.left" timestamp="1636638258472">
+    <state width="971" height="245" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1636640832762" />
+    <state width="971" height="245" key="GridCell.Tab.0.left" timestamp="1636640832762">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1183" height="228" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1636638258472" />
-    <state width="1183" height="228" key="GridCell.Tab.0.right" timestamp="1636638258474">
+    <state width="971" height="245" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1636640832762" />
+    <state width="971" height="245" key="GridCell.Tab.0.right" timestamp="1636640832762">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1183" height="228" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1636638258474" />
+    <state width="971" height="245" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1636640832762" />
     <state x="834" y="169" key="SettingsEditor" timestamp="1636569777790">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

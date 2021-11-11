@@ -1,5 +1,6 @@
 package com.example.waste_drug.search.pharmacy;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.waste_drug.KakaoActivity;
 import com.example.waste_drug.R;
 import com.example.waste_drug.data.Pharmacy;
 import com.example.waste_drug.search.adapter.OnPharmacyItemClickListener;
@@ -259,6 +261,8 @@ public class PharmacyFragment extends Fragment {
                 public void onItemClick(View v, int pos) {
                     Log.v("tag", "PharmacyClickLiestener in fragment");
                     Log.v("tag", "PharmacyClickLiestener"+pharmacyArrayList.size()+"/"+pos);
+                    Intent intent = new Intent(getActivity(), KakaoActivity.class);
+                    startActivity(intent);
                 }
             });
         }
