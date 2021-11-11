@@ -15,12 +15,14 @@
     </FrameLayout>
 
     <LinearLayout
+        android:id="@+id/info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="@color/white"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:visibility="invisible">
 
         <TextView
             android:id="@+id/tv_name"
