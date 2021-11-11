@@ -16,7 +16,10 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".Map1Activity"></activity>
         <activity android:name=".Map2Activity" />
-        <activity android:name=".search.SearchActivity">
+        <activity android:name=".search.SearchActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

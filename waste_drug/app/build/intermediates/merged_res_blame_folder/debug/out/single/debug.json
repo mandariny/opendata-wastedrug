@@ -8,10 +8,6 @@
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\layout\\activity_search.xml"
     },
     {
-        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_business_time.xml.flat",
-        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\layout\\fragment_business_time.xml"
-    },
-    {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },

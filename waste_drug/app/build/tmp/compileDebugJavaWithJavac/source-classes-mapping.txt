@@ -38,8 +38,6 @@ com/example/waste_drug/db/AppDatabase.java
  com.example.waste_drug.db.AppDatabase
 com/example/waste_drug/Map1Activity.java
  com.example.waste_drug.Map1Activity
-com/example/waste_drug/business_time.java
- com.example.waste_drug.business_time
 com/example/waste_drug/search/adapter/PharmacyAdapter.java
  com.example.waste_drug.search.adapter.PharmacyAdapter
  com.example.waste_drug.search.adapter.PharmacyAdapter$OnPharmacyItemClickListener

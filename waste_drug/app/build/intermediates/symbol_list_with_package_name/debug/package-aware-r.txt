@@ -1778,8 +1778,8 @@ id beginning
 id blocking
 id bottom
 id bounce
-id button4
-id button5
+id button1
+id button2
 id buttonPanel
 id cache_measures
 id cancel_action
@@ -2067,7 +2067,6 @@ id tab
 id tabMode
 id tab_drug_box
 id tab_pharmacy
-id tabs
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -2209,7 +2208,6 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
-layout fragment_business_time
 layout fragment_drugbox
 layout fragment_pharmacy
 layout fragment_waste_drug_box
