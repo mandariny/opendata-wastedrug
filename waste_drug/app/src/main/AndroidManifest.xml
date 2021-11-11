@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Waste_drug"
         android:usesCleartextTraffic="true">
+
         <activity android:name=".Map1Activity"></activity>
         <activity android:name=".Map2Activity" />
         <activity android:name=".search.SearchActivity"
