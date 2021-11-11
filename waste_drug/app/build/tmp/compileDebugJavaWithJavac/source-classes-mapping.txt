@@ -1,9 +1,26 @@
-com/example/waste_drug/MainActivity.java
- com.example.waste_drug.MainActivity
- com.example.waste_drug.MainActivity$1
+com/example/waste_drug/KakaoActivity.java
+ com.example.waste_drug.KakaoActivity
+com/example/waste_drug/search/drugbox/DrugBoxFragment.java
+ com.example.waste_drug.search.drugbox.DrugBoxFragment
+com/example/waste_drug/search/adapter/ViewPagerAdapter.java
+ com.example.waste_drug.search.adapter.ViewPagerAdapter
+com/example/waste_drug/data/Pharmacy.java
+ com.example.waste_drug.data.Pharmacy
+com/example/waste_drug/search/pharmacy/PharmacyFragment.java
+ com.example.waste_drug.search.pharmacy.PharmacyFragment
+ com.example.waste_drug.search.pharmacy.PharmacyFragment$1
+ com.example.waste_drug.search.pharmacy.PharmacyFragment$MyAsyncTask
+com/example/waste_drug/search/SearchActivity.java
+ com.example.waste_drug.search.SearchActivity
 com/example/waste_drug/BuildConfig.java
  com.example.waste_drug.BuildConfig
 com/example/waste_drug/business_time.java
  com.example.waste_drug.business_time
 com/example/waste_drug/waste_drug_box.java
  com.example.waste_drug.waste_drug_box
+com/example/waste_drug/search/adapter/PharmacyAdapter.java
+ com.example.waste_drug.search.adapter.PharmacyAdapter
+ com.example.waste_drug.search.adapter.PharmacyAdapter$PharmacyViewHolder
+com/example/waste_drug/MainActivity.java
+ com.example.waste_drug.MainActivity
+ com.example.waste_drug.MainActivity$1

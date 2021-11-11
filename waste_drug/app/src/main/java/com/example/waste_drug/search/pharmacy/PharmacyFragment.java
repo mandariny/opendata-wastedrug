@@ -89,7 +89,7 @@ public class PharmacyFragment extends Fragment {
         @Override
         protected String doInBackground(String... strings) {
             if (!isSearch) {
-                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=&pageNo=1&numOfRows=50";
+                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=CjgXorlQ%2FWNSknj9kf3L7KuvIjQLVKLhhPbiIcQDp67L952y4CkiTwPl4TnmN0nC4aQvrOJodqQCqoMIYYLmZA%3D%3D";
             } else {
                 requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=&QN=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
                 isSearch = false;

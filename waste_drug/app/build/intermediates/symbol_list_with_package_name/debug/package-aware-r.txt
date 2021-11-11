@@ -970,6 +970,7 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color black
+color border_line
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -1900,6 +1901,7 @@ id line3
 id linear
 id listMode
 id list_item
+id map_view
 id masked
 id material_clock_display
 id material_clock_face
@@ -1993,6 +1995,8 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id rv_drug_box_view
+id rv_pharmacy_view
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -2007,9 +2011,11 @@ id search_badge
 id search_bar
 id search_button
 id search_close_btn
+id search_drug_box_view
 id search_edit_frame
 id search_go_btn
 id search_mag_icon
+id search_pharmacy_view
 id search_plate
 id search_src_text
 id search_voice_btn
@@ -2049,7 +2055,10 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
+id tab
 id tabMode
+id tab_drug_box
+id tab_pharmacy
 id tabs
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -2095,6 +2104,10 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tv_address
+id tv_name
+id tv_phone
+id tv_time
 id unchecked
 id uniform
 id unlabeled
@@ -2102,6 +2115,7 @@ id up
 id useLogo
 id view_offset_helper
 id visible
+id vp_view
 id withText
 id withinBounds
 id wrap
@@ -2167,7 +2181,9 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_kakao
 layout activity_main
+layout activity_search
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2185,7 +2201,10 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_business_time
+layout fragment_drugbox
+layout fragment_pharmacy
 layout fragment_waste_drug_box
+layout layout_pharmacy_item
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2365,6 +2384,12 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string search_menu_title
 string status_bar_notification_info_overflow
+string text_address
+string text_drugBox
+string text_info_pharmacy
+string text_name
+string text_phone
+string text_time
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow
@@ -3217,6 +3242,7 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml network_security_config
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end
 xml standalone_badge_gravity_bottom_start
