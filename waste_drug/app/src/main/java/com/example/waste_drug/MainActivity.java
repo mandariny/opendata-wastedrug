@@ -3,6 +3,12 @@ package com.example.waste_drug;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
+<<<<<<< HEAD
+=======
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
+>>>>>>> parent of 2631766... set main page
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -11,8 +17,33 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends FragmentActivity {
 
+<<<<<<< HEAD
     TabLayout tabs;
 
+=======
+public class MainActivity extends FragmentActivity {
+
+    private void getAppKeyHash() {
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md;
+                md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                String something = new String(Base64.encode(md.digest(), 0));
+                Log.e("Hash key", something);
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            Log.e("name not found", e.toString());
+        }
+    }
+
+
+
+    TabLayout tabs;
+
+>>>>>>> parent of 2631766... set main page
     waste_drug_box fragment1;
     business_time fragment2;
 
@@ -32,6 +63,22 @@ public class MainActivity extends FragmentActivity {
         tabs.addTab(tabs.newTab().setText("폐의약품 수거함"));
         tabs.addTab(tabs.newTab().setText("약국 운영 시간"));
 
+<<<<<<< HEAD
+=======
+        //getAppKeyHash();
+        
+        //프래그먼트 생성
+        fragment1 = new waste_drug_box();
+        fragment2 = new business_time();
+
+        getSupportFragmentManager().beginTransaction().add(R.id.container, fragment1).commit();
+
+        //탭바 추가
+        tabs = findViewById(R.id.tabs);
+        tabs.addTab(tabs.newTab().setText("폐의약품 수거함"));
+        tabs.addTab(tabs.newTab().setText("약국 운영 시간"));
+
+>>>>>>> parent of 2631766... set main page
         tabs.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             //프래그먼트 전환
             @Override
@@ -57,4 +104,5 @@ public class MainActivity extends FragmentActivity {
         });
 
     }
+
 }

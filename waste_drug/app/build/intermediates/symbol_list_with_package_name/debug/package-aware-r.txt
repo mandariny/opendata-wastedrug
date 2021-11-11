@@ -2050,6 +2050,11 @@ id stretch
 id submenuarrow
 id submit_area
 id tabMode
+<<<<<<< HEAD
+=======
+id tab_drug_box
+id tab_pharmacy
+>>>>>>> parent of 2631766... set main page
 id tabs
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -2185,6 +2190,11 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_business_time
+<<<<<<< HEAD
+=======
+layout fragment_drugbox
+layout fragment_pharmacy
+>>>>>>> parent of 2631766... set main page
 layout fragment_waste_drug_box
 layout material_chip_input_combo
 layout material_clock_display

@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Waste_drug"
         android:usesCleartextTraffic="true">
+<<<<<<< HEAD
+=======
+        <activity android:name=".Map1Activity"></activity>
+        <activity android:name=".Map2Activity" />
+>>>>>>> parent of 2631766... set main page
         <activity android:name=".search.SearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
