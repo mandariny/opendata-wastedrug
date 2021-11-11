@@ -1,6 +1,8 @@
 package com.example.waste_drug;
 
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,7 +19,12 @@ import net.daum.mf.map.api.MapView;
 import net.daum.mf.map.api.MapPOIItem;
 import net.daum.mf.map.api.MapPoint;
 
+import java.io.IOException;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.List;
+
+import com.example.waste_drug.data.Pharmacy;
 
 public class KakaoActivity extends AppCompatActivity implements MapView.POIItemEventListener {
 
@@ -32,17 +39,29 @@ public class KakaoActivity extends AppCompatActivity implements MapView.POIItemE
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kakao);
 
+        MapView mapView = new MapView(this);
+        ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
+
         Intent intent = getIntent();
         ArrayList<Pharmacy> pharmacyArrayList = (ArrayList<Pharmacy>)intent.getSerializableExtra(("pharmacies"));
         int pos = intent.getIntExtra("position",0);
-        Log.v("tag", "Kakaomap~"+pharmacyArrayList.size()+"/"+pos);
 
-        MapView mapView = new MapView(this);
+        String title = pharmacyArrayList.get(pos).getDutyName();
+        String arr = pharmacyArrayList.get(pos).getDutyAddr();
+        double lat = 0;
+        double lon = 0;
 
-        ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
+        Geocoder geocoder = new Geocoder(getApplicationContext());
+        try{
+            List<Address> resultLocation = geocoder.getFromLocationName(arr,1);
+            lat = resultLocation.get(0).getLatitude();
+            lon = resultLocation.get(0).getLongitude();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         //포인트 좌표의 위도, 경도 설정
-        MapPoint MARKER_POINT = MapPoint.mapPointWithGeoCoord(37.5514579595, 126.951949155);
+        MapPoint MARKER_POINT = MapPoint.mapPointWithGeoCoord(lat, lon);
         mapView.setMapCenterPoint(MARKER_POINT, true);
         mapView.setPOIItemEventListener(this);
 
@@ -50,7 +69,7 @@ public class KakaoActivity extends AppCompatActivity implements MapView.POIItemE
 
         //마커 설정
         MapPOIItem marker = new MapPOIItem();
-        marker.setItemName("Default Marker");
+        marker.setItemName(title);
         marker.setTag(0);
         marker.setMapPoint(MARKER_POINT);
 
