@@ -1,6 +1,8 @@
 package com.example.waste_drug.search.drugbox;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +13,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
 
+import com.example.waste_drug.Map1Activity;
 import com.example.waste_drug.R;
 import com.example.waste_drug.db.AppDatabase;
 import com.example.waste_drug.db.DrugBox;
@@ -80,6 +82,17 @@ public class DrugBoxFragment extends Fragment {
         recyclerView.setAdapter(drugBoxAdapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
+
+        //이벤트리스너 연결결
+        drugBoxAdapter.setOnItemClicklistener(new DrugBoxAdapter.OnDrugBoxItemClickListener() {
+            @Override
+            public void onItemClick(View v, int pos) {
+                Intent intent = new Intent(getActivity(), Map1Activity.class);
+                intent.putExtra("drugboxes",drugBox);
+                intent.putExtra("position", pos);
+                startActivity(intent);
+            }
+        });
     }
 
     public void searchViewClicked() {

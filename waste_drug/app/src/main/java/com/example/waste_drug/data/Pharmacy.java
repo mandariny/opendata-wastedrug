@@ -1,6 +1,8 @@
 package com.example.waste_drug.data;
 
-public class Pharmacy {
+import java.io.Serializable;
+
+public class Pharmacy implements Serializable {
     String dutyAddr;
     String dutyMapimg;
     String dutyName;

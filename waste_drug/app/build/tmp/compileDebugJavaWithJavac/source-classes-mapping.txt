@@ -1,14 +1,21 @@
-com/example/waste_drug/MainActivity.java
- com.example.waste_drug.MainActivity
- com.example.waste_drug.MainActivity$1
+com/example/waste_drug/search/drugbox/DrugBoxFragment.java
+ com.example.waste_drug.search.drugbox.DrugBoxFragment
+ com.example.waste_drug.search.drugbox.DrugBoxFragment$1
+ com.example.waste_drug.search.drugbox.DrugBoxFragment$1InsertRunnable
+ com.example.waste_drug.search.drugbox.DrugBoxFragment$2
+ com.example.waste_drug.search.drugbox.DrugBoxFragment$3
+com/example/waste_drug/search/pharmacy/PharmacyFragment.java
+ com.example.waste_drug.search.pharmacy.PharmacyFragment
+ com.example.waste_drug.search.pharmacy.PharmacyFragment$1
+ com.example.waste_drug.search.pharmacy.PharmacyFragment$2
+ com.example.waste_drug.search.pharmacy.PharmacyFragment$MyAsyncTask
+ com.example.waste_drug.search.pharmacy.PharmacyFragment$MyAsyncTask$1
+com/example/waste_drug/search/SearchActivity.java
+ com.example.waste_drug.search.SearchActivity
 com/example/waste_drug/BuildConfig.java
  com.example.waste_drug.BuildConfig
-com/example/waste_drug/business_time.java
- com.example.waste_drug.business_time
 com/example/waste_drug/waste_drug_box.java
  com.example.waste_drug.waste_drug_box
-<<<<<<< HEAD
-=======
 com/example/waste_drug/db/DrugBoxDao.java
  com.example.waste_drug.db.DrugBoxDao
 com/example/waste_drug/search/adapter/ViewPagerAdapter.java
@@ -31,8 +38,6 @@ com/example/waste_drug/db/AppDatabase.java
  com.example.waste_drug.db.AppDatabase
 com/example/waste_drug/Map1Activity.java
  com.example.waste_drug.Map1Activity
-com/example/waste_drug/business_time.java
- com.example.waste_drug.business_time
 com/example/waste_drug/search/adapter/PharmacyAdapter.java
  com.example.waste_drug.search.adapter.PharmacyAdapter
  com.example.waste_drug.search.adapter.PharmacyAdapter$OnPharmacyItemClickListener
@@ -40,4 +45,3 @@ com/example/waste_drug/search/adapter/PharmacyAdapter.java
  com.example.waste_drug.search.adapter.PharmacyAdapter$PharmacyViewHolder$1
 com/example/waste_drug/Map2Activity.java
  com.example.waste_drug.Map2Activity
->>>>>>> parent of 2631766... set main page

@@ -5,34 +5,47 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="16"
-        android:targetSdkVersion="30" />
+        android:minSdkVersion="24"
+        android:targetSdkVersion="31" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
+        android:extractNativeLibs="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-<<<<<<< HEAD
-        android:theme="@style/Theme.Waste_drug" >
-        <activity android:name="com.example.waste_drug.MainActivity" >
-=======
         android:theme="@style/Theme.Waste_drug"
         android:usesCleartextTraffic="true" >
         <activity android:name="com.example.waste_drug.Map1Activity" />
         <activity android:name="com.example.waste_drug.Map2Activity" />
-        <activity android:name="com.example.waste_drug.search.SearchActivity" >
->>>>>>> parent of 2631766... set main page
+        <activity
+            android:name="com.example.waste_drug.search.SearchActivity"
+            android:parentActivityName="com.example.waste_drug.MainActivity" >
+        </activity>
+        <activity android:name="com.example.waste_drug.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="f708709920ae96f8ba2a25978fda5cb7" />
+
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:directBootAware="true"
+            android:exported="false" />
     </application>
 
 </manifest>

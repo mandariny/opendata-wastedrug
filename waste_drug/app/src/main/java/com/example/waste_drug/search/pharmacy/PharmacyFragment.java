@@ -1,5 +1,6 @@
 package com.example.waste_drug.search.pharmacy;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.waste_drug.Map2Activity;
 import com.example.waste_drug.R;
 import com.example.waste_drug.data.Pharmacy;
 import com.example.waste_drug.search.adapter.PharmacyAdapter;
@@ -39,6 +41,7 @@ public class PharmacyFragment extends Fragment {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
     }
 
@@ -50,6 +53,7 @@ public class PharmacyFragment extends Fragment {
         searchButtonClicked();
         searchButtonClosed();
         executeAsyncTask();
+
         return v;
     }
 
@@ -101,9 +105,9 @@ public class PharmacyFragment extends Fragment {
         @Override
         protected String doInBackground(String... strings) {
             if (!isSearch) {
-                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=&pageNo=1&numOfRows=50";
+                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=CjgXorlQ%2FWNSknj9kf3L7KuvIjQLVKLhhPbiIcQDp67L952y4CkiTwPl4TnmN0nC4aQvrOJodqQCqoMIYYLmZA%3D%3D";
             } else {
-                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=&QN=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
+                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=CjgXorlQ%2FWNSknj9kf3L7KuvIjQLVKLhhPbiIcQDp67L952y4CkiTwPl4TnmN0nC4aQvrOJodqQCqoMIYYLmZA%3D%3D&QN=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
                 isSearch = false;
             }
             try {
@@ -246,8 +250,20 @@ public class PharmacyFragment extends Fragment {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
 
+            //Log.v("tag", "PharmacyClickLiestener"+pharmacyArrayList.size()); //보여지는 애들
+
+
             PharmacyAdapter pharmacyAdapter = new PharmacyAdapter(getContext(), pharmacyArrayList);
             recyclerView.setAdapter(pharmacyAdapter);
+            pharmacyAdapter.setOnItemClicklistener(new PharmacyAdapter.OnPharmacyItemClickListener() {
+                @Override
+                public void onItemClick(View v, int pos) {
+                    Intent intent = new Intent(getActivity(), Map2Activity.class);
+                    intent.putExtra("pharmacies", pharmacyArrayList);
+                    intent.putExtra("position", pos);
+                    startActivity(intent);
+                }
+            });
         }
     }
 }

@@ -3,9 +3,11 @@ package com.example.waste_drug.search;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.waste_drug.R;
+import com.example.waste_drug.search.adapter.PharmacyAdapter;
 import com.example.waste_drug.search.adapter.ViewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 

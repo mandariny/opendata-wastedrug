@@ -1,6 +1,7 @@
 package com.example.waste_drug.search.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ public class PharmacyAdapter extends RecyclerView.Adapter<PharmacyAdapter.Pharma
     private ArrayList<Pharmacy> pharmacyList;
     private Context context;
     private LayoutInflater mInflate;
+    OnPharmacyItemClickListener pharmacy_listener = null;
 
     public PharmacyAdapter(Context context, ArrayList<Pharmacy> pharmacyList) {
         this.pharmacyList = pharmacyList;
@@ -62,7 +64,16 @@ public class PharmacyAdapter extends RecyclerView.Adapter<PharmacyAdapter.Pharma
         return pharmacyList.size();
     }
 
-    public static class PharmacyViewHolder extends RecyclerView.ViewHolder {
+    //리사이클러뷰 이벤트 리스너
+    public interface OnPharmacyItemClickListener{
+        void onItemClick(View v, int pos);
+    }
+
+    public void setOnItemClicklistener(OnPharmacyItemClickListener listener){
+        this.pharmacy_listener = listener;
+    }
+
+    public class PharmacyViewHolder extends RecyclerView.ViewHolder {
         public TextView tvName;
         public TextView tvAddress;
         public TextView tvPhone;
@@ -75,6 +86,20 @@ public class PharmacyAdapter extends RecyclerView.Adapter<PharmacyAdapter.Pharma
             tvAddress = itemView.findViewById(R.id.tv_address);
             tvPhone = itemView.findViewById(R.id.tv_phone);
             tvTime = itemView.findViewById(R.id.tv_time);
+
+            //클릭 이벤트 리스너
+            itemView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    int pos = getAdapterPosition();
+                    if(pos != RecyclerView.NO_POSITION){
+                        pharmacy_listener.onItemClick(v, pos);
+
+                    }
+                }
+            });
         }
     }
+
+
 }

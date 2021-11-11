@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0fde3ba-eb1e-40ea-845a-0e63f98543b9" name="Default Changelist" comment="">
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/../../waste_drug/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../waste_drug/.idea/workspace.xml" afterDir="false" />
 =======
@@ -12,6 +22,7 @@
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/Map2Activity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map1.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_map2.xml" afterDir="false" />
+>>>>>>> main
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -22,7 +33,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+<<<<<<< HEAD
+=======
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+>>>>>>> main
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" afterDir="false" />
@@ -30,8 +44,14 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/waste_drug/MainActivity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/waste_drug/MainActivity$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/waste_drug/MainActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/waste_drug/MainActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/waste_drug/business_time.class" beforeDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/waste_drug/MainActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/waste_drug/MainActivity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/waste_drug/business_time.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/waste_drug/business_time.class" afterDir="false" />
+>>>>>>> main
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/waste_drug/waste_drug_box.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/example/waste_drug/waste_drug_box.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/out/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/out/AndroidManifest.xml" afterDir="false" />
@@ -40,15 +60,30 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/MainActivity$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/MainActivity$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/MainActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/MainActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/business_time.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/waste_drug_box.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/waste_drug_box.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_business_time.xml.flat" beforeDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/MainActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/MainActivity.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/business_time.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/business_time.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/waste_drug_box.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/waste_drug_box.dex" afterDir="false" />
+>>>>>>> main
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/business_time.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_business_time.xml" beforeDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/KakaoActivity.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/db/DrugBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/db/DrugBox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/search/adapter/DrugBoxAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/search/adapter/DrugBoxAdapter.java" afterDir="false" />
@@ -56,19 +91,29 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/search/pharmacy/PharmacyFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/search/pharmacy/PharmacyFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_kakao.xml" beforeDir="false" />
 >>>>>>> parent of 2631766... set main page
+>>>>>>> main
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[ce031713a5b13c3b0c]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="20jJsW8rkw12gkS152f8N6UXopU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -77,9 +122,22 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="ce031713a5b13c3b0c" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-11-11T12:07:55.210Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../학교/4-2/모바일플랫폼개발/PojangMacha (4)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="android.template.-1856557737">
+      <recent name="com.example.waste_drug" />
+    </key>
+    <key name="android.template.-737150641">
+      <recent name="com.example.waste_drug" />
+    </key>
+    <key name="android.template.-1878977921">
+      <recent name="com.example.waste_drug" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -139,7 +197,7 @@
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
+      <option name="ACTIVITY_CLASS" value="com.example.waste_drug.MapActivity" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
       <method v="2">
@@ -162,6 +220,9 @@
   </component>
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> main
   <component name="WindowStateProjectService">
     <state x="828" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1636569475665">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -183,10 +244,17 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="1222" y="392" width="435" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1050@0.0.1920.1050" timestamp="1636567246928" />
+<<<<<<< HEAD
+    <state x="1170" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1636655230391">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="1170" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1636655230391" />
+=======
     <state x="1170" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1636652875621">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="1170" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1636652875621" />
+>>>>>>> main
     <state x="840" y="100" width="987" height="850" key="AVDManager" timestamp="1636565296154">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -199,6 +267,24 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1636622713632" />
+<<<<<<< HEAD
+    <state width="913" height="173" key="GridCell.Tab.0.bottom" timestamp="1636656100995">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="913" height="173" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1636656100995" />
+    <state width="913" height="173" key="GridCell.Tab.0.center" timestamp="1636656100995">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="913" height="173" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1636656100995" />
+    <state width="913" height="173" key="GridCell.Tab.0.left" timestamp="1636656100995">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="913" height="173" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1636656100995" />
+    <state width="913" height="173" key="GridCell.Tab.0.right" timestamp="1636656100995">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="913" height="173" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1636656100995" />
+=======
     <state width="1876" height="90" key="GridCell.Tab.0.bottom" timestamp="1636654200293">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -215,6 +301,7 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1876" height="90" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1636654200293" />
+>>>>>>> main
     <state x="834" y="169" key="SettingsEditor" timestamp="1636569777790">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -224,5 +311,8 @@
     </state>
     <state x="1103" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1636599358268" />
   </component>
+<<<<<<< HEAD
+=======
 >>>>>>> parent of 2631766... set main page
+>>>>>>> main
 </project>
