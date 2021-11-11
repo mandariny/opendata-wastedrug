@@ -13,91 +13,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0fde3ba-eb1e-40ea-845a-0e63f98543b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/search/adapter/OnPharmacyItemClickListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/waste_drug.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/waste_drug.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-hdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-ldpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-mdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/annotation_processor_list/debug/annotationProcessors.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/annotation_processor_list/debug/annotationProcessors.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/+SegGDgBBq6SDNhYgJM9DiznL38=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/+SegGDgBBq6SDNhYgJM9DiznL38=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/1vvS3XkEZknwyyGUyVv09sa6KJI=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/1vvS3XkEZknwyyGUyVv09sa6KJI=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/CgAsmA8Op59wzXjUg5cqJo_0cxo=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/CgAsmA8Op59wzXjUg5cqJo_0cxo=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/HHLhxtVXe0AzkAp6yA0uguqY46k=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/HHLhxtVXe0AzkAp6yA0uguqY46k=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/HKjdXnqJSYQvopLOfgoSiYpVJxg=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/HKjdXnqJSYQvopLOfgoSiYpVJxg=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/NLCBhDTzpWbiWiL2V1kvX6DZLPk=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/NLCBhDTzpWbiWiL2V1kvX6DZLPk=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/bmJ9LT7QTbtn3iwVh8ArkfUNXkc=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/bmJ9LT7QTbtn3iwVh8ArkfUNXkc=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/izjyj0_eSXuUsE1UWjYldsdQtWw=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/izjyj0_eSXuUsE1UWjYldsdQtWw=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/jQBcDRZI_pTMMlnXbwYjKirrFOs=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/jQBcDRZI_pTMMlnXbwYjKirrFOs=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/nTUe6XPb9fysIG5eoBPOMAIedOQ=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/nTUe6XPb9fysIG5eoBPOMAIedOQ=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/qtAFCwyUsoa2lZ5CMNCeFKdq97U=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/qtAFCwyUsoa2lZ5CMNCeFKdq97U=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/vWXXp+lc3FYVHx1n5vL4k5JTY8E=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/vWXXp+lc3FYVHx1n5vL4k5JTY8E=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/merge-state" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/+SegGDgBBq6SDNhYgJM9DiznL38=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/+SegGDgBBq6SDNhYgJM9DiznL38=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/1vvS3XkEZknwyyGUyVv09sa6KJI=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/1vvS3XkEZknwyyGUyVv09sa6KJI=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/CgAsmA8Op59wzXjUg5cqJo_0cxo=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/CgAsmA8Op59wzXjUg5cqJo_0cxo=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/HHLhxtVXe0AzkAp6yA0uguqY46k=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/HHLhxtVXe0AzkAp6yA0uguqY46k=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/HKjdXnqJSYQvopLOfgoSiYpVJxg=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/HKjdXnqJSYQvopLOfgoSiYpVJxg=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/NLCBhDTzpWbiWiL2V1kvX6DZLPk=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/NLCBhDTzpWbiWiL2V1kvX6DZLPk=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/bmJ9LT7QTbtn3iwVh8ArkfUNXkc=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/bmJ9LT7QTbtn3iwVh8ArkfUNXkc=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/izjyj0_eSXuUsE1UWjYldsdQtWw=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/izjyj0_eSXuUsE1UWjYldsdQtWw=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/jQBcDRZI_pTMMlnXbwYjKirrFOs=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/jQBcDRZI_pTMMlnXbwYjKirrFOs=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/nTUe6XPb9fysIG5eoBPOMAIedOQ=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/nTUe6XPb9fysIG5eoBPOMAIedOQ=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/qtAFCwyUsoa2lZ5CMNCeFKdq97U=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/qtAFCwyUsoa2lZ5CMNCeFKdq97U=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/vWXXp+lc3FYVHx1n5vL4k5JTY8E=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeNativeLibs/zip-cache/vWXXp+lc3FYVHx1n5vL4k5JTY8E=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_java_res/debug/out.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_java_res/debug/out.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/out/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/out/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/BuildConfig.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/BuildConfig.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/MainActivity$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/MainActivity$1.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/MainActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/MainActivity.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/business_time.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/business_time.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/waste_drug_box.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/example/waste_drug/waste_drug_box.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_launcher_background.xml.flat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-anydpi-v24_ic_launcher_foreground.xml.flat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher_background.png.flat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_launcher_background.png.flat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_launcher_background.png.flat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_launcher_background.png.flat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_launcher_background.png.flat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_launcher_background.png.flat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/search/SearchActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/search/SearchActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/search/adapter/PharmacyAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/search/adapter/PharmacyAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/search/pharmacy/PharmacyFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/search/pharmacy/PharmacyFragment.java" afterDir="false" />
     </list>
@@ -106,7 +31,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[ce031713a5b13c3b0c]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -130,8 +55,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_4_XL_API_30" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-11-11T11:55:48.261Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="ce031713a5b13c3b0c" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-11-11T12:07:55.210Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../학교/4-2/모바일플랫폼개발/PojangMacha (4)" />
@@ -232,10 +157,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="1206" y="325" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1636611396341" />
-    <state x="1245" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1636614609502">
+    <state x="1245" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1636638663956">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="1245" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1636614609502" />
+    <state x="1245" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1636638663956" />
     <state x="1103" y="314" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1636569430873">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -260,22 +185,22 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="280" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1636622713632" />
-    <state width="609" height="358" key="GridCell.Tab.0.bottom" timestamp="1636631258167">
+    <state width="1183" height="228" key="GridCell.Tab.0.bottom" timestamp="1636638258474">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="609" height="358" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1636631258167" />
-    <state width="609" height="358" key="GridCell.Tab.0.center" timestamp="1636631258167">
+    <state width="1183" height="228" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1636638258474" />
+    <state width="1183" height="228" key="GridCell.Tab.0.center" timestamp="1636638258473">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="609" height="358" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1636631258167" />
-    <state width="609" height="358" key="GridCell.Tab.0.left" timestamp="1636631258167">
+    <state width="1183" height="228" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1636638258473" />
+    <state width="1183" height="228" key="GridCell.Tab.0.left" timestamp="1636638258472">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="609" height="358" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1636631258167" />
-    <state width="609" height="358" key="GridCell.Tab.0.right" timestamp="1636631258167">
+    <state width="1183" height="228" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1636638258472" />
+    <state width="1183" height="228" key="GridCell.Tab.0.right" timestamp="1636638258474">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="609" height="358" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1636631258167" />
+    <state width="1183" height="228" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1636638258474" />
     <state x="834" y="169" key="SettingsEditor" timestamp="1636569777790">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

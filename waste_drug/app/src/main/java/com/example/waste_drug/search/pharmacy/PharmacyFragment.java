@@ -106,7 +106,7 @@ public class PharmacyFragment extends Fragment {
             if (!isSearch) {
                 requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=CjgXorlQ%2FWNSknj9kf3L7KuvIjQLVKLhhPbiIcQDp67L952y4CkiTwPl4TnmN0nC4aQvrOJodqQCqoMIYYLmZA%3D%3D";
             } else {
-                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=&QN=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
+                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=CjgXorlQ%2FWNSknj9kf3L7KuvIjQLVKLhhPbiIcQDp67L952y4CkiTwPl4TnmN0nC4aQvrOJodqQCqoMIYYLmZA%3D%3D&QN=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
                 isSearch = false;
             }
             try {
@@ -249,12 +249,16 @@ public class PharmacyFragment extends Fragment {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
 
+            //Log.v("tag", "PharmacyClickLiestener"+pharmacyArrayList.size()); //보여지는 애들
+
+
             PharmacyAdapter pharmacyAdapter = new PharmacyAdapter(getContext(), pharmacyArrayList);
             recyclerView.setAdapter(pharmacyAdapter);
-            pharmacyAdapter.setOnItemClicklistener(new OnPharmacyItemClickListener() {
+            pharmacyAdapter.setOnItemClicklistener(new PharmacyAdapter.OnPharmacyItemClickListener() {
                 @Override
-                public void onItemClick(PharmacyAdapter.PharmacyViewHolder holder, View view, int position) {
-                    Log.v("tag", "PharmacyClickLiestener");
+                public void onItemClick(View v, int pos) {
+                    Log.v("tag", "PharmacyClickLiestener in fragment");
+                    Log.v("tag", "PharmacyClickLiestener"+pharmacyArrayList.size()+"/"+pos);
                 }
             });
         }
