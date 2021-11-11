@@ -1,4 +1,4 @@
-#Thu Nov 11 14:17:37 KST 2021
+#Thu Nov 11 15:23:52 KST 2021
 base.0=D\:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

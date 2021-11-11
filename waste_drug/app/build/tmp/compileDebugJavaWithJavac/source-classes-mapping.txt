@@ -1,5 +1,6 @@
-com/example/waste_drug/KakaoActivity.java
- com.example.waste_drug.KakaoActivity
+com/example/waste_drug/MainActivity.java
+ com.example.waste_drug.MainActivity
+ com.example.waste_drug.MainActivity$1
 com/example/waste_drug/search/drugbox/DrugBoxFragment.java
  com.example.waste_drug.search.drugbox.DrugBoxFragment
 com/example/waste_drug/search/adapter/ViewPagerAdapter.java
@@ -21,6 +22,5 @@ com/example/waste_drug/waste_drug_box.java
 com/example/waste_drug/search/adapter/PharmacyAdapter.java
  com.example.waste_drug.search.adapter.PharmacyAdapter
  com.example.waste_drug.search.adapter.PharmacyAdapter$PharmacyViewHolder
-com/example/waste_drug/MainActivity.java
- com.example.waste_drug.MainActivity
- com.example.waste_drug.MainActivity$1
+com/example/waste_drug/KakaoActivity.java
+ com.example.waste_drug.KakaoActivity
