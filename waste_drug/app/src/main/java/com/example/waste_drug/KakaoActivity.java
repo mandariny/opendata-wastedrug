@@ -30,7 +30,7 @@ public class KakaoActivity extends AppCompatActivity implements MapView.POIItemE
 
     LinearLayout info_view;
     TextView name;
-    TextView add;
+    TextView address;
     TextView phone;
     TextView time;
 
@@ -39,17 +39,52 @@ public class KakaoActivity extends AppCompatActivity implements MapView.POIItemE
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kakao);
 
+        name = findViewById(R.id.info_name);
+        address = findViewById(R.id.info_address);
+        phone = findViewById(R.id.info_phone);
+        time = findViewById(R.id.info_time);
+
         MapView mapView = new MapView(this);
         ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
 
         Intent intent = getIntent();
         ArrayList<Pharmacy> pharmacyArrayList = (ArrayList<Pharmacy>)intent.getSerializableExtra(("pharmacies"));
         int pos = intent.getIntExtra("position",0);
-
         String title = pharmacyArrayList.get(pos).getDutyName();
         String arr = pharmacyArrayList.get(pos).getDutyAddr();
+        String pnum = pharmacyArrayList.get(pos).getDutyTel1();
+        String days = "";
         double lat = 0;
         double lon = 0;
+
+        if(Integer.parseInt(pharmacyArrayList.get(pos).getDutyTime1c())>1800 ||
+                Integer.parseInt(pharmacyArrayList.get(pos).getDutyTime2c())>1800 ||
+                Integer.parseInt(pharmacyArrayList.get(pos).getDutyTime3c())>1800 ||
+                Integer.parseInt(pharmacyArrayList.get(pos).getDutyTime4c())>1800 ||
+                Integer.parseInt(pharmacyArrayList.get(pos).getDutyTime5c())>1800 )
+            days += "평일 야간 ";
+        if(pharmacyArrayList.get(pos).getDutyTime6c() != null ){
+            if(!days.equals(""))
+            days += "/ ";
+            days += "토요일 ";
+        }
+        if(pharmacyArrayList.get(pos).getDutyTime7c() != null ){
+            if(!days.equals(""))
+                days += "/ ";
+            days += "일요일 ";
+        }
+        if(pharmacyArrayList.get(pos).getDutyTime8c() != null ){
+            if(!days.equals(""))
+                days += "/ ";
+            days += "공휴일 ";
+        }
+        if(days.equals(""))
+            days += "운영 정보 없음";
+
+        name.setText(title);
+        address.setText(arr);
+        phone.setText(pnum);
+        time.setText(days);
 
         Geocoder geocoder = new Geocoder(getApplicationContext());
         try{
@@ -84,19 +119,8 @@ public class KakaoActivity extends AppCompatActivity implements MapView.POIItemE
     @Override
     public void onPOIItemSelected(MapView mapView, MapPOIItem mapPOIItem) {
         //마커 클릭시 정보 노출
-
         info_view = findViewById(R.id.info);
         info_view.setVisibility(View.VISIBLE);
-
-        name = findViewById(R.id.info_name);
-        add = findViewById(R.id.info_address);
-        phone = findViewById(R.id.info_phone);
-        time = findViewById(R.id.info_time);
-
-        name.setText("NAME");
-        add.setText("ADDRESS");
-        phone.setText("PHONE");
-        time.setText("TIME");
     }
 
     @Override
