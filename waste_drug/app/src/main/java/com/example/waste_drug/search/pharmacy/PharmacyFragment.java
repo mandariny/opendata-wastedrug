@@ -48,6 +48,7 @@ public class PharmacyFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_pharmacy, container, false);
         getInitView(v);
         searchButtonClicked();
+        searchButtonClosed();
         executeAsyncTask();
         return v;
     }
@@ -74,6 +75,17 @@ public class PharmacyFragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String s) {
+                return false;
+            }
+        });
+    }
+
+    public void searchButtonClosed() {
+        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                isSearch = false;
+                executeAsyncTask();
                 return false;
             }
         });
