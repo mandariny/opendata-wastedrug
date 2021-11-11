@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +14,12 @@ import net.daum.mf.map.api.MapPOIItem;
 import net.daum.mf.map.api.MapPoint;
 
 public class KakaoActivity extends AppCompatActivity implements MapView.POIItemEventListener {
+
+    LinearLayout info_view;
+    TextView name;
+    TextView add;
+    TextView phone;
+    TextView time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +53,20 @@ public class KakaoActivity extends AppCompatActivity implements MapView.POIItemE
 
     @Override
     public void onPOIItemSelected(MapView mapView, MapPOIItem mapPOIItem) {
-        LinearLayout info_view;
-        info_view = findViewById(R.id.info);
+        //마커 클릭시 정보 노출
 
+        info_view = findViewById(R.id.info);
         info_view.setVisibility(View.VISIBLE);
+
+        name = findViewById(R.id.info_name);
+        add = findViewById(R.id.info_address);
+        phone = findViewById(R.id.info_phone);
+        time = findViewById(R.id.info_time);
+
+        name.setText("NAME");
+        add.setText("ADDRESS");
+        phone.setText("PHONE");
+        time.setText("TIME");
     }
 
     @Override

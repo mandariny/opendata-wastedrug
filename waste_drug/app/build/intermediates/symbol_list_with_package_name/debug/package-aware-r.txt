@@ -1884,6 +1884,10 @@ id ignore
 id ignoreRequest
 id image
 id info
+id info_address
+id info_name
+id info_phone
+id info_time
 id invisible
 id inward
 id italic

@@ -1,10 +1,10 @@
+com/example/waste_drug/search/adapter/ViewPagerAdapter.java
+ com.example.waste_drug.search.adapter.ViewPagerAdapter
+com/example/waste_drug/search/drugbox/DrugBoxFragment.java
+ com.example.waste_drug.search.drugbox.DrugBoxFragment
 com/example/waste_drug/MainActivity.java
  com.example.waste_drug.MainActivity
  com.example.waste_drug.MainActivity$1
-com/example/waste_drug/search/drugbox/DrugBoxFragment.java
- com.example.waste_drug.search.drugbox.DrugBoxFragment
-com/example/waste_drug/search/adapter/ViewPagerAdapter.java
- com.example.waste_drug.search.adapter.ViewPagerAdapter
 com/example/waste_drug/data/Pharmacy.java
  com.example.waste_drug.data.Pharmacy
 com/example/waste_drug/search/pharmacy/PharmacyFragment.java
