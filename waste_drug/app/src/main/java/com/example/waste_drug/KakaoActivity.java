@@ -1,6 +1,8 @@
 package com.example.waste_drug;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -9,9 +11,13 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.waste_drug.data.Pharmacy;
+
 import net.daum.mf.map.api.MapView;
 import net.daum.mf.map.api.MapPOIItem;
 import net.daum.mf.map.api.MapPoint;
+
+import java.util.ArrayList;
 
 public class KakaoActivity extends AppCompatActivity implements MapView.POIItemEventListener {
 
@@ -25,6 +31,11 @@ public class KakaoActivity extends AppCompatActivity implements MapView.POIItemE
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kakao);
+
+        Intent intent = getIntent();
+        ArrayList<Pharmacy> pharmacyArrayList = (ArrayList<Pharmacy>)intent.getSerializableExtra(("pharmacies"));
+        int pos = intent.getIntExtra("position",0);
+        Log.v("tag", "Kakaomap~"+pharmacyArrayList.size()+"/"+pos);
 
         MapView mapView = new MapView(this);
 

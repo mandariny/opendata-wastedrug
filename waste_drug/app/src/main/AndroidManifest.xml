@@ -14,9 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Waste_drug"
         android:usesCleartextTraffic="true">
-        <activity android:name=".KakaoActivity"
-            android:parentActivityName=".search.SearchActivity">
-        </activity>
+        <activity android:name=".KakaoActivity"></activity>
         <activity android:name=".search.SearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

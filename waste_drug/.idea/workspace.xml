@@ -24,6 +24,8 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/KakaoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/KakaoActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/data/Pharmacy.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/data/Pharmacy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/search/pharmacy/PharmacyFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/waste_drug/search/pharmacy/PharmacyFragment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

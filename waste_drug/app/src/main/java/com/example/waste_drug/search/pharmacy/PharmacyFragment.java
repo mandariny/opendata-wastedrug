@@ -262,6 +262,8 @@ public class PharmacyFragment extends Fragment {
                     Log.v("tag", "PharmacyClickLiestener in fragment");
                     Log.v("tag", "PharmacyClickLiestener"+pharmacyArrayList.size()+"/"+pos);
                     Intent intent = new Intent(getActivity(), KakaoActivity.class);
+                    intent.putExtra("pharmacies", pharmacyArrayList);
+                    intent.putExtra("position", pos);
                     startActivity(intent);
                 }
             });
