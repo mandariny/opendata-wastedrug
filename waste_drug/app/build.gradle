@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.waste_drug"
-        minSdkVersion 30
+        minSdkVersion 24
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"

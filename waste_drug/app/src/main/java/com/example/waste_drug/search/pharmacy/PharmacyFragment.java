@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.waste_drug.R;
 import com.example.waste_drug.data.Pharmacy;
+import com.example.waste_drug.search.adapter.OnPharmacyItemClickListener;
 import com.example.waste_drug.search.adapter.PharmacyAdapter;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -39,6 +40,7 @@ public class PharmacyFragment extends Fragment {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
     }
 
@@ -50,6 +52,7 @@ public class PharmacyFragment extends Fragment {
         searchButtonClicked();
         searchButtonClosed();
         executeAsyncTask();
+
         return v;
     }
 
@@ -248,6 +251,12 @@ public class PharmacyFragment extends Fragment {
 
             PharmacyAdapter pharmacyAdapter = new PharmacyAdapter(getContext(), pharmacyArrayList);
             recyclerView.setAdapter(pharmacyAdapter);
+            pharmacyAdapter.setOnItemClicklistener(new OnPharmacyItemClickListener() {
+                @Override
+                public void onItemClick(PharmacyAdapter.PharmacyViewHolder holder, View view, int position) {
+                    Log.v("tag", "PharmacyClickLiestener");
+                }
+            });
         }
     }
 }

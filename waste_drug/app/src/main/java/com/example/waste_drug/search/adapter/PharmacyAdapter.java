@@ -14,11 +14,12 @@ import com.example.waste_drug.data.Pharmacy;
 
 import java.util.ArrayList;
 
-public class PharmacyAdapter extends RecyclerView.Adapter<PharmacyAdapter.PharmacyViewHolder> {
+public class PharmacyAdapter extends RecyclerView.Adapter<PharmacyAdapter.PharmacyViewHolder> implements OnPharmacyItemClickListener{
 
     private ArrayList<Pharmacy> pharmacyList;
     private Context context;
     private LayoutInflater mInflate;
+    OnPharmacyItemClickListener listener;
 
     public PharmacyAdapter(Context context, ArrayList<Pharmacy> pharmacyList) {
         this.pharmacyList = pharmacyList;
@@ -61,6 +62,19 @@ public class PharmacyAdapter extends RecyclerView.Adapter<PharmacyAdapter.Pharma
     public int getItemCount() {
         return pharmacyList.size();
     }
+
+    public void setOnItemClicklistener(OnPharmacyItemClickListener listener){
+        this.listener = listener;
+    }
+
+    @Override
+    public void onItemClick(PharmacyAdapter.PharmacyViewHolder holder, View view, int position) {
+        if(listener != null){
+            listener.onItemClick(holder,view,position);
+        }
+
+    }
+
 
     public static class PharmacyViewHolder extends RecyclerView.ViewHolder {
         public TextView tvName;
