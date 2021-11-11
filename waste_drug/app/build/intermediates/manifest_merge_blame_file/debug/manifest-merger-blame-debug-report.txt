@@ -18,7 +18,7 @@
 12-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:6:22-76
 13
 14    <application
-14-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:8:5-31:19
+14-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:8:5-30:19
 15        android:allowBackup="true"
 15-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:9:9-35
 16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -40,39 +40,42 @@
 25-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:15:9-48
 26        android:usesCleartextTraffic="true" >
 26-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:16:9-44
-27        <activity android:name="com.example.waste_drug.KakaoActivity" />
-27-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:17:9-60
-27-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:17:19-48
-28        <activity android:name="com.example.waste_drug.search.SearchActivity" >
-28-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:18:9-25:20
-28-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:18:19-56
-29            <intent-filter>
-29-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:19:13-23:29
-30                <action android:name="android.intent.action.MAIN" />
-30-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:20:17-69
-30-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:20:25-66
-31
-32                <category android:name="android.intent.category.LAUNCHER" />
-32-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:22:17-77
-32-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:22:27-74
-33            </intent-filter>
-34        </activity>
-35
-36        <meta-data
-36-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:28:9-30:64
-37            android:name="com.kakao.sdk.AppKey"
-37-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:29:13-48
-38            android:value="f708709920ae96f8ba2a25978fda5cb7" />
-38-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:30:13-61
-39
-40        <service
-40-->[androidx.room:room-runtime:2.4.0-beta01] C:\Users\YoonSohee\.gradle\caches\transforms-2\files-2.1\75a9d6d008551d2b59dcccad037f2351\room-runtime-2.4.0-beta01\AndroidManifest.xml:25:9-28:40
-41            android:name="androidx.room.MultiInstanceInvalidationService"
-41-->[androidx.room:room-runtime:2.4.0-beta01] C:\Users\YoonSohee\.gradle\caches\transforms-2\files-2.1\75a9d6d008551d2b59dcccad037f2351\room-runtime-2.4.0-beta01\AndroidManifest.xml:26:13-74
-42            android:directBootAware="true"
-42-->[androidx.room:room-runtime:2.4.0-beta01] C:\Users\YoonSohee\.gradle\caches\transforms-2\files-2.1\75a9d6d008551d2b59dcccad037f2351\room-runtime-2.4.0-beta01\AndroidManifest.xml:27:13-43
-43            android:exported="false" />
-43-->[androidx.room:room-runtime:2.4.0-beta01] C:\Users\YoonSohee\.gradle\caches\transforms-2\files-2.1\75a9d6d008551d2b59dcccad037f2351\room-runtime-2.4.0-beta01\AndroidManifest.xml:28:13-37
-44    </application>
-45
-46</manifest>
+27        <activity android:name="com.example.waste_drug.Map1Activity" />
+27-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:17:9-59
+27-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:17:19-47
+28        <activity android:name="com.example.waste_drug.Map2Activity" />
+28-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:18:9-50
+28-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:18:19-47
+29        <activity android:name="com.example.waste_drug.search.SearchActivity" >
+29-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:19:9-25:20
+29-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:19:19-56
+30            <intent-filter>
+30-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:20:13-24:29
+31                <action android:name="android.intent.action.MAIN" />
+31-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:21:17-69
+31-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:21:25-66
+32
+33                <category android:name="android.intent.category.LAUNCHER" />
+33-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:23:17-77
+33-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:23:27-74
+34            </intent-filter>
+35        </activity>
+36
+37        <meta-data
+37-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:27:9-29:64
+38            android:name="com.kakao.sdk.AppKey"
+38-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:28:13-48
+39            android:value="f708709920ae96f8ba2a25978fda5cb7" />
+39-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:29:13-61
+40
+41        <service
+41-->[androidx.room:room-runtime:2.4.0-beta01] C:\Users\YoonSohee\.gradle\caches\transforms-2\files-2.1\75a9d6d008551d2b59dcccad037f2351\room-runtime-2.4.0-beta01\AndroidManifest.xml:25:9-28:40
+42            android:name="androidx.room.MultiInstanceInvalidationService"
+42-->[androidx.room:room-runtime:2.4.0-beta01] C:\Users\YoonSohee\.gradle\caches\transforms-2\files-2.1\75a9d6d008551d2b59dcccad037f2351\room-runtime-2.4.0-beta01\AndroidManifest.xml:26:13-74
+43            android:directBootAware="true"
+43-->[androidx.room:room-runtime:2.4.0-beta01] C:\Users\YoonSohee\.gradle\caches\transforms-2\files-2.1\75a9d6d008551d2b59dcccad037f2351\room-runtime-2.4.0-beta01\AndroidManifest.xml:27:13-43
+44            android:exported="false" />
+44-->[androidx.room:room-runtime:2.4.0-beta01] C:\Users\YoonSohee\.gradle\caches\transforms-2\files-2.1\75a9d6d008551d2b59dcccad037f2351\room-runtime-2.4.0-beta01\AndroidManifest.xml:28:13-37
+45    </application>
+46
+47</manifest>

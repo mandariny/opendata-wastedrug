@@ -24,7 +24,8 @@
         android:testOnly="true"
         android:theme="@style/Theme.Waste_drug"
         android:usesCleartextTraffic="true" >
-        <activity android:name="com.example.waste_drug.KakaoActivity" />
+        <activity android:name="com.example.waste_drug.Map1Activity" />
+        <activity android:name="com.example.waste_drug.Map2Activity" />
         <activity android:name="com.example.waste_drug.search.SearchActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1884,10 +1884,14 @@ id ignore
 id ignoreRequest
 id image
 id info
+id info2
 id info_address
+id info_address2
 id info_name
+id info_name2
 id info_phone
-id info_time
+id info_phone2
+id info_time2
 id invisible
 id inward
 id italic
@@ -2185,8 +2189,9 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_kakao
 layout activity_main
+layout activity_map1
+layout activity_map2
 layout activity_search
 layout custom_dialog
 layout design_bottom_navigation_item

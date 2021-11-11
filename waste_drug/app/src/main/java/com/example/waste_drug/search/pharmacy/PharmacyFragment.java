@@ -17,10 +17,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.waste_drug.KakaoActivity;
+import com.example.waste_drug.Map2Activity;
 import com.example.waste_drug.R;
 import com.example.waste_drug.data.Pharmacy;
-import com.example.waste_drug.search.adapter.OnPharmacyItemClickListener;
 import com.example.waste_drug.search.adapter.PharmacyAdapter;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -259,9 +258,7 @@ public class PharmacyFragment extends Fragment {
             pharmacyAdapter.setOnItemClicklistener(new PharmacyAdapter.OnPharmacyItemClickListener() {
                 @Override
                 public void onItemClick(View v, int pos) {
-                    Log.v("tag", "PharmacyClickLiestener in fragment");
-                    Log.v("tag", "PharmacyClickLiestener"+pharmacyArrayList.size()+"/"+pos);
-                    Intent intent = new Intent(getActivity(), KakaoActivity.class);
+                    Intent intent = new Intent(getActivity(), Map2Activity.class);
                     intent.putExtra("pharmacies", pharmacyArrayList);
                     intent.putExtra("position", pos);
                     startActivity(intent);

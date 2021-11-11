@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 public class DrugBoxAdapter extends RecyclerView.Adapter<DrugBoxAdapter.DrugBoxViewHolder> {
     private ArrayList<DrugBox> drugBoxArrayList = new ArrayList<>();
+    OnDrugBoxItemClickListener drugbox_listener = null;
 
     public DrugBoxAdapter(ArrayList<DrugBox> drugBoxArrayList) {
         this.drugBoxArrayList = drugBoxArrayList;
@@ -46,6 +47,16 @@ public class DrugBoxAdapter extends RecyclerView.Adapter<DrugBoxAdapter.DrugBoxV
         return drugBoxArrayList.size();
     }
 
+    //리사이클러뷰 이벤트 리스너
+    public interface OnDrugBoxItemClickListener{
+        void onItemClick(View v, int pos);
+    }
+
+    public void setOnItemClicklistener(OnDrugBoxItemClickListener listener){
+        this.drugbox_listener = listener;
+    }
+
+
     public class DrugBoxViewHolder extends RecyclerView.ViewHolder {
         TextView address;
         TextView name;
@@ -57,6 +68,18 @@ public class DrugBoxAdapter extends RecyclerView.Adapter<DrugBoxAdapter.DrugBoxV
             address = itemView.findViewById(R.id.tv_address);
             name = itemView.findViewById(R.id.tv_name);
             tel = itemView.findViewById(R.id.tv_phone);
+
+            //클릭 이벤트 리스너
+            itemView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    int pos = getAdapterPosition();
+                    if(pos != RecyclerView.NO_POSITION){
+                        drugbox_listener.onItemClick(v, pos);
+
+                    }
+                }
+            });
         }
     }
 
