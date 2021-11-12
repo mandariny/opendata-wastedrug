@@ -20,6 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,11 +40,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }*/
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         GridView gridView = findViewById(R.id.gv_grid_view);
         GridAdapter adapter = new GridAdapter();
@@ -53,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
         adapter.insertItem(new GridItem("물약","한 병에 모을 수 있는 만큼 모아, 새지 않도록 밀봉하여 배출"));
         adapter.insertItem(new GridItem("연고/안약", "겉의 종이박스만 제거하고 용기째 배출"));
         gridView.setAdapter(adapter);
+                
+        //getAppKeyHash();
+  
 
         Button button2 = (Button) findViewById((R.id.button2));
         button2.setOnClickListener(new View.OnClickListener(){
