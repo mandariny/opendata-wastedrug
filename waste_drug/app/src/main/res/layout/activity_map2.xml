@@ -22,7 +22,7 @@
         android:background="@color/white"
         android:orientation="vertical"
         android:padding="10dp"
-        android:visibility="invisible">
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/info_name2"
