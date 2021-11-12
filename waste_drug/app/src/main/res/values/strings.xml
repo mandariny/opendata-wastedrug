@@ -8,4 +8,5 @@
     <string name="text_drugBox">수거함 정보</string>
     <string name="text_info_pharmacy">약국 정보</string>
     <string name="text_time">주말 / 공휴일</string>
+    <string name="text_search">수거함/약국 정보 검색</string>
 </resources>
