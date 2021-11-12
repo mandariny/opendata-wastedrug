@@ -18,6 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,11 +38,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }*/
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //getAppKeyHash();
 
         Button button2 = (Button) findViewById((R.id.button2));
         button2.setOnClickListener(new View.OnClickListener(){
