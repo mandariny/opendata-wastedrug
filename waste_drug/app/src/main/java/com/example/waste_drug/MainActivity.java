@@ -12,7 +12,9 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridView;
 
+import com.example.waste_drug.data.GridItem;
 import com.example.waste_drug.search.SearchActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -42,6 +44,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        GridView gridView = findViewById(R.id.gv_grid_view);
+        GridAdapter adapter = new GridAdapter();
+
+        adapter.insertItem(new GridItem("알약", "포장된 비닐, 종이 등을 제거한 뒤 내용물만 모아 배출"));
+        adapter.insertItem(new GridItem("가루약", "포장지를 뜯지 않고 그대로 배출"));
+        adapter.insertItem(new GridItem("물약","한 병에 모을 수 있는 만큼 모아, 새지 않도록 밀봉하여 배출"));
+        adapter.insertItem(new GridItem("연고/안약", "겉의 종이박스만 제거하고 용기째 배출"));
+        gridView.setAdapter(adapter);
 
         Button button2 = (Button) findViewById((R.id.button2));
         button2.setOnClickListener(new View.OnClickListener(){
