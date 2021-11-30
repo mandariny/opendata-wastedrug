@@ -1030,6 +1030,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color grid_background_color
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color material_blue_grey_800
@@ -1778,8 +1779,8 @@ id beginning
 id blocking
 id bottom
 id bounce
-id button1
 id button2
+id button3
 id buttonPanel
 id cache_measures
 id cancel_action
@@ -1872,6 +1873,7 @@ id group_divider
 id grouping
 id groups
 id guideline
+id gv_grid_view
 id header_title
 id hideable
 id home
@@ -1904,6 +1906,7 @@ id largeLabel
 id layout
 id left
 id leftToRight
+id li_gridview_item
 id line1
 id line3
 id linear
@@ -2112,9 +2115,11 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tv_address
+id tv_content
 id tv_name
 id tv_phone
 id tv_time
+id tv_value
 id unchecked
 id uniform
 id unlabeled
@@ -2211,6 +2216,7 @@ layout design_text_input_start_icon
 layout fragment_drugbox
 layout fragment_pharmacy
 layout fragment_waste_drug_box
+layout gridview_item
 layout layout_pharmacy_item
 layout material_chip_input_combo
 layout material_clock_display
@@ -2396,6 +2402,7 @@ string text_drugBox
 string text_info_pharmacy
 string text_name
 string text_phone
+string text_search
 string text_time
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

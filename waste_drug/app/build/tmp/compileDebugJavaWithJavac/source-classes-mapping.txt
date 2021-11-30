@@ -1,9 +1,7 @@
-com/example/waste_drug/search/drugbox/DrugBoxFragment.java
- com.example.waste_drug.search.drugbox.DrugBoxFragment
- com.example.waste_drug.search.drugbox.DrugBoxFragment$1
- com.example.waste_drug.search.drugbox.DrugBoxFragment$1InsertRunnable
- com.example.waste_drug.search.drugbox.DrugBoxFragment$2
- com.example.waste_drug.search.drugbox.DrugBoxFragment$3
+com/example/waste_drug/GridAdapter.java
+ com.example.waste_drug.GridAdapter
+com/example/waste_drug/Map2Activity.java
+ com.example.waste_drug.Map2Activity
 com/example/waste_drug/search/pharmacy/PharmacyFragment.java
  com.example.waste_drug.search.pharmacy.PharmacyFragment
  com.example.waste_drug.search.pharmacy.PharmacyFragment$1
@@ -20,6 +18,13 @@ com/example/waste_drug/db/DrugBoxDao.java
  com.example.waste_drug.db.DrugBoxDao
 com/example/waste_drug/search/adapter/ViewPagerAdapter.java
  com.example.waste_drug.search.adapter.ViewPagerAdapter
+com/example/waste_drug/search/adapter/PharmacyAdapter.java
+ com.example.waste_drug.search.adapter.PharmacyAdapter
+ com.example.waste_drug.search.adapter.PharmacyAdapter$OnPharmacyItemClickListener
+ com.example.waste_drug.search.adapter.PharmacyAdapter$PharmacyViewHolder
+ com.example.waste_drug.search.adapter.PharmacyAdapter$PharmacyViewHolder$1
+com/example/waste_drug/data/GridItem.java
+ com.example.waste_drug.data.GridItem
 com/example/waste_drug/MainActivity.java
  com.example.waste_drug.MainActivity
  com.example.waste_drug.MainActivity$1
@@ -38,10 +43,11 @@ com/example/waste_drug/db/AppDatabase.java
  com.example.waste_drug.db.AppDatabase
 com/example/waste_drug/Map1Activity.java
  com.example.waste_drug.Map1Activity
-com/example/waste_drug/search/adapter/PharmacyAdapter.java
- com.example.waste_drug.search.adapter.PharmacyAdapter
- com.example.waste_drug.search.adapter.PharmacyAdapter$OnPharmacyItemClickListener
- com.example.waste_drug.search.adapter.PharmacyAdapter$PharmacyViewHolder
- com.example.waste_drug.search.adapter.PharmacyAdapter$PharmacyViewHolder$1
-com/example/waste_drug/Map2Activity.java
- com.example.waste_drug.Map2Activity
+com/example/waste_drug/search/drugbox/DrugBoxFragment.java
+ com.example.waste_drug.search.drugbox.DrugBoxFragment
+ com.example.waste_drug.search.drugbox.DrugBoxFragment$1
+ com.example.waste_drug.search.drugbox.DrugBoxFragment$1InsertRunnable
+ com.example.waste_drug.search.drugbox.DrugBoxFragment$2
+ com.example.waste_drug.search.drugbox.DrugBoxFragment$3
+com/example/waste_drug/search/GpsTracker.java
+ com.example.waste_drug.search.GpsTracker

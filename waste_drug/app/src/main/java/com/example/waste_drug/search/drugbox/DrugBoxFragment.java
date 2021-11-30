@@ -1,11 +1,13 @@
 package com.example.waste_drug.search.drugbox;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
@@ -18,17 +20,21 @@ import com.example.waste_drug.Map1Activity;
 import com.example.waste_drug.R;
 import com.example.waste_drug.db.AppDatabase;
 import com.example.waste_drug.db.DrugBox;
+import com.example.waste_drug.search.GpsTracker;
 import com.example.waste_drug.search.adapter.DrugBoxAdapter;
+import com.example.waste_drug.search.GpsTracker;
 
 import java.util.ArrayList;
 
-public class DrugBoxFragment extends Fragment {
+public class DrugBoxFragment extends Fragment implements View.OnClickListener{
     private RecyclerView recyclerView;
     private DrugBoxAdapter drugBoxAdapter;
     private SearchView searchView;
     private AppDatabase db = null;
     private ArrayList<DrugBox> drugBox = new ArrayList<>();
     private ArrayList<DrugBox> searchDrugBox = new ArrayList<>();
+    private GpsTracker gpsTracker;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +51,26 @@ public class DrugBoxFragment extends Fragment {
         getDB(drugBox);
         searchViewClicked();
         searchViewClosed();
+
+        gpsTracker = new GpsTracker(container.getContext());
+        Button show_loc = (Button) v.findViewById(R.id.button3);
+        show_loc.setOnClickListener(this);
+
         return v;
+    }
+
+    @Override
+    public void onClick(View v){
+        switch(v.getId())
+        {
+            case R.id.button3:
+            {
+                double latitude = gpsTracker.getLatitude();
+                double longitude = gpsTracker.getLongitude();
+
+                Log.v("tag","lat: "+latitude+" & lon: "+longitude);
+            }
+        }
     }
 
     public void getInitView(View v) {
