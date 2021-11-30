@@ -1,6 +1,7 @@
 package com.example.waste_drug.search.pharmacy;
 
 import android.content.Intent;
+import android.location.Address;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -8,7 +9,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.SearchView;
+import android.location.Geocoder;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,18 +24,23 @@ import com.example.waste_drug.BuildConfig;
 import com.example.waste_drug.Map2Activity;
 import com.example.waste_drug.R;
 import com.example.waste_drug.data.Pharmacy;
+import com.example.waste_drug.db.DrugBox;
 import com.example.waste_drug.search.adapter.PharmacyAdapter;
+import com.example.waste_drug.search.GpsTracker;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
-public class PharmacyFragment extends Fragment {
+public class PharmacyFragment extends Fragment implements View.OnClickListener{
     private ArrayList<Pharmacy> pharmacyArrayList = null;
     private String requestUrl = "";
     private String searchText = "";
@@ -40,6 +48,9 @@ public class PharmacyFragment extends Fragment {
     private SearchView searchView;
     private boolean isSearch = false;
     private final String[] APIKEY = new String[]{BuildConfig.PHARMACY_API_KEY};
+    private GpsTracker gpsTracker;
+    private Geocoder geocoder;
+    private boolean isGps = false;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,7 +67,47 @@ public class PharmacyFragment extends Fragment {
         searchButtonClosed();
         executeAsyncTask();
 
+        gpsTracker = new GpsTracker(container.getContext());
+        geocoder = new Geocoder(container.getContext(), Locale.getDefault());
+        Button show_loc = (Button) v.findViewById(R.id.button4);
+        show_loc.setOnClickListener(this);
+
         return v;
+    }
+
+    @Override
+    public void onClick(View v){
+        switch(v.getId())
+        {
+            case R.id.button4:
+            {
+                double latitude = gpsTracker.getLatitude();
+                double longitude = gpsTracker.getLongitude();
+
+                Log.v("tag","lat: "+latitude+" & lon: "+longitude);
+
+                List<Address> address;
+                Address add;
+
+                try {
+                    address = geocoder.getFromLocation(latitude, longitude, 1);
+                    add = address.get(0);
+                    //Log.v("tag", "add: "+add.getSubLocality().toString());
+                    //Log.v("tag", "add: "+add.getThoroughfare().toString());
+
+                    String s = add.getSubLocality().toString();
+
+                    isSearch = true;
+                    isGps = true;
+                    searchText = s;
+                    Log.v("tag","searchText: "+searchText);
+                    executeAsyncTask();
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     private void getInitView(View v) {
@@ -74,6 +125,7 @@ public class PharmacyFragment extends Fragment {
             @Override
             public boolean onQueryTextSubmit(String s) {
                 isSearch = true;
+                isGps = false;
                 searchText = s;
                 executeAsyncTask();
                 return false;
@@ -108,9 +160,16 @@ public class PharmacyFragment extends Fragment {
         protected String doInBackground(String... strings) {
             if (!isSearch) {
                 requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=" + APIKEY[0] + "&numOfRows=50";
-
             } else {
                 requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=" + APIKEY[0] + "&QN=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
+                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=CjgXorlQ%2FWNSknj9kf3L7KuvIjQLVKLhhPbiIcQDp67L952y4CkiTwPl4TnmN0nC4aQvrOJodqQCqoMIYYLmZA%3D%3D";
+            }
+            else if(!isGps){
+                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=CjgXorlQ%2FWNSknj9kf3L7KuvIjQLVKLhhPbiIcQDp67L952y4CkiTwPl4TnmN0nC4aQvrOJodqQCqoMIYYLmZA%3D%3D&Q0=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
+                isSearch = false;
+            }
+            else{
+                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=CjgXorlQ%2FWNSknj9kf3L7KuvIjQLVKLhhPbiIcQDp67L952y4CkiTwPl4TnmN0nC4aQvrOJodqQCqoMIYYLmZA%3D%3D&Q0=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
                 isSearch = false;
             }
             try {
