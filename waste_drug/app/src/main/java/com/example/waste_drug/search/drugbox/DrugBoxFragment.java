@@ -2,6 +2,7 @@ package com.example.waste_drug.search.drugbox;
 
 import android.Manifest;
 import android.content.Intent;
+import android.location.Address;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SearchView;
+import android.location.Geocoder;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,7 +26,13 @@ import com.example.waste_drug.search.GpsTracker;
 import com.example.waste_drug.search.adapter.DrugBoxAdapter;
 import com.example.waste_drug.search.GpsTracker;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
+import net.daum.mf.map.api.MapReverseGeoCoder;
+import net.daum.mf.map.api.MapPoint;
 
 public class DrugBoxFragment extends Fragment implements View.OnClickListener{
     private RecyclerView recyclerView;
@@ -34,6 +42,9 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
     private ArrayList<DrugBox> drugBox = new ArrayList<>();
     private ArrayList<DrugBox> searchDrugBox = new ArrayList<>();
     private GpsTracker gpsTracker;
+    private Geocoder geocoder;
+    private MapReverseGeoCoder mapGeocoder;
+    private MapPoint mapPoint;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,6 +64,7 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
         searchViewClosed();
 
         gpsTracker = new GpsTracker(container.getContext());
+        geocoder = new Geocoder(container.getContext(), Locale.getDefault());
         Button show_loc = (Button) v.findViewById(R.id.button3);
         show_loc.setOnClickListener(this);
 
@@ -69,9 +81,35 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
                 double longitude = gpsTracker.getLongitude();
 
                 Log.v("tag","lat: "+latitude+" & lon: "+longitude);
+
+                List<Address> address;
+                Address add;
+
+                try {
+                    address = geocoder.getFromLocation(latitude, longitude, 1);
+                    add = address.get(0);
+                    Log.v("tag", "add: "+add.getAddressLine(0).toString());
+                    //Log.v("tag", "add2: "+add.getSubAdminArea().toString());
+                    Log.v("tag", "add3: "+add.getSubLocality().toString());
+                    Log.v("tag", "add: "+add.getThoroughfare().toString());
+
+                    String s = add.getThoroughfare().toString();
+
+                    searchDrugBox = new ArrayList<>();
+                    for(DrugBox drugBox : drugBox) {
+                        if(drugBox.address.contains(s) || drugBox.name.contains(s)) {
+                            searchDrugBox.add(drugBox);
+                        }
+                    }
+
+                    getDB(searchDrugBox);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
+
 
     public void getInitView(View v) {
         searchView = v.findViewById(R.id.search_drug_box_view);
@@ -260,5 +298,6 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
         drugBox.add(new DrugBox(103, "서울특별시 광진구 아차산로 237, 삼진빌딩 5층 (화양동)", "뉴우리약국", "확인불가"));
         drugBox.add(new DrugBox(104, "서울특별시 광진구 동일로 178, 광진캠퍼스시티 1층 104호 (화양동)", "스타온누리약국", "확인불가"));
         drugBox.add(new DrugBox(105, "서울특별시 광진구 긴고랑로 47, 1층 (중곡동)", "서울제일약국", "확인불가"));
+        //drugBox.add(new DrugBox(105, "서울특별시 광진구 긴고랑로 47, 1층 (면목동)", "신성모약국", "확인불가"));
     }
 }
