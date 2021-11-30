@@ -8,10 +8,20 @@
         android:id="@+id/search_pharmacy_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/rv_pharmacy_view"
+        app:layout_constraintBottom_toTopOf="@id/button4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/rv_pharmacy_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/search_pharmacy_view"
+        android:text="GPS" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_pharmacy_view"
@@ -20,6 +30,6 @@
         android:paddingBottom="?attr/actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_pharmacy_view" />
+        app:layout_constraintTop_toBottomOf="@id/button4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

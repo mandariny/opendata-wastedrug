@@ -31,9 +31,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import net.daum.mf.map.api.MapReverseGeoCoder;
-import net.daum.mf.map.api.MapPoint;
-
 public class DrugBoxFragment extends Fragment implements View.OnClickListener{
     private RecyclerView recyclerView;
     private DrugBoxAdapter drugBoxAdapter;
@@ -43,8 +40,6 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
     private ArrayList<DrugBox> searchDrugBox = new ArrayList<>();
     private GpsTracker gpsTracker;
     private Geocoder geocoder;
-    private MapReverseGeoCoder mapGeocoder;
-    private MapPoint mapPoint;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -80,7 +75,7 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
                 double latitude = gpsTracker.getLatitude();
                 double longitude = gpsTracker.getLongitude();
 
-                Log.v("tag","lat: "+latitude+" & lon: "+longitude);
+                //Log.v("tag","lat: "+latitude+" & lon: "+longitude);
 
                 List<Address> address;
                 Address add;
@@ -88,10 +83,8 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
                 try {
                     address = geocoder.getFromLocation(latitude, longitude, 1);
                     add = address.get(0);
-                    Log.v("tag", "add: "+add.getAddressLine(0).toString());
-                    //Log.v("tag", "add2: "+add.getSubAdminArea().toString());
-                    Log.v("tag", "add3: "+add.getSubLocality().toString());
-                    Log.v("tag", "add: "+add.getThoroughfare().toString());
+                    //Log.v("tag", "add: "+add.getSubLocality().toString());
+                    //Log.v("tag", "add: "+add.getThoroughfare().toString());
 
                     String s = add.getThoroughfare().toString();
 

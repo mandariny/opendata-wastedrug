@@ -48,12 +48,12 @@
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_map1.xml.flat",
-        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\layout\\activity_map1.xml"
-    },
-    {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_map1.xml.flat",
+        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\layout\\activity_map1.xml"
     },
     {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
