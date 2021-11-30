@@ -1,6 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:text="가지고 있는 약의 정보들을 입력해주세요!"
+            android:textColor="@color/textColor"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="약 이름"
+            android:textColor="@color/textColor" />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/et_background_style"
+            android:maxLength="30"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textCursorDrawable="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="유통기한"
+            android:textColor="@color/textColor" />
+
+        <EditText
+            android:id="@+id/et_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/et_background_style"
+            android:hint="예) 2021-01-01"
+            android:maxLength="10"
+            android:padding="10dp"
+            android:textCursorDrawable="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_effect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="효능 및 효과"
+            android:textColor="@color/textColor" />
+
+        <EditText
+            android:id="@+id/et_effect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/et_background_style"
+            android:maxLength="100"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textCursorDrawable="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="사진 첨부"
+            android:textColor="@color/textColor" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/add_image_background_border_style"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="클릭해서 이미지를 가져오세요!"
+                android:layout_alignEnd="@id/iv_drug_photo"
+                android:layout_alignStart="@id/iv_drug_photo"
+                android:layout_alignTop="@id/iv_drug_photo"
+                android:layout_alignBottom="@id/iv_drug_photo"
+                android:textColor="#48433c"
+                android:gravity="center"
+               />
+
+            <ImageView
+                android:id="@+id/iv_drug_photo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="center" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="추가 정보 (선택)"
+            android:textColor="@color/textColor" />
+
+        <EditText
+            android:id="@+id/et_option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/et_background_style"
+            android:maxLength="150"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textCursorDrawable="@color/black" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#e7d6af"
+            android:text="등록"
+            android:textColor="@color/textColor" />
+    </LinearLayout>
+
+</ScrollView>
