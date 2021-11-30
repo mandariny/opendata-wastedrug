@@ -1,26 +1,16 @@
 package com.example.waste_drug;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
-import android.os.Bundle;
-import android.util.Base64;
-import android.util.Log;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.GridView;
-
-import com.example.waste_drug.data.GridItem;
+import com.example.waste_drug.manage.ManageActivity;
+import com.example.waste_drug.recycle.RecycleActivity;
 import com.example.waste_drug.search.SearchActivity;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.tabs.TabLayout;
-
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,28 +34,83 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        clickEvent();
+    }
 
+    private void clickEvent() {
+        clickCollectionBoxLayout();
+        clickPharmacyLayout();
+        clickRecycleLayout();
+        clickManageMyDrugLayout();
+        clickShippingServiceLayout();
+        clickMyBenefitLayout();
+    }
 
-        GridView gridView = findViewById(R.id.gv_grid_view);
-        GridAdapter adapter = new GridAdapter();
-
-        adapter.insertItem(new GridItem("알약", "포장된 비닐, 종이 등을 제거한 뒤 내용물만 모아 배출"));
-        adapter.insertItem(new GridItem("가루약", "포장지를 뜯지 않고 그대로 배출"));
-        adapter.insertItem(new GridItem("물약","한 병에 모을 수 있는 만큼 모아, 새지 않도록 밀봉하여 배출"));
-        adapter.insertItem(new GridItem("연고/안약", "겉의 종이박스만 제거하고 용기째 배출"));
-        gridView.setAdapter(adapter);
-                
-        //getAppKeyHash();
-  
-
-        Button button2 = (Button) findViewById((R.id.button2));
-        button2.setOnClickListener(new View.OnClickListener(){
+    private void clickCollectionBoxLayout() {
+        RelativeLayout searchCollectionBoxLayout = findViewById(R.id.rl_search_collection_box);
+        searchCollectionBoxLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent;
-                intent = new Intent(getApplicationContext(), SearchActivity.class);
+                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                intent.putExtra("index", 0);
                 startActivity(intent);
             }
         });
     }
+
+    private void clickPharmacyLayout() {
+        RelativeLayout searchPharmacyLayout = findViewById(R.id.rl_search_pharmacy);
+        searchPharmacyLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                intent.putExtra("index", 1);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void clickRecycleLayout() {
+        RelativeLayout recycleLayout = findViewById(R.id.rl_recycler);
+        recycleLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), RecycleActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void clickManageMyDrugLayout() {
+        RelativeLayout manageDrugLayout = findViewById(R.id.rl_drug_manage);
+        manageDrugLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ManageActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void clickShippingServiceLayout() {
+        RelativeLayout shippingServiceLayout = findViewById(R.id.rl_shipping_service);
+        shippingServiceLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "shipping click!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void clickMyBenefitLayout() {
+        RelativeLayout benefitLayout = findViewById(R.id.rl_benefit);
+        benefitLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "benefit click!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
 }
