@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="현재 사용 중인 약을 입력하고 관리해보세요!"
+            android:text="현재 가지고 있는 약을 입력하고 관리해보세요!"
             android:textColor="@color/textColor"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
