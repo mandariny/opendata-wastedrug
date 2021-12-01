@@ -8,12 +8,10 @@
         android:minSdkVersion="26"
         android:targetSdkVersion="31" />
 
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -28,13 +26,18 @@
         android:testOnly="true"
         android:theme="@style/Theme.Waste_drug"
         android:usesCleartextTraffic="true" >
+        <activity android:name="com.example.waste_drug.manage.RegisterActivity" />
+        <activity android:name="com.example.waste_drug.manage.ManageActivity" />
+        <activity android:name="com.example.waste_drug.recycle.RecycleActivity" />
         <activity android:name="com.example.waste_drug.Map1Activity" />
         <activity android:name="com.example.waste_drug.Map2Activity" />
         <activity
             android:name="com.example.waste_drug.search.SearchActivity"
             android:parentActivityName="com.example.waste_drug.MainActivity" >
         </activity>
-        <activity android:name="com.example.waste_drug.MainActivity" >
+        <activity
+            android:name="com.example.waste_drug.MainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

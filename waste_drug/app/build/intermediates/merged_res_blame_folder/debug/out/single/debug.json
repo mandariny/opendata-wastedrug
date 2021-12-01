@@ -4,16 +4,44 @@
         "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_addimage.png.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\drawable\\addimage.png"
+    },
+    {
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shipping.png.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\drawable\\shipping.png"
+    },
+    {
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_add_image_background_border_style.xml.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\drawable\\add_image_background_border_style.xml"
+    },
+    {
         "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_btn_border_style.xml.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\drawable-v24\\btn_border_style.xml"
     },
     {
         "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
         "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_add_image_plus.png.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\drawable-v24\\add_image_plus.png"
+    },
+    {
         "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_drugbox.xml.flat",
         "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\layout\\fragment_drugbox.xml"
+    },
+    {
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_manage.xml.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\layout\\activity_manage.xml"
+    },
+    {
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_register.xml.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\layout\\activity_register.xml"
     },
     {
         "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
@@ -28,8 +56,20 @@
         "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_plus.png.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\drawable-v24\\plus.png"
+    },
+    {
         "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_note.png.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\drawable\\note.png"
+    },
+    {
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_et_background_style.xml.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\drawable\\et_background_style.xml"
     },
     {
         "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
@@ -40,6 +80,10 @@
         "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_liquid.png.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\drawable\\liquid.png"
+    },
+    {
         "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
@@ -48,12 +92,36 @@
         "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\layout\\activity_map2.xml"
     },
     {
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_recycle.png.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\drawable\\recycle.png"
+    },
+    {
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_my_drug_item.xml.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\layout\\my_drug_item.xml"
+    },
+    {
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_pill.png.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\drawable\\pill.png"
+    },
+    {
         "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\xml_network_security_config.xml.flat",
         "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\xml\\network_security_config.xml"
     },
     {
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_powder.png.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\drawable\\powder.png"
+    },
+    {
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_box.png.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\drawable\\box.png"
+    },
+    {
         "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_benefit.png.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\drawable\\benefit.png"
     },
     {
         "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_pharmacy_item.xml.flat",
@@ -68,6 +136,10 @@
         "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_pharmacy.png.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\drawable\\pharmacy.png"
+    },
+    {
         "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_search.xml.flat",
         "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\layout\\activity_search.xml"
     },
@@ -80,12 +152,16 @@
         "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\layout\\fragment_pharmacy.xml"
     },
     {
-        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_waste_drug_box.xml.flat",
-        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\layout\\fragment_waste_drug_box.xml"
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ointment.png.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\drawable\\ointment.png"
     },
     {
-        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_gridview_item.xml.flat",
-        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\layout\\gridview_item.xml"
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_recycle.xml.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\layout\\activity_recycle.xml"
+    },
+    {
+        "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_waste_drug_box.xml.flat",
+        "source": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\src\\main\\res\\layout\\fragment_waste_drug_box.xml"
     },
     {
         "merged": "D:\\Android_Studio_Practice\\opendata_hackathon\\opendata_wastedrug\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",

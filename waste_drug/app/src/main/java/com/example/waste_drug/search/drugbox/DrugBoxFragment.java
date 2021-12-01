@@ -2,7 +2,9 @@ package com.example.waste_drug.search.drugbox;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Address;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,9 +13,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SearchView;
 import android.location.Geocoder;
+import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -40,6 +44,8 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
     private ArrayList<DrugBox> searchDrugBox = new ArrayList<>();
     private GpsTracker gpsTracker;
     private Geocoder geocoder;
+    private Context mContext;
+    private Button show_loc;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,11 +63,21 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
         getDB(drugBox);
         searchViewClicked();
         searchViewClosed();
+        mContext = container.getContext();
 
-        gpsTracker = new GpsTracker(container.getContext());
-        geocoder = new Geocoder(container.getContext(), Locale.getDefault());
-        Button show_loc = (Button) v.findViewById(R.id.button3);
-        show_loc.setOnClickListener(this);
+        show_loc = (Button) v.findViewById(R.id.button3);
+
+        int hasFineLocationPermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION);
+        int hasCoarseLocationPermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION);
+
+        if (hasFineLocationPermission == PackageManager.PERMISSION_GRANTED && hasCoarseLocationPermission == PackageManager.PERMISSION_GRANTED) {
+            gpsTracker = new GpsTracker(mContext);
+            geocoder = new Geocoder(mContext, Locale.getDefault());
+            show_loc.setOnClickListener(this);
+
+        } else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+            requestPermissions(new String[] {Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 1000);
+
 
         return v;
     }
@@ -84,7 +100,7 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
                     address = geocoder.getFromLocation(latitude, longitude, 1);
                     add = address.get(0);
                     //Log.v("tag", "add: "+add.getSubLocality().toString());
-                    //Log.v("tag", "add: "+add.getThoroughfare().toString());
+                    Log.v("tag", "add: "+add.getThoroughfare().toString());
 
                     String s = add.getThoroughfare().toString();
 
@@ -871,5 +887,28 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
         drugBox.add(new DrugBox(681, "서울특별시 송파구 마천로45길 15 (마천동)", "후생약국", "확인불가"));
         drugBox.add(new DrugBox(682, "서울특별시 송파구 중대로 68 (문정동, 훼미리샤르망 106호)", "훼미리약국", "확인불가"));
 
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], int[] grantResult){
+        if(requestCode == 1000){
+            boolean check_result = true;
+
+            for(int result: grantResult){
+                if(result != PackageManager.PERMISSION_GRANTED) {
+                    check_result = false;
+                    break;
+                }
+            }
+
+            if(check_result == true){
+                gpsTracker = new GpsTracker(mContext);
+                geocoder = new Geocoder(mContext, Locale.getDefault());
+                show_loc.setOnClickListener(this);
+
+            }else{
+                getActivity().finish();
+            }
+        }
     }
 }
