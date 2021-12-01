@@ -1,5 +1,6 @@
 package com.example.waste_drug.search;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,5 +32,9 @@ public class SearchActivity extends AppCompatActivity {
     public void initTabs(ViewPager viewPager) {
         TabLayout tabs = findViewById(R.id.tab);
         tabs.setupWithViewPager(viewPager);
+
+        Intent intent = getIntent();
+        int index = intent.getIntExtra("index", -1);
+        tabs.selectTab(tabs.getTabAt(index));
     }
 }
