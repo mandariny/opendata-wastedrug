@@ -264,7 +264,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void inputMyDrugIntoDB() {
-        MyDrugInfo myDrugInfo = new MyDrugInfo(0, name, date, effect, pic, addInfo);
+        MyDrugInfo myDrugInfo = new MyDrugInfo(0, name, date, effect, pic, addInfo, 0);
         MyDrugDatabase db = MyDrugDatabase.getInstance(getApplicationContext());
 
         class InsertRunnable implements Runnable {

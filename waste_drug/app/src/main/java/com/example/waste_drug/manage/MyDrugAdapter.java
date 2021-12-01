@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,8 +64,12 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
             e.printStackTrace();
         }
 
+
         if (diffDays < 7) {
-            holder.expiryDate.setTextColor(Color.RED);
+            Log.d("MAIN", myDrugInfo.uid + " " + String.valueOf(diffDays) + " " + myDrugInfo.name + " " + myDrugInfo.date + " " + position);
+            holder.expiryDate.setTextColor(Color.parseColor("#eb0000"));
+        } else {
+            holder.expiryDate.setTextColor(Color.parseColor("#0a6e0a"));
         }
 
         holder.name.setText(myDrugInfo.name);
@@ -74,6 +79,12 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
                 .centerCrop()
                 .into(holder.picture);
 
+        if(myDrugInfo.subscribe == 1) {
+            holder.subscribe.setVisibility(View.VISIBLE);
+        } else {
+            holder.subscribe.setVisibility(View.INVISIBLE);
+        }
+
         holder.option.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,9 +93,33 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
         });
     }
 
-    public void showPopup(@NonNull final MyDrugViewHolder holder, View v, int position) {
+    public long getDiffTime(String date) throws ParseException {
+        Calendar todayDate = Calendar.getInstance();
+        todayDate.setTime(new Date());
+
+        @SuppressLint("SimpleDateFormat")
+        Date drugDate = new SimpleDateFormat("yyyy-MM-dd").parse(date);
+        Calendar cmpDate = Calendar.getInstance();
+        if (drugDate != null) {
+            cmpDate.setTime(drugDate);
+        }
+
+        long diffSec = (cmpDate.getTimeInMillis() - todayDate.getTimeInMillis()) / 1000;
+
+        return diffSec / (24 * 60 * 60);
+    }
+
+    public void showPopup(@NonNull final MyDrugViewHolder holder,  View v, int position) {
         PopupMenu popupMenu = new PopupMenu(mContext, holder.option);
         popupMenu.inflate(R.menu.popup_menu);
+        Menu menu = popupMenu.getMenu();
+
+        if(myDrugList.get(position).subscribe == 1) {
+            menu.getItem(1).setTitle("구독 취소");
+        } else {
+            menu.getItem(1).setTitle("구독 하기");
+        }
+
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @SuppressLint("NonConstantResourceId")
             @Override
@@ -95,6 +130,13 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
                         Toast.makeText(mContext, "삭제 완료!", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.action_popup_star:
+                        if(myDrugList.get(position).subscribe == 0) {
+                            subscribeDrugInfo(v, position, true);
+                            Toast.makeText(mContext, "구독 완료!", Toast.LENGTH_SHORT).show();
+                        } else {
+                            subscribeDrugInfo(v, position, false);
+                            Toast.makeText(mContext, "구독 취소!", Toast.LENGTH_SHORT).show();
+                        }
                         break;
                     default:
                         break;
@@ -127,25 +169,37 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
         thread.start();
     }
 
+    @SuppressLint("NotifyDataSetChanged")
+    public void subscribeDrugInfo(View v, int position, boolean idx) {
+        MyDrugDatabase db = MyDrugDatabase.getInstance(v.getContext());
+
+        if(idx) {
+            myDrugList.get(position).subscribe = 1;
+        } else {
+            myDrugList.get(position).subscribe = 0;
+        }
+        notifyDataSetChanged();
+
+        class subscribeRunnable implements Runnable {
+            @Override
+            public void run() {
+                try{
+                    db.myDrugInfoDao().updateMyDrug(myDrugList.get(position));
+                    myDrugList = db.myDrugInfoDao().getAll();
+                } catch(Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        subscribeRunnable subscribeRunnable = new subscribeRunnable();
+        Thread thread = new Thread(subscribeRunnable);
+        thread.start();
+    }
+
     @Override
     public int getItemCount() {
         return myDrugList.size();
-    }
-
-    public long getDiffTime(String date) throws ParseException {
-        Calendar todayDate = Calendar.getInstance();
-        todayDate.setTime(new Date());
-
-        @SuppressLint("SimpleDateFormat")
-        Date drugDate = new SimpleDateFormat("yyyy-MM-dd").parse(date);
-        Calendar cmpDate = Calendar.getInstance();
-        if (drugDate != null) {
-            cmpDate.setTime(drugDate);
-        }
-
-        long diffSec = (cmpDate.getTimeInMillis() - todayDate.getTimeInMillis()) / 1000;
-
-        return diffSec / (24 * 60 * 60);
     }
 
     public class MyDrugViewHolder extends RecyclerView.ViewHolder {
@@ -153,6 +207,7 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
         TextView expiryDate;
         ImageView picture;
         ImageButton option;
+        TextView subscribe;
 
         public MyDrugViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -161,6 +216,7 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
             expiryDate = itemView.findViewById(R.id.tv_expiry_date);
             picture = itemView.findViewById(R.id.iv_drug_photo);
             option = itemView.findViewById(R.id.btn_option);
+            subscribe = itemView.findViewById(R.id.tv_subscribe);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
