@@ -11,7 +11,7 @@ import java.util.List;
 
 @Dao
 public interface MyDrugInfoDao {
-    @Query("SELECT * FROM MyDrugInfo")
+    @Query("SELECT * FROM MyDrugInfo ORDER BY uid DESC")
     List<MyDrugInfo> getAll();
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
