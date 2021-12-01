@@ -1,51 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:padding="10dp">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/iv_drug_photo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_drug_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:ems="5"
+        android:maxLines="1"
+        android:textColor="@color/textColor"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@id/iv_drug_photo"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="타이레놀" />
 
-        <ImageView
-            android:id="@+id/iv_drug_photo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"/>
+    <TextView
+        android:id="@+id/tv_expiry_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/textColor"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/iv_drug_photo"
+        app:layout_constraintTop_toBottomOf="@id/tv_drug_name"
+        tools:text="유통기한 : 2021-11-29" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tv_drug_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:textColor="@color/textColor"
-                android:textSize="24sp"
-                tools:text="타이레놀" />
-
-            <TextView
-                android:id="@+id/tv_expiry_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/textColor"
-                android:textSize="16sp"
-                tools:text="유통기한 : 2021-11-29" />
-        </LinearLayout>
-    </LinearLayout>
+    <ImageButton
+        android:id="@+id/btn_option"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="16dp"
+        android:src="@drawable/ic_more_vert_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="16dp"
-        android:background="@color/border_line" />
-</LinearLayout>
+        android:background="@color/border_line"
+        app:layout_constraintTop_toBottomOf="@id/iv_drug_photo" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,4 +11,7 @@
     <color name="grid_background_color">#32AAFF</color>
     <color name="textColor">#1d3646</color>
     <color name="backgroundColor">#efece5</color>
+    <color name="red">#ff0000</color>
+    <color name="buttonEnableTrueBackgroundColor">#e7d6af</color>
+    <color name="buttonEnableFalseBackgroundColor">#dcdcdc</color>
 </resources>

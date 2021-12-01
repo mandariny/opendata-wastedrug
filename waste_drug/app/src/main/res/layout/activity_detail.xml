@@ -15,30 +15,30 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
             android:gravity="center"
-            android:text="가지고 있는 약의 정보들을 입력해주세요!"
+            android:text="입력하신 약의 정보입니다!"
             android:textColor="@color/textColor"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tv_name"
+            android:id="@+id/tv_name_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:text="약 이름"
             android:textColor="@color/textColor" />
 
-        <EditText
-            android:id="@+id/et_name"
+        <TextView
+            android:id="@+id/tv_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/et_background_style"
             android:maxLength="30"
             android:minHeight="48dp"
             android:padding="10dp"
-            android:textCursorDrawable="@color/black" />
+            android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tv_date"
+            android:id="@+id/tv_date_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -46,19 +46,19 @@
             android:text="유통기한"
             android:textColor="@color/textColor" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_date"
-            style="@style/Widget.AppCompat.Button.Borderless"
+        <TextView
+            android:id="@+id/tv_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@drawable/et_background_style"
             android:gravity="start|center"
             android:minHeight="48dp"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tv_effect"
+            android:id="@+id/tv_effect_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -66,15 +66,15 @@
             android:text="효능 및 효과"
             android:textColor="@color/textColor" />
 
-        <EditText
-            android:id="@+id/et_effect"
+        <TextView
+            android:id="@+id/tv_effect"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/et_background_style"
             android:maxLength="100"
             android:minHeight="48dp"
             android:padding="10dp"
-            android:textCursorDrawable="@color/black" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tv_photo"
@@ -91,18 +91,6 @@
             android:background="@drawable/add_image_background_border_style"
             android:gravity="center">
 
-            <TextView
-                android:id="@+id/tv_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@id/iv_drug_photo"
-                android:layout_alignTop="@id/iv_drug_photo"
-                android:layout_alignEnd="@id/iv_drug_photo"
-                android:layout_alignBottom="@id/iv_drug_photo"
-                android:gravity="center"
-                android:text="클릭해서 이미지를 가져오세요!"
-                android:textColor="#48433c" />
-
             <ImageView
                 android:id="@+id/iv_drug_photo"
                 android:layout_width="match_parent"
@@ -112,35 +100,23 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/tv_option"
+            android:id="@+id/tv_option_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:text="추가 정보 (선택)"
+            android:text="추가 정보"
             android:textColor="@color/textColor" />
 
-        <EditText
-            android:id="@+id/et_option"
+        <TextView
+            android:id="@+id/tv_option"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/et_background_style"
             android:maxLength="150"
             android:minHeight="48dp"
             android:padding="10dp"
-            android:textCursorDrawable="@color/black" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_register"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/et_background_style"
-            android:backgroundTint="@color/buttonEnableFalseBackgroundColor"
-            android:enabled="false"
-            android:minHeight="48dp"
-            android:text="등록"
-            android:textColor="@color/textColor" />
+            android:textSize="16sp" />
     </LinearLayout>
 
 </ScrollView>
