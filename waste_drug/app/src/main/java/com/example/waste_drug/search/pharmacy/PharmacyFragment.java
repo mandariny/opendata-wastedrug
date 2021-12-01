@@ -1,6 +1,9 @@
 package com.example.waste_drug.search.pharmacy;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Address;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -16,6 +19,7 @@ import android.location.Geocoder;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -52,6 +56,9 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
     private Geocoder geocoder;
     private boolean isGps = false;
 
+    private Context mContext;
+    private Button show_loc;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
 
@@ -66,11 +73,22 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
         searchButtonClicked();
         searchButtonClosed();
         executeAsyncTask();
+        mContext = container.getContext();
 
-        gpsTracker = new GpsTracker(container.getContext());
-        geocoder = new Geocoder(container.getContext(), Locale.getDefault());
-        Button show_loc = (Button) v.findViewById(R.id.button4);
-        show_loc.setOnClickListener(this);
+//        gpsTracker = new GpsTracker(container.getContext());
+//        geocoder = new Geocoder(container.getContext(), Locale.getDefault());
+        show_loc = (Button) v.findViewById(R.id.button4);
+
+        int hasFineLocationPermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION);
+        int hasCoarseLocationPermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION);
+
+        if (hasFineLocationPermission == PackageManager.PERMISSION_GRANTED && hasCoarseLocationPermission == PackageManager.PERMISSION_GRANTED) {
+            gpsTracker = new GpsTracker(mContext);
+            geocoder = new Geocoder(mContext, Locale.getDefault());
+            show_loc.setOnClickListener(this);
+
+        } else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+            requestPermissions(new String[] {Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 1000);
 
         return v;
     }
@@ -160,16 +178,12 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
         protected String doInBackground(String... strings) {
             if (!isSearch) {
                 requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=" + APIKEY[0] + "&numOfRows=50";
-            } else {
-                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=" + APIKEY[0] + "&QN=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
-                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=CjgXorlQ%2FWNSknj9kf3L7KuvIjQLVKLhhPbiIcQDp67L952y4CkiTwPl4TnmN0nC4aQvrOJodqQCqoMIYYLmZA%3D%3D";
-            }
-            if(!isGps){
-                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=CjgXorlQ%2FWNSknj9kf3L7KuvIjQLVKLhhPbiIcQDp67L952y4CkiTwPl4TnmN0nC4aQvrOJodqQCqoMIYYLmZA%3D%3D&Q0=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
+            } else if(isGps){
+                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=" + APIKEY[0] + "&Q0=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
                 isSearch = false;
             }
             else{
-                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=CjgXorlQ%2FWNSknj9kf3L7KuvIjQLVKLhhPbiIcQDp67L952y4CkiTwPl4TnmN0nC4aQvrOJodqQCqoMIYYLmZA%3D%3D&Q0=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
+                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=" + APIKEY[0] + "&QN=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
                 isSearch = false;
             }
             try {
@@ -331,6 +345,29 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
                     startActivity(intent);
                 }
             });
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], int[] grantResult){
+        if(requestCode == 1000){
+            boolean check_result = true;
+
+            for(int result: grantResult){
+                if(result != PackageManager.PERMISSION_GRANTED) {
+                    check_result = false;
+                    break;
+                }
+            }
+
+            if(check_result == true){
+                gpsTracker = new GpsTracker(mContext);
+                geocoder = new Geocoder(mContext, Locale.getDefault());
+                show_loc.setOnClickListener(this);
+
+            }else{
+                getActivity().finish();
+            }
         }
     }
 }

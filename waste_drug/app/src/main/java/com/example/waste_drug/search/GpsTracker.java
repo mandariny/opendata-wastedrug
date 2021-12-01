@@ -9,9 +9,11 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Build;
 import android.os.IBinder;
 import android.util.Log;
 import androidx.core.content.ContextCompat;
+import androidx.annotation.NonNull;
 
 import com.example.waste_drug.search.drugbox.DrugBoxFragment;
 
@@ -20,8 +22,8 @@ public class GpsTracker extends Service implements LocationListener {
     Location location;
     double latitude;
     double longitude;
-    private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 10;
-    private static final long MIN_TIME_BW_UPDATES = 1000 * 60 * 1;
+    private static final long MIN_DISTANCE_CHANGE = 10;
+    private static final long MIN_TIME = 1000 * 60 * 1;
     protected LocationManager locationManager;
 
     public GpsTracker(Context context) {
@@ -46,7 +48,7 @@ public class GpsTracker extends Service implements LocationListener {
                     return null;
 
                 if (isNetworkEnabled) {
-                    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+                    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DISTANCE_CHANGE, this);
                     if (locationManager != null) {
                         location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
                         if (location != null) {
@@ -56,9 +58,9 @@ public class GpsTracker extends Service implements LocationListener {
                     }
                 }
 
-                /*if (isGPSEnabled) {
+                if (isGPSEnabled) {
                     if (location == null) {
-                        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+                        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, MIN_TIME, MIN_DISTANCE_CHANGE, this);
                         if (locationManager != null) {
                             location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
                             if (location != null) {
@@ -67,7 +69,7 @@ public class GpsTracker extends Service implements LocationListener {
                             }
                         }
                     }
-                }*/
+                }
             }
         } catch (Exception e) {
             Log.d("@@@", ""+e.toString());
@@ -115,5 +117,6 @@ public class GpsTracker extends Service implements LocationListener {
             locationManager.removeUpdates(GpsTracker.this);
         }
     }
+
 }
 
