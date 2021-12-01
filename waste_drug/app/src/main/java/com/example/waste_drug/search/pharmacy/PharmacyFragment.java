@@ -164,7 +164,7 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
                 requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=" + APIKEY[0] + "&QN=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
                 requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=CjgXorlQ%2FWNSknj9kf3L7KuvIjQLVKLhhPbiIcQDp67L952y4CkiTwPl4TnmN0nC4aQvrOJodqQCqoMIYYLmZA%3D%3D";
             }
-            else if(!isGps){
+            if(!isGps){
                 requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=CjgXorlQ%2FWNSknj9kf3L7KuvIjQLVKLhhPbiIcQDp67L952y4CkiTwPl4TnmN0nC4aQvrOJodqQCqoMIYYLmZA%3D%3D&Q0=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
                 isSearch = false;
             }
