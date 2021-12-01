@@ -37,6 +37,9 @@
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="f708709920ae96f8ba2a25978fda5cb7" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
