@@ -91,7 +91,6 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
         int hasFineLocationPermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION);
         int hasCoarseLocationPermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION);
 
-
         if (hasFineLocationPermission == PackageManager.PERMISSION_GRANTED && hasCoarseLocationPermission == PackageManager.PERMISSION_GRANTED) {
             show_loc.setOnClickListener(this);
         } else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)

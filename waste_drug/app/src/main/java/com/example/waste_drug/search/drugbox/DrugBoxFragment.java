@@ -73,17 +73,9 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
 
         mContext = container.getContext();
 
-        boolean isConnected = isNetworkConnected();
-
-        if(!isConnected){
-            showDialogForNetwork();
-        }
-
         getInitDB();
         makeDB();
         saveDB();
-
-
 
         firstDrugBoxList = drugBox.subList(0,20);
         firstDrugBox.addAll(firstDrugBoxList);

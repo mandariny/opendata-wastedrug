@@ -7,11 +7,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.Network;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.waste_drug.manage.ManageActivity;
@@ -61,7 +63,12 @@ public class MainActivity extends AppCompatActivity {
         searchCollectionBoxLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!isNetworkConnected()){
+                ConnectivityManager connectivityManager = (ConnectivityManager)getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+                NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
+
+                boolean isConnected = activeNetwork != null &&
+                        activeNetwork.isConnectedOrConnecting();
+                if(!isConnected){
                     showDialogForNetwork();
                 }else{
                     Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
@@ -77,7 +84,13 @@ public class MainActivity extends AppCompatActivity {
         searchPharmacyLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!isNetworkConnected()){
+                ConnectivityManager connectivityManager = (ConnectivityManager)getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+                NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
+
+                boolean isConnected = activeNetwork != null &&
+                        activeNetwork.isConnectedOrConnecting();
+
+                if(!isConnected){
                     showDialogForNetwork();
                 }else{
                     Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
@@ -130,16 +143,16 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public boolean isNetworkConnected(){
-        ConnectivityManager connectivityManager = (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
-
-        Network currentNetwork = connectivityManager.getActiveNetwork();
-
-        if(currentNetwork != null)
-            return true;
-        else
-            return false;
-    }
+//    public boolean isNetworkConnected(){
+//        ConnectivityManager connectivityManager = (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+//
+//        Network currentNetwork = connectivityManager.getActiveNetwork();
+//
+//        if(currentNetwork != null)
+//            return true;
+//        else
+//            return false;
+//    }
 
     public void showDialogForNetwork(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
