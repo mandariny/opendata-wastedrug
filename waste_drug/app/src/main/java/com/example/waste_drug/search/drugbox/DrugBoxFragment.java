@@ -42,6 +42,8 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
     private AppDatabase db = null;
     private ArrayList<DrugBox> drugBox = new ArrayList<>();
     private ArrayList<DrugBox> searchDrugBox = new ArrayList<>();
+    private ArrayList<DrugBox> firstDrugBox = new ArrayList<>();
+    private List<DrugBox> firstDrugBoxList;
     private GpsTracker gpsTracker;
     private Geocoder geocoder;
     private Context mContext;
@@ -60,7 +62,12 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
         getInitDB();
         makeDB();
         saveDB();
-        getDB(drugBox);
+
+        firstDrugBoxList = drugBox.subList(0,20);
+        firstDrugBox.addAll(firstDrugBoxList);
+
+        //
+        getDB(firstDrugBox);
         searchViewClicked();
         searchViewClosed();
         mContext = container.getContext();
@@ -77,7 +84,6 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
 
         } else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
             requestPermissions(new String[] {Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 1000);
-
 
         return v;
     }
@@ -195,7 +201,7 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
         searchView.setOnCloseListener(new SearchView.OnCloseListener() {
             @Override
             public boolean onClose() {
-                getDB(drugBox);
+                getDB(firstDrugBox);
                 return false;
             }
         });
