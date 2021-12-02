@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.Network;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -77,10 +79,12 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_pharmacy, container, false);
         getInitView(v);
+
+        mContext = container.getContext();
+
         searchButtonClicked();
         searchButtonClosed();
         executeAsyncTask();
-        mContext = container.getContext();
 
         show_loc = (ImageButton) v.findViewById(R.id.button4);
 
@@ -405,4 +409,5 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
             }
         }
     }
+
 }

@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -67,9 +70,20 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_drugbox, container, false);
         getInitView(v);
+
+        mContext = container.getContext();
+
+        boolean isConnected = isNetworkConnected();
+
+        if(!isConnected){
+            showDialogForNetwork();
+        }
+
         getInitDB();
         makeDB();
         saveDB();
+
+
 
         firstDrugBoxList = drugBox.subList(0,20);
         firstDrugBox.addAll(firstDrugBoxList);
@@ -77,7 +91,6 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
         getDB(firstDrugBox);
         searchViewClicked();
         searchViewClosed();
-        mContext = container.getContext();
 
         show_loc = (ImageButton) v.findViewById(R.id.button3);
 
@@ -951,5 +964,41 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
                 getActivity().finish();
             }
         }
+    }
+
+    public boolean isNetworkConnected(){
+        ConnectivityManager connectivityManager = (ConnectivityManager)mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+//        NetworkInfo mobile = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+//        NetworkInfo wifi = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+//        NetworkInfo lte = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIMAX);
+//
+//        if(mobile != null || lte != null){
+//            if(mobile.isConnected() || wifi.isConnected() || lte.isConnected())
+//                return true;
+//        }else{
+//            if(wifi.isConnected())
+//        }
+
+        Network currentNetwork = connectivityManager.getActiveNetwork();
+
+        if(currentNetwork != null)
+            return true;
+        else
+            return false;
+    }
+
+    public void showDialogForNetwork(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+        builder.setTitle("네트워크 필요");
+        builder.setMessage("수거함 정보를 불러오기 위해서는 네트워크가 필요합니다 필요합니다.\n네트워크에 연결해주세요");
+        builder.setCancelable(true);
+        builder.setNegativeButton("메인으로 돌아가기", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+                getActivity().finish();
+            }
+        });
+        builder.create().show();
     }
 }

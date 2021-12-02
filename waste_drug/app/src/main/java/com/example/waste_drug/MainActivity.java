@@ -1,7 +1,12 @@
 package com.example.waste_drug;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.Network;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -56,9 +61,13 @@ public class MainActivity extends AppCompatActivity {
         searchCollectionBoxLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
-                intent.putExtra("index", 0);
-                startActivity(intent);
+                if(!isNetworkConnected()){
+                    showDialogForNetwork();
+                }else{
+                    Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                    intent.putExtra("index", 0);
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -68,9 +77,13 @@ public class MainActivity extends AppCompatActivity {
         searchPharmacyLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
-                intent.putExtra("index", 1);
-                startActivity(intent);
+                if(!isNetworkConnected()){
+                    showDialogForNetwork();
+                }else{
+                    Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                    intent.putExtra("index", 1);
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -117,5 +130,29 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public boolean isNetworkConnected(){
+        ConnectivityManager connectivityManager = (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        Network currentNetwork = connectivityManager.getActiveNetwork();
+
+        if(currentNetwork != null)
+            return true;
+        else
+            return false;
+    }
+
+    public void showDialogForNetwork(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("네트워크 필요");
+        builder.setMessage("\n수거함 정보를 불러오기 위해서는 네트워크가 필요합니다 필요합니다.\n네트워크에 연결해주세요");
+        builder.setCancelable(true);
+        builder.setNegativeButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        builder.create().show();
+    }
 
 }
