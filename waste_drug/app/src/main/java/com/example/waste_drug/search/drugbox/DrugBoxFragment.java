@@ -1,11 +1,15 @@
 package com.example.waste_drug.search.drugbox;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
+import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +19,7 @@ import android.widget.ImageButton;
 import android.widget.SearchView;
 import android.location.Geocoder;
 import android.content.Context;
+import android.location.LocationManager;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -49,6 +54,8 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
     private Geocoder geocoder;
     private Context mContext;
     private ImageButton show_loc;
+    private static final int GPS_ENABLE_REQUEST_CODE = 2001;
+    private static final int PERMISSIONS_REQUEST_CODE = 100;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -78,10 +85,7 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
         int hasCoarseLocationPermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION);
 
         if (hasFineLocationPermission == PackageManager.PERMISSION_GRANTED && hasCoarseLocationPermission == PackageManager.PERMISSION_GRANTED) {
-            gpsTracker = new GpsTracker(mContext);
-            geocoder = new Geocoder(mContext, Locale.getDefault());
             show_loc.setOnClickListener(this);
-
         } else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
             requestPermissions(new String[] {Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 1000);
 
@@ -94,37 +98,71 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
         {
             case R.id.button3:
             {
-                double latitude = gpsTracker.getLatitude();
-                double longitude = gpsTracker.getLongitude();
-
-                //Log.v("tag","lat: "+latitude+" & lon: "+longitude);
-
-                List<Address> address;
-                Address add;
-
-                try {
-                    address = geocoder.getFromLocation(latitude, longitude, 1);
-                    add = address.get(0);
-                    //Log.v("tag", "add: "+add.getSubLocality().toString());
-                    Log.v("tag", "add: "+add.getThoroughfare().toString());
-
-                    String s = add.getThoroughfare().toString();
-
-                    searchDrugBox = new ArrayList<>();
-                    for(DrugBox drugBox : drugBox) {
-                        if(drugBox.address.contains(s) || drugBox.name.contains(s)) {
-                            searchDrugBox.add(drugBox);
-                        }
-                    }
-
-                    getDB(searchDrugBox);
-                } catch (IOException e) {
-                    e.printStackTrace();
+                if (!checkLocationServicesStatus()) {
+                    showDialogForLocationService();
+                }else{
+                    getSearchDrugBox();
                 }
             }
         }
     }
 
+    public void getSearchDrugBox(){
+        gpsTracker = new GpsTracker(mContext);
+        geocoder = new Geocoder(mContext, Locale.getDefault());
+
+        double latitude = gpsTracker.getLatitude();
+        double longitude = gpsTracker.getLongitude();
+
+        List<Address> address;
+        Address add;
+
+        try {
+            address = geocoder.getFromLocation(latitude, longitude, 1);
+            add = address.get(0);
+
+            String s = add.getThoroughfare().toString();
+
+            searchDrugBox = new ArrayList<>();
+            for(DrugBox drugBox : drugBox) {
+                if(drugBox.address.contains(s) || drugBox.name.contains(s)) {
+                    searchDrugBox.add(drugBox);
+                }
+            }
+
+            getDB(searchDrugBox);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean checkLocationServicesStatus(){
+        LocationManager locationManager = (LocationManager)mContext.getSystemService(Context.LOCATION_SERVICE);
+
+        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+    }
+
+    public void showDialogForLocationService(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+        builder.setTitle("위치 서비스 필요");
+        builder.setMessage("GPS 기능을 이용하기 위해서는 위치 서비스가 필요합니다.\n위치 설정을 수정해주세요");
+        builder.setCancelable(true);
+        builder.setPositiveButton("설정", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent callGPSSettingIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                startActivityForResult(callGPSSettingIntent, GPS_ENABLE_REQUEST_CODE);
+            }
+        });
+        builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+                getActivity().finish();
+            }
+        });
+        builder.create().show();
+    }
 
     public void getInitView(View v) {
         searchView = v.findViewById(R.id.search_drug_box_view);
@@ -908,9 +946,6 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
             }
 
             if(check_result == true){
-                gpsTracker = new GpsTracker(mContext);
-                geocoder = new Geocoder(mContext, Locale.getDefault());
-                show_loc.setOnClickListener(this);
 
             }else{
                 getActivity().finish();
