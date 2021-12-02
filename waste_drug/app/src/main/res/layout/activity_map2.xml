@@ -21,8 +21,7 @@
         android:layout_gravity="bottom"
         android:background="@color/white"
         android:orientation="vertical"
-        android:padding="10dp"
-        android:visibility="gone">
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/info_name2"

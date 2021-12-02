@@ -23,11 +23,15 @@ import java.util.List;
 
 public class Map2Activity extends AppCompatActivity implements MapView.POIItemEventListener {
 
-    LinearLayout info_view;
-    TextView name;
-    TextView address;
-    TextView phone;
-    TextView time;
+    private LinearLayout info_view;
+    private TextView name;
+    private TextView address;
+    private TextView phone;
+    private TextView time;
+    private ArrayList<String> arrs= new ArrayList<>();
+    private ArrayList<String> titles= new ArrayList<>();
+    private ArrayList<String> pnums= new ArrayList<>();
+    private ArrayList<String> times = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,83 +43,90 @@ public class Map2Activity extends AppCompatActivity implements MapView.POIItemEv
         phone = findViewById(R.id.info_phone2);
         time = findViewById(R.id.info_time2);
 
-        MapView mapView = new MapView(this);
-        ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
-
         Intent intent = getIntent();
         ArrayList<Pharmacy> pharmacyArrayList = (ArrayList<Pharmacy>)intent.getSerializableExtra(("pharmacies"));
         int pos = intent.getIntExtra("position",0);
-        String title = pharmacyArrayList.get(pos).getDutyName();
-        String arr = pharmacyArrayList.get(pos).getDutyAddr();
-        String pnum = pharmacyArrayList.get(pos).getDutyTel1();
-        String days = "";
-        double lat = 0;
-        double lon = 0;
 
-        if(Integer.parseInt(pharmacyArrayList.get(pos).getDutyTime1c())>1800 ||
-                Integer.parseInt(pharmacyArrayList.get(pos).getDutyTime2c())>1800 ||
-                Integer.parseInt(pharmacyArrayList.get(pos).getDutyTime3c())>1800 ||
-                Integer.parseInt(pharmacyArrayList.get(pos).getDutyTime4c())>1800 ||
-                Integer.parseInt(pharmacyArrayList.get(pos).getDutyTime5c())>1800 )
-            days += "평일 야간 ";
-        if(pharmacyArrayList.get(pos).getDutyTime6c() != null ){
-            if(!days.equals(""))
-                days += "/ ";
-            days += "토요일 ";
-        }
-        if(pharmacyArrayList.get(pos).getDutyTime7c() != null ){
-            if(!days.equals(""))
-                days += "/ ";
-            days += "일요일 ";
-        }
-        if(pharmacyArrayList.get(pos).getDutyTime8c() != null ){
-            if(!days.equals(""))
-                days += "/ ";
-            days += "공휴일 ";
-        }
-        if(days.equals(""))
-            days += "운영 정보 없음";
+        for(int i=0; i<pharmacyArrayList.size();i++){
+            String days = "";
+            arrs.add(pharmacyArrayList.get(i).getDutyAddr());
+            titles.add(pharmacyArrayList.get(i).getDutyName());
+            pnums.add(pharmacyArrayList.get(i).getDutyTel1());
 
-        name.setText(title);
-        address.setText(arr);
-        phone.setText(pnum);
-        time.setText(days);
+            if(Integer.parseInt(pharmacyArrayList.get(i).getDutyTime1c())>1800 ||
+                    Integer.parseInt(pharmacyArrayList.get(i).getDutyTime2c())>1800 ||
+                    Integer.parseInt(pharmacyArrayList.get(i).getDutyTime3c())>1800 ||
+                    Integer.parseInt(pharmacyArrayList.get(i).getDutyTime4c())>1800 ||
+                    Integer.parseInt(pharmacyArrayList.get(i).getDutyTime5c())>1800 )
+                days += "평일 야간 ";
+            if(pharmacyArrayList.get(i).getDutyTime6c() != null ){
+                if(!days.equals(""))
+                    days += "/ ";
+                days += "토요일 ";
+            }
+            if(pharmacyArrayList.get(i).getDutyTime7c() != null ){
+                if(!days.equals(""))
+                    days += "/ ";
+                days += "일요일 ";
+            }
+            if(pharmacyArrayList.get(i).getDutyTime8c() != null ){
+                if(!days.equals(""))
+                    days += "/ ";
+                days += "공휴일 ";
+            }
+            if(days.equals(""))
+                days += "운영 정보 없음";
+
+            times.add(days);
+        }
+
+        ArrayList<Double> lat = new ArrayList<>();
+        ArrayList<Double> lon = new ArrayList<>();
 
         Geocoder geocoder = new Geocoder(getApplicationContext());
         try{
-            List<Address> resultLocation = geocoder.getFromLocationName(arr,1);
-            lat = resultLocation.get(0).getLatitude();
-            lon = resultLocation.get(0).getLongitude();
+            for(int i=0; i<pharmacyArrayList.size();i++){
+                List<Address> resultLocation = geocoder.getFromLocationName(arrs.get(i),1);
+                lat.add(resultLocation.get(0).getLatitude());
+                lon.add(resultLocation.get(0).getLongitude());
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        //포인트 좌표의 위도, 경도 설정
-        MapPoint MARKER_POINT = MapPoint.mapPointWithGeoCoord(lat, lon);
-        mapView.setMapCenterPoint(MARKER_POINT, true);
+        MapView mapView = new MapView(this);
+        ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
+
+        MapPOIItem [] markers = new MapPOIItem[pharmacyArrayList.size()];
+        for(int i=0; i<pharmacyArrayList.size();i++){
+            markers[i] = new MapPOIItem();
+            markers[i].setItemName(titles.get(i));
+            markers[i].setTag(i);
+            markers[i].setMapPoint(MapPoint.mapPointWithGeoCoord(lat.get(i),lon.get(i)));
+            markers[i].setMarkerType(MapPOIItem.MarkerType.BluePin);
+            markers[i].setSelectedMarkerType(MapPOIItem.MarkerType.RedPin);
+        }
+
+        name.setText(titles.get(pos));
+        address.setText(arrs.get(pos));
+        phone.setText(pnums.get(pos));
+        time.setText(times.get(pos));
+
+        mapView.setMapCenterPoint(MapPoint.mapPointWithGeoCoord(lat.get(pos),lon.get(pos)), true);
         mapView.setPOIItemEventListener(this);
-
+        mapView.setZoomLevel(2,false);
+        mapView.addPOIItems(markers);
+        mapView.selectPOIItem(markers[pos],false);
         mapViewContainer.addView(mapView);
-
-        //마커 설정
-        MapPOIItem marker = new MapPOIItem();
-        marker.setItemName(title);
-        marker.setTag(0);
-        marker.setMapPoint(MARKER_POINT);
-
-        // 기본으로 제공하는 BluePin 마커 모양.
-        marker.setMarkerType(MapPOIItem.MarkerType.BluePin);
-        // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
-        marker.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin);
-
-        mapView.addPOIItem(marker);
     }
 
     @Override
     public void onPOIItemSelected(MapView mapView, MapPOIItem mapPOIItem) {
-        //마커 클릭시 정보 노출
-        info_view = findViewById(R.id.info2);
-        info_view.setVisibility(View.VISIBLE);
+        name.setText(titles.get(mapPOIItem.getTag()));
+        address.setText(arrs.get(mapPOIItem.getTag()));
+        phone.setText(pnums.get(mapPOIItem.getTag()));
+        time.setText(times.get(mapPOIItem.getTag()));
     }
 
     @Override

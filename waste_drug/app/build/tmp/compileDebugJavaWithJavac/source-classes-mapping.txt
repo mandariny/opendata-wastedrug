@@ -4,6 +4,9 @@ com/example/waste_drug/search/drugbox/DrugBoxFragment.java
  com.example.waste_drug.search.drugbox.DrugBoxFragment$1InsertRunnable
  com.example.waste_drug.search.drugbox.DrugBoxFragment$2
  com.example.waste_drug.search.drugbox.DrugBoxFragment$3
+ com.example.waste_drug.search.drugbox.DrugBoxFragment$4
+ com.example.waste_drug.search.drugbox.DrugBoxFragment$5
+ com.example.waste_drug.search.drugbox.DrugBoxFragment$6
 com/example/waste_drug/db/MyDrugDatabase.java
  com.example.waste_drug.db.MyDrugDatabase
 com/example/waste_drug/db/MyDrugInfo.java
@@ -15,6 +18,8 @@ com/example/waste_drug/search/pharmacy/PharmacyFragment.java
  com.example.waste_drug.search.pharmacy.PharmacyFragment
  com.example.waste_drug.search.pharmacy.PharmacyFragment$1
  com.example.waste_drug.search.pharmacy.PharmacyFragment$2
+ com.example.waste_drug.search.pharmacy.PharmacyFragment$3
+ com.example.waste_drug.search.pharmacy.PharmacyFragment$4
  com.example.waste_drug.search.pharmacy.PharmacyFragment$MyAsyncTask
  com.example.waste_drug.search.pharmacy.PharmacyFragment$MyAsyncTask$1
 com/example/waste_drug/search/SearchActivity.java
@@ -51,14 +56,8 @@ com/example/waste_drug/manage/ManageActivity.java
  com.example.waste_drug.manage.ManageActivity
  com.example.waste_drug.manage.ManageActivity$1
  com.example.waste_drug.manage.ManageActivity$1GetRunnable
-com/example/waste_drug/MainActivity.java
- com.example.waste_drug.MainActivity
- com.example.waste_drug.MainActivity$1
- com.example.waste_drug.MainActivity$2
- com.example.waste_drug.MainActivity$3
- com.example.waste_drug.MainActivity$4
- com.example.waste_drug.MainActivity$5
- com.example.waste_drug.MainActivity$6
+com/example/waste_drug/Map2Activity.java
+ com.example.waste_drug.Map2Activity
 com/example/waste_drug/search/adapter/OnPharmacyItemClickListener.java
  com.example.waste_drug.search.adapter.OnPharmacyItemClickListener
 com/example/waste_drug/db/DrugBox.java
@@ -79,5 +78,12 @@ com/example/waste_drug/search/adapter/PharmacyAdapter.java
  com.example.waste_drug.search.adapter.PharmacyAdapter$OnPharmacyItemClickListener
  com.example.waste_drug.search.adapter.PharmacyAdapter$PharmacyViewHolder
  com.example.waste_drug.search.adapter.PharmacyAdapter$PharmacyViewHolder$1
-com/example/waste_drug/Map2Activity.java
- com.example.waste_drug.Map2Activity
+com/example/waste_drug/MainActivity.java
+ com.example.waste_drug.MainActivity
+ com.example.waste_drug.MainActivity$1
+ com.example.waste_drug.MainActivity$2
+ com.example.waste_drug.MainActivity$3
+ com.example.waste_drug.MainActivity$4
+ com.example.waste_drug.MainActivity$5
+ com.example.waste_drug.MainActivity$6
+ com.example.waste_drug.MainActivity$7
