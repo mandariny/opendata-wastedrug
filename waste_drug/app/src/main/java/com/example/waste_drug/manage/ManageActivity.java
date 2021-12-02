@@ -62,11 +62,8 @@ public class ManageActivity extends AppCompatActivity {
 
     @SuppressLint("NotifyDataSetChanged")
     private void setRecyclerView() {
-        for(int i = 0; i < myDrugInfoArrayList.size(); i++) {
-            Log.d("MAIN", myDrugInfoArrayList.get(i).picture);
-        }
         myDrugRecyclerView = findViewById(R.id.rv_manage);
-        myDrugAdapter = new MyDrugAdapter(myDrugInfoArrayList);
+        myDrugAdapter = new MyDrugAdapter(myDrugInfoArrayList, getApplicationContext());
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), RecyclerView.VERTICAL, false);
 
         myDrugRecyclerView.setLayoutManager(layoutManager);

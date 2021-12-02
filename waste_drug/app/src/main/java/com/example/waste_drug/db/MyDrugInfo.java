@@ -12,28 +12,32 @@ public class MyDrugInfo implements Serializable {
     @PrimaryKey(autoGenerate = true)
     public int uid = 0;
 
-    @ColumnInfo(name="name")
+    @ColumnInfo(name = "name")
     public String name;
 
-    @ColumnInfo(name="expiryDate")
+    @ColumnInfo(name = "expiryDate")
     public String date;
 
-    @ColumnInfo(name="effect")
+    @ColumnInfo(name = "effect")
     public String effect;
 
-    @ColumnInfo(name="picture")
+    @ColumnInfo(name = "picture")
     public String picture;
 
-    @ColumnInfo(name="addInfo")
+    @ColumnInfo(name = "addInfo")
     public String addInfo;
 
-    public MyDrugInfo(int uid, String name, String date, String effect, String picture, String addInfo) {
+    @ColumnInfo(name = "subscribe")
+    public int subscribe = 0;
+
+    public MyDrugInfo(int uid, String name, String date, String effect, String picture, String addInfo, int subscribe) {
         this.uid = uid;
         this.name = name;
         this.date = date;
         this.effect = effect;
         this.picture = picture;
         this.addInfo = addInfo;
+        this.subscribe = subscribe;
     }
 
     public int getUid() {
@@ -82,5 +86,13 @@ public class MyDrugInfo implements Serializable {
 
     public void setAddInfo(String addInfo) {
         this.addInfo = addInfo;
+    }
+
+    public int getSubscribe() {
+        return subscribe;
+    }
+
+    public void setSubscribe(int subscribe) {
+        this.subscribe = subscribe;
     }
 }

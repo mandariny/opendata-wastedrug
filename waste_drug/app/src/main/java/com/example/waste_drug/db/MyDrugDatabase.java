@@ -14,7 +14,7 @@ public abstract class MyDrugDatabase extends RoomDatabase {
 
     public static MyDrugDatabase getInstance(Context context) {
         if (INSTANCE == null) {
-            INSTANCE = Room.databaseBuilder(context.getApplicationContext(), MyDrugDatabase.class, "mydrug-db").build();
+            INSTANCE = Room.databaseBuilder(context.getApplicationContext(), MyDrugDatabase.class, "mydrug").build();
         }
         return INSTANCE;
     }
