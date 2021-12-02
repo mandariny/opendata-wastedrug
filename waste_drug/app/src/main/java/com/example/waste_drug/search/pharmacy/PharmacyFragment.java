@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.SearchView;
 import android.location.Geocoder;
 
@@ -57,7 +58,7 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
     private boolean isGps = false;
 
     private Context mContext;
-    private Button show_loc;
+    private ImageButton show_loc;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -77,7 +78,7 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
 
 //        gpsTracker = new GpsTracker(container.getContext());
 //        geocoder = new Geocoder(container.getContext(), Locale.getDefault());
-        show_loc = (Button) v.findViewById(R.id.button4);
+        show_loc = (ImageButton) v.findViewById(R.id.button4);
 
         int hasFineLocationPermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION);
         int hasCoarseLocationPermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION);
