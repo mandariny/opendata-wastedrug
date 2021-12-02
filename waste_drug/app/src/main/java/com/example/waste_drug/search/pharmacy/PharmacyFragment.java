@@ -1,6 +1,9 @@
 package com.example.waste_drug.search.pharmacy;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Address;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -16,10 +19,12 @@ import android.location.Geocoder;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.waste_drug.BuildConfig;
 import com.example.waste_drug.Map2Activity;
 import com.example.waste_drug.R;
 import com.example.waste_drug.data.Pharmacy;
@@ -46,9 +51,13 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
     private RecyclerView recyclerView;
     private SearchView searchView;
     private boolean isSearch = false;
+    private final String[] APIKEY = new String[]{BuildConfig.PHARMACY_API_KEY};
     private GpsTracker gpsTracker;
     private Geocoder geocoder;
     private boolean isGps = false;
+
+    private Context mContext;
+    private Button show_loc;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -64,11 +73,22 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
         searchButtonClicked();
         searchButtonClosed();
         executeAsyncTask();
+        mContext = container.getContext();
 
-        gpsTracker = new GpsTracker(container.getContext());
-        geocoder = new Geocoder(container.getContext(), Locale.getDefault());
-        Button show_loc = (Button) v.findViewById(R.id.button4);
-        show_loc.setOnClickListener(this);
+//        gpsTracker = new GpsTracker(container.getContext());
+//        geocoder = new Geocoder(container.getContext(), Locale.getDefault());
+        show_loc = (Button) v.findViewById(R.id.button4);
+
+        int hasFineLocationPermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION);
+        int hasCoarseLocationPermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION);
+
+        if (hasFineLocationPermission == PackageManager.PERMISSION_GRANTED && hasCoarseLocationPermission == PackageManager.PERMISSION_GRANTED) {
+            gpsTracker = new GpsTracker(mContext);
+            geocoder = new Geocoder(mContext, Locale.getDefault());
+            show_loc.setOnClickListener(this);
+
+        } else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+            requestPermissions(new String[] {Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 1000);
 
         return v;
     }
@@ -157,14 +177,13 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
         @Override
         protected String doInBackground(String... strings) {
             if (!isSearch) {
-                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=CjgXorlQ%2FWNSknj9kf3L7KuvIjQLVKLhhPbiIcQDp67L952y4CkiTwPl4TnmN0nC4aQvrOJodqQCqoMIYYLmZA%3D%3D";
-            }
-            else if(!isGps){
-                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=CjgXorlQ%2FWNSknj9kf3L7KuvIjQLVKLhhPbiIcQDp67L952y4CkiTwPl4TnmN0nC4aQvrOJodqQCqoMIYYLmZA%3D%3D&Q0=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
+                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=" + APIKEY[0] + "&numOfRows=50";
+            } else if(isGps){
+                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=" + APIKEY[0] + "&Q0=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
                 isSearch = false;
             }
             else{
-                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=CjgXorlQ%2FWNSknj9kf3L7KuvIjQLVKLhhPbiIcQDp67L952y4CkiTwPl4TnmN0nC4aQvrOJodqQCqoMIYYLmZA%3D%3D&Q0=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
+                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=" + APIKEY[0] + "&QN=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
                 isSearch = false;
             }
             try {
@@ -200,11 +219,14 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
                                 Log.d("MAIN", pharmacy.getDutyTime1c());
                                 if (pharmacy.getDutyTime6c() != null) {
                                     pharmacy.setOpenInSaturday(true);
-                                } if (pharmacy.getDutyTime7c() != null) {
+                                }
+                                if (pharmacy.getDutyTime7c() != null) {
                                     pharmacy.setOpenInSunday(true);
-                                } if (pharmacy.getDutyTime8c() != null) {
+                                }
+                                if (pharmacy.getDutyTime8c() != null) {
                                     pharmacy.setOpenInHoliday(true);
-                                } if (Integer.parseInt(pharmacy.getDutyTime1c()) > 1800 ||
+                                }
+                                if (Integer.parseInt(pharmacy.getDutyTime1c()) > 1800 ||
                                         Integer.parseInt(pharmacy.getDutyTime2c()) > 1800 ||
                                         Integer.parseInt(pharmacy.getDutyTime3c()) > 1800 ||
                                         Integer.parseInt(pharmacy.getDutyTime4c()) > 1800 ||
@@ -213,7 +235,7 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
                                     pharmacy.setOpenInNight(true);
                                 }
 
-                                if(pharmacy.isOpenInNight() || pharmacy.isOpenInSaturday() || pharmacy.isOpenInSunday() || pharmacy.isOpenInHoliday()) {
+                                if (pharmacy.isOpenInNight() || pharmacy.isOpenInSaturday() || pharmacy.isOpenInSunday() || pharmacy.isOpenInHoliday()) {
                                     pharmacyArrayList.add(pharmacy);
                                 }
                             }
@@ -259,39 +281,41 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
                             }
                             break;
                         case XmlPullParser.TEXT:
-                            if (isDutyAddress) {
-                                pharmacy.setDutyAddr(parser.getText());
-                                isDutyAddress = false;
-                            } else if (isDutyName) {
-                                pharmacy.setDutyName(parser.getText());
-                                isDutyName = false;
-                            } else if (isDutyTel) {
-                                pharmacy.setDutyTel1(parser.getText());
-                                isDutyTel = false;
-                            } else if (isDutyTimeMonday) {
-                                pharmacy.setDutyTime1c(parser.getText());
-                                isDutyTimeMonday = false;
-                            } else if (isDutyTimeTuesday) {
-                                pharmacy.setDutyTime2c(parser.getText());
-                                isDutyTimeTuesday = false;
-                            } else if (isDutyTimeWednesday) {
-                                pharmacy.setDutyTime3c(parser.getText());
-                                isDutyTimeWednesday = false;
-                            } else if (isDutyTimeThursday) {
-                                pharmacy.setDutyTime4c(parser.getText());
-                                isDutyTimeThursday = false;
-                            } else if (isDutyTimeFriday) {
-                                pharmacy.setDutyTime5c(parser.getText());
-                                isDutyTimeFriday = false;
-                            } else if (isDutyTimeSaturday) {
-                                pharmacy.setDutyTime6c(parser.getText());
-                                isDutyTimeSaturday = false;
-                            } else if (isDutyTimeSunday) {
-                                pharmacy.setDutyTime7c(parser.getText());
-                                isDutyTimeSunday = false;
-                            } else if (isDutyTimeHoliday) {
-                                pharmacy.setDutyTime8c(parser.getText());
-                                isDutyTimeHoliday = false;
+                            if(pharmacy != null) {
+                                if (isDutyAddress) {
+                                    pharmacy.setDutyAddr(parser.getText());
+                                    isDutyAddress = false;
+                                } else if (isDutyName) {
+                                    pharmacy.setDutyName(parser.getText());
+                                    isDutyName = false;
+                                } else if (isDutyTel) {
+                                    pharmacy.setDutyTel1(parser.getText());
+                                    isDutyTel = false;
+                                } else if (isDutyTimeMonday) {
+                                    pharmacy.setDutyTime1c(parser.getText());
+                                    isDutyTimeMonday = false;
+                                } else if (isDutyTimeTuesday) {
+                                    pharmacy.setDutyTime2c(parser.getText());
+                                    isDutyTimeTuesday = false;
+                                } else if (isDutyTimeWednesday) {
+                                    pharmacy.setDutyTime3c(parser.getText());
+                                    isDutyTimeWednesday = false;
+                                } else if (isDutyTimeThursday) {
+                                    pharmacy.setDutyTime4c(parser.getText());
+                                    isDutyTimeThursday = false;
+                                } else if (isDutyTimeFriday) {
+                                    pharmacy.setDutyTime5c(parser.getText());
+                                    isDutyTimeFriday = false;
+                                } else if (isDutyTimeSaturday) {
+                                    pharmacy.setDutyTime6c(parser.getText());
+                                    isDutyTimeSaturday = false;
+                                } else if (isDutyTimeSunday) {
+                                    pharmacy.setDutyTime7c(parser.getText());
+                                    isDutyTimeSunday = false;
+                                } else if (isDutyTimeHoliday) {
+                                    pharmacy.setDutyTime8c(parser.getText());
+                                    isDutyTimeHoliday = false;
+                                }
                             }
                             break;
                     }
@@ -321,6 +345,29 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
                     startActivity(intent);
                 }
             });
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], int[] grantResult){
+        if(requestCode == 1000){
+            boolean check_result = true;
+
+            for(int result: grantResult){
+                if(result != PackageManager.PERMISSION_GRANTED) {
+                    check_result = false;
+                    break;
+                }
+            }
+
+            if(check_result == true){
+                gpsTracker = new GpsTracker(mContext);
+                geocoder = new Geocoder(mContext, Locale.getDefault());
+                show_loc.setOnClickListener(this);
+
+            }else{
+                getActivity().finish();
+            }
         }
     }
 }

@@ -19,15 +19,19 @@ import net.daum.mf.map.api.MapPOIItem;
 import net.daum.mf.map.api.MapPoint;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Map1Activity extends AppCompatActivity implements MapView.POIItemEventListener {
 
-    LinearLayout info_view;
-    TextView name;
-    TextView address;
-    TextView phone;
+    private LinearLayout info_view;
+    private TextView name;
+    private TextView address;
+    private TextView phone;
+    private ArrayList<String> arrs= new ArrayList<>();
+    private ArrayList<String> titles= new ArrayList<>();
+    private ArrayList<String> pnums= new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,59 +42,62 @@ public class Map1Activity extends AppCompatActivity implements MapView.POIItemEv
         address = findViewById(R.id.info_address);
         phone = findViewById(R.id.info_phone);
 
-        Log.v("tag","hey modu");
-
-        MapView mapView = new MapView(this);
-        ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
-
         Intent intent = getIntent();
         ArrayList<DrugBox> drugArrayList = (ArrayList<DrugBox>)intent.getSerializableExtra(("drugboxes"));
         int pos = intent.getIntExtra("position",0);
-        String title = drugArrayList.get(pos).getName();
-        String arr = drugArrayList.get(pos).getAddress();
-        String pnum = drugArrayList.get(pos).getTel();
-        double lat = 0;
-        double lon = 0;
 
-        name.setText(title);
-        address.setText(arr);
-        phone.setText(pnum);
+        for(int i=0; i<drugArrayList.size();i++){
+            arrs.add(drugArrayList.get(i).getAddress());
+            titles.add(drugArrayList.get(i).getName());
+            pnums.add(drugArrayList.get(i).getTel());
+        }
+
+        ArrayList<Double> lat = new ArrayList<>();
+        ArrayList<Double> lon = new ArrayList<>();
 
         Geocoder geocoder = new Geocoder(getApplicationContext());
         try{
-            List<Address> resultLocation = geocoder.getFromLocationName(arr,1);
-            lat = resultLocation.get(0).getLatitude();
-            lon = resultLocation.get(0).getLongitude();
+            for(int i=0; i<drugArrayList.size();i++){
+                List<Address> resultLocation = geocoder.getFromLocationName(arrs.get(i),1);
+                lat.add(resultLocation.get(0).getLatitude());
+                lon.add(resultLocation.get(0).getLongitude());
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        //포인트 좌표의 위도, 경도 설정
-        MapPoint MARKER_POINT = MapPoint.mapPointWithGeoCoord(lat, lon);
-        mapView.setMapCenterPoint(MARKER_POINT, true);
-        mapView.setPOIItemEventListener(this);
+        MapView mapView = new MapView(this);
+        ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
 
+        MapPOIItem [] markers = new MapPOIItem[drugArrayList.size()];
+        for(int i=0; i<drugArrayList.size();i++){
+            markers[i] = new MapPOIItem();
+            markers[i].setItemName(titles.get(i));
+            markers[i].setTag(i);
+            markers[i].setMapPoint(MapPoint.mapPointWithGeoCoord(lat.get(i),lon.get(i)));
+            markers[i].setMarkerType(MapPOIItem.MarkerType.BluePin);
+            markers[i].setSelectedMarkerType(MapPOIItem.MarkerType.RedPin);
+        }
+
+        name.setText(titles.get(pos));
+        address.setText(arrs.get(pos));
+        phone.setText(pnums.get(pos));
+
+        mapView.setMapCenterPoint(MapPoint.mapPointWithGeoCoord(lat.get(pos),lon.get(pos)), true);
+        mapView.setPOIItemEventListener(this);
+        mapView.setZoomLevel(2,false);
+        mapView.addPOIItems(markers);
+        mapView.selectPOIItem(markers[pos],false);
         mapViewContainer.addView(mapView);
 
-        //마커 설정
-        MapPOIItem marker = new MapPOIItem();
-        marker.setItemName(title);
-        marker.setTag(0);
-        marker.setMapPoint(MARKER_POINT);
-
-        // 기본으로 제공하는 BluePin 마커 모양.
-        marker.setMarkerType(MapPOIItem.MarkerType.BluePin);
-        // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
-        marker.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin);
-
-        mapView.addPOIItem(marker);
     }
 
     @Override
     public void onPOIItemSelected(MapView mapView, MapPOIItem mapPOIItem) {
-        //마커 클릭시 정보 노출
-        info_view = findViewById(R.id.info);
-        info_view.setVisibility(View.VISIBLE);
+        name.setText(titles.get(mapPOIItem.getTag()));
+        address.setText(arrs.get(mapPOIItem.getTag()));
+        phone.setText(pnums.get(mapPOIItem.getTag()));
     }
 
     @Override
