@@ -26,7 +26,7 @@
         <activity android:name=".manage.ManageActivity" />
         <activity android:name=".recycle.RecycleActivity"/>
         <activity android:name=".Map1Activity"></activity>
-        <activity android:name=".Map2Activity" />
+        <activity android:name=".Map2Activity"></activity>
         <activity android:name=".search.SearchActivity"
             android:parentActivityName=".MainActivity">
         </activity>

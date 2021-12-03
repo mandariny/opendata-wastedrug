@@ -716,6 +716,18 @@ attr region_widthLessThan
 attr region_widthMoreThan
 attr reverseLayout
 attr rippleColor
+attr riv_border_color
+attr riv_border_width
+attr riv_corner_radius
+attr riv_corner_radius_bottom_left
+attr riv_corner_radius_bottom_right
+attr riv_corner_radius_top_left
+attr riv_corner_radius_top_right
+attr riv_mutate_background
+attr riv_oval
+attr riv_tile_mode
+attr riv_tile_mode_x
+attr riv_tile_mode_y
 attr round
 attr roundPercent
 attr saturation
@@ -977,6 +989,7 @@ color background_material_light
 color black
 color blue
 color border_line
+color border_line2
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -1651,7 +1664,7 @@ drawable app_icon
 drawable avd_hide_password
 drawable avd_show_password
 drawable background_my_drug_item
-drawable benefit
+drawable background_recycle_method
 drawable box
 drawable box_icon
 drawable box_icon_resize
@@ -1671,6 +1684,12 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable et_background_style
+drawable feed1
+drawable feed2
+drawable feed3
+drawable feed_big1
+drawable feed_big2
+drawable feed_big3
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -1682,6 +1701,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable layout_line
 drawable liquid
+drawable liquid1
 drawable marker
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
@@ -1717,15 +1737,23 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable ointment
+drawable ointment1
 drawable outline_gps_fixed_24
+drawable person
 drawable pharmacy
 drawable pharmacy_icon
 drawable pill
+drawable pill1
 drawable plus
 drawable powder
+drawable powder1
+drawable qrcode
 drawable recycle
+drawable recycle_detail_border
 drawable selected_icon
 drawable shipping
+drawable shipping1
+drawable speech
 drawable splash
 drawable splash_img
 drawable test_custom_background
@@ -1735,6 +1763,7 @@ drawable unselected_icon
 font amaranth
 font font
 font lgsm
+font lgsmhasb
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -1824,6 +1853,7 @@ id baseline
 id beginOnFirstDraw
 id beginning
 id blocking
+id borderline
 id bottom
 id bounce
 id btn_date
@@ -1850,6 +1880,8 @@ id chip_group
 id chronometer
 id circle_center
 id cl_pharmacy_layout
+id cl_slide_detail
+id clamp
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -1940,6 +1972,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageSlide
 id info
 id info2
 id info_address
@@ -1959,9 +1992,12 @@ id iv_drug_photo
 id iv_drug_recycle
 id iv_liquid
 id iv_ointment
+id iv_person
 id iv_pill
 id iv_plus
+id iv_poster
 id iv_powder
+id iv_recycle_poster
 id iv_search_collection_box
 id iv_search_pharmacy
 id iv_shipping_service
@@ -2007,6 +2043,7 @@ id media_actions
 id message
 id middle
 id mini
+id mirror
 id month_grid
 id month_navigation_bar
 id month_navigation_fragment_toggle
@@ -2069,6 +2106,8 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id refresh
+id repeat
 id reverseSawtooth
 id right
 id rightToLeft
@@ -2089,6 +2128,7 @@ id row_index_key
 id rv_drug_box_view
 id rv_manage
 id rv_pharmacy_view
+id rv_shipping
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -2185,6 +2225,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id toolbar
 id top
 id topPanel
 id touch_outside
@@ -2208,7 +2249,6 @@ id tv_effect_text
 id tv_expiry_date
 id tv_image
 id tv_liquid
-id tv_main_effect
 id tv_manage
 id tv_name
 id tv_name_text
@@ -2218,6 +2258,8 @@ id tv_option_text
 id tv_phone
 id tv_photo
 id tv_powder
+id tv_recycle_content
+id tv_recycle_text
 id tv_search_collection_box
 id tv_search_pharmacy
 id tv_shipping_service
@@ -2232,6 +2274,7 @@ id useLogo
 id view
 id view_offset_helper
 id visible
+id vp_main
 id vp_view
 id withText
 id withinBounds
@@ -2304,8 +2347,11 @@ layout activity_manage
 layout activity_map1
 layout activity_map2
 layout activity_recycle
+layout activity_recycle_detail
 layout activity_register
 layout activity_search
+layout activity_shipping
+layout activity_slide_detail
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2387,6 +2433,8 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout shipping_item
+layout slide_item_container
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
 layout test_chip_zero_corner_radius
@@ -2445,6 +2493,14 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string define_roundedimageview
+string detail_tv_date_text_string
+string detail_tv_effect_text_string
+string detail_tv_name_text_string
+string detail_tv_option_text_string
+string detail_tv_photo_string
+string detail_tv_title_string
+string drug_item_tv_subscribe_string
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
@@ -2453,6 +2509,21 @@ string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
+string library_roundedimageview_author
+string library_roundedimageview_authorWebsite
+string library_roundedimageview_isOpenSource
+string library_roundedimageview_libraryDescription
+string library_roundedimageview_libraryName
+string library_roundedimageview_libraryVersion
+string library_roundedimageview_libraryWebsite
+string library_roundedimageview_licenseId
+string library_roundedimageview_repositoryLink
+string main_tv_benefit_string
+string main_tv_drug_note_string
+string main_tv_drug_recycle_string
+string main_tv_search_collection_box_string
+string main_tv_search_pharmacy_string
+string main_tv_shipping_service_string
 string material_clock_display_divider
 string material_clock_toggle_content_description
 string material_hour_selection
@@ -2508,7 +2579,21 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string recycle_tv_liquid_string
+string recycle_tv_ointment_string
+string recycle_tv_powder_string
+string recycle_tv_recycle_text_string
+string recycle_tv_search_collection_box_string
+string register_btn_register_string
+string register_tv_date_string
+string register_tv_effect
+string register_tv_image_string
+string register_tv_name_string
+string register_tv_option_string
+string register_tv_photo_string
+string register_tv_title_string
 string search_menu_title
+string shipping_item_tv_effect_text_string
 string status_bar_notification_info_overflow
 string text_address
 string text_drugBox
@@ -3038,6 +3123,7 @@ style ThemeOverlay_MaterialComponents_TimePicker_Display
 style ThemeOverlay_MaterialComponents_Toolbar_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Surface
 style ThemeOverlayColorAccentRed
+style ToolbarTitleText
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
 style Widget_AppCompat_ActionBar_TabBar
@@ -3341,6 +3427,7 @@ styleable RadialViewGroup materialCircleRadius
 styleable RangeSlider minSeparation values
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable RecyclerView android_orientation android_clipToPadding android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
+styleable RoundedImageView android_scaleType riv_border_color riv_border_width riv_corner_radius riv_corner_radius_bottom_left riv_corner_radius_bottom_right riv_corner_radius_top_left riv_corner_radius_top_right riv_mutate_background riv_oval riv_tile_mode riv_tile_mode_x riv_tile_mode_y
 styleable ScrimInsetsFrameLayout insetForeground
 styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon

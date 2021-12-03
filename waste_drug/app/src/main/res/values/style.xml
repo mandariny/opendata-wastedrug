@@ -9,4 +9,7 @@
         <item name="android:fontStyle">normal</item>
         <item name="android:textColor">@color/blue</item>
     </style>
+    <style name="ToolbarTitleText">
+        <item name="android:fontFamily">@font/font</item>
+    </style>
 </resources>

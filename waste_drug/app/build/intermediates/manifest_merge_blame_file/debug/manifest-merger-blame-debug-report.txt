@@ -27,7 +27,7 @@
 15-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:9:22-77
 16
 17    <application
-17-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:11:5-43:19
+17-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:11:5-47:19
 18        android:allowBackup="true"
 18-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:12:9-35
 19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -49,68 +49,80 @@
 28-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:18:9-48
 29        android:usesCleartextTraffic="true" >
 29-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:19:9-44
-30        <activity android:name="com.example.waste_drug.manage.RegisterActivity" />
-30-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:21:9-61
-30-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:21:19-58
-31        <activity android:name="com.example.waste_drug.manage.ManageActivity" />
-31-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:22:9-59
-31-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:22:19-56
-32        <activity android:name="com.example.waste_drug.recycle.RecycleActivity" />
-32-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:23:9-60
-32-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:23:19-58
-33        <activity android:name="com.example.waste_drug.Map1Activity" />
+30        <activity android:name="com.example.waste_drug.recycle.RecycleDetailActivity" />
+30-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:21:9-66
+30-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:21:19-64
+31        <activity android:name="com.example.waste_drug.slide.SlideActivity" />
+31-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:22:9-57
+31-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:22:19-54
+32        <activity android:name="com.example.waste_drug.shipping.ShippingActivity" />
+32-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:23:9-62
+32-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:23:19-60
+33        <activity android:name="com.example.waste_drug.manage.DetailActivity" />
 33-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:24:9-59
-33-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:24:19-47
-34        <activity android:name="com.example.waste_drug.Map2Activity" />
-34-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:25:9-50
-34-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:25:19-47
-35        <activity
-35-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:26:9-28:20
-36            android:name="com.example.waste_drug.search.SearchActivity"
-36-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:26:19-56
-37            android:parentActivityName="com.example.waste_drug.MainActivity" >
-37-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:27:13-55
-38        </activity>
+33-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:24:19-56
+34        <activity android:name="com.example.waste_drug.manage.RegisterActivity" />
+34-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:25:9-61
+34-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:25:19-58
+35        <activity android:name="com.example.waste_drug.manage.ManageActivity" />
+35-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:26:9-59
+35-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:26:19-56
+36        <activity android:name="com.example.waste_drug.recycle.RecycleActivity" />
+36-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:27:9-60
+36-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:27:19-58
+37        <activity android:name="com.example.waste_drug.Map1Activity" />
+37-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:28:9-59
+37-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:28:19-47
+38        <activity android:name="com.example.waste_drug.Map2Activity" />
+38-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:29:9-59
+38-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:29:19-47
 39        <activity
-39-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:29:9-31:20
-40            android:name="com.example.waste_drug.MainActivity"
-40-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:29:19-47
-41            android:exported="true" >
-41-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:29:48-71
+39-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:30:9-32:20
+40            android:name="com.example.waste_drug.search.SearchActivity"
+40-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:30:19-56
+41            android:parentActivityName="com.example.waste_drug.MainActivity" >
+41-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:31:13-55
 42        </activity>
 43        <activity
-43-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:32:9-38:20
-44            android:name="com.example.waste_drug.SplashActivity"
-44-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:32:19-49
-45            android:theme="@style/SplashTheme" >
-45-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:33:13-47
-46            <intent-filter>
-46-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:34:13-37:29
-47                <action android:name="android.intent.action.MAIN" />
-47-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:35:17-69
-47-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:35:25-66
-48
-49                <category android:name="android.intent.category.LAUNCHER" />
-49-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:36:17-77
-49-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:36:27-74
-50            </intent-filter>
-51        </activity>
+43-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:33:9-35:20
+44            android:name="com.example.waste_drug.MainActivity"
+44-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:33:19-47
+45            android:exported="true" >
+45-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:33:48-71
+46        </activity>
+47        <activity
+47-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:36:9-42:20
+48            android:name="com.example.waste_drug.SplashActivity"
+48-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:36:19-49
+49            android:theme="@style/SplashTheme" >
+49-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:37:13-47
+50            <intent-filter>
+50-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:38:13-41:29
+51                <action android:name="android.intent.action.MAIN" />
+51-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:39:17-69
+51-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:39:25-66
 52
-53        <meta-data
-53-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:40:9-42:64
-54            android:name="com.kakao.sdk.AppKey"
-54-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:41:13-48
-55            android:value="f708709920ae96f8ba2a25978fda5cb7" />
-55-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:42:13-61
+53                <category android:name="android.intent.category.LAUNCHER" />
+53-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:40:17-77
+53-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:40:27-74
+54            </intent-filter>
+55        </activity>
 56
-57        <service
-57-->[androidx.room:room-runtime:2.4.0-beta01] C:\Users\YoonSohee\.gradle\caches\transforms-2\files-2.1\75a9d6d008551d2b59dcccad037f2351\room-runtime-2.4.0-beta01\AndroidManifest.xml:25:9-28:40
-58            android:name="androidx.room.MultiInstanceInvalidationService"
-58-->[androidx.room:room-runtime:2.4.0-beta01] C:\Users\YoonSohee\.gradle\caches\transforms-2\files-2.1\75a9d6d008551d2b59dcccad037f2351\room-runtime-2.4.0-beta01\AndroidManifest.xml:26:13-74
-59            android:directBootAware="true"
-59-->[androidx.room:room-runtime:2.4.0-beta01] C:\Users\YoonSohee\.gradle\caches\transforms-2\files-2.1\75a9d6d008551d2b59dcccad037f2351\room-runtime-2.4.0-beta01\AndroidManifest.xml:27:13-43
-60            android:exported="false" />
-60-->[androidx.room:room-runtime:2.4.0-beta01] C:\Users\YoonSohee\.gradle\caches\transforms-2\files-2.1\75a9d6d008551d2b59dcccad037f2351\room-runtime-2.4.0-beta01\AndroidManifest.xml:28:13-37
-61    </application>
-62
-63</manifest>
+57        <meta-data
+57-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:44:9-46:64
+58            android:name="com.kakao.sdk.AppKey"
+58-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:45:13-48
+59            android:value="f708709920ae96f8ba2a25978fda5cb7" />
+59-->D:\AndroidStudio\waste_drug\app\src\main\AndroidManifest.xml:46:13-61
+60
+61        <service
+61-->[androidx.room:room-runtime:2.4.0-beta01] C:\Users\YoonSohee\.gradle\caches\transforms-2\files-2.1\75a9d6d008551d2b59dcccad037f2351\room-runtime-2.4.0-beta01\AndroidManifest.xml:25:9-28:40
+62            android:name="androidx.room.MultiInstanceInvalidationService"
+62-->[androidx.room:room-runtime:2.4.0-beta01] C:\Users\YoonSohee\.gradle\caches\transforms-2\files-2.1\75a9d6d008551d2b59dcccad037f2351\room-runtime-2.4.0-beta01\AndroidManifest.xml:26:13-74
+63            android:directBootAware="true"
+63-->[androidx.room:room-runtime:2.4.0-beta01] C:\Users\YoonSohee\.gradle\caches\transforms-2\files-2.1\75a9d6d008551d2b59dcccad037f2351\room-runtime-2.4.0-beta01\AndroidManifest.xml:27:13-43
+64            android:exported="false" />
+64-->[androidx.room:room-runtime:2.4.0-beta01] C:\Users\YoonSohee\.gradle\caches\transforms-2\files-2.1\75a9d6d008551d2b59dcccad037f2351\room-runtime-2.4.0-beta01\AndroidManifest.xml:28:13-37
+65    </application>
+66
+67</manifest>

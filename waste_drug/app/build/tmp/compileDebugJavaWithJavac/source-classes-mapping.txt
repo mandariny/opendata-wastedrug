@@ -26,11 +26,16 @@ com/example/waste_drug/search/adapter/ViewPagerAdapter.java
  com.example.waste_drug.search.adapter.ViewPagerAdapter
 com/example/waste_drug/db/MyDrugInfoDao.java
  com.example.waste_drug.db.MyDrugInfoDao
-com/example/waste_drug/search/adapter/PharmacyAdapter.java
- com.example.waste_drug.search.adapter.PharmacyAdapter
- com.example.waste_drug.search.adapter.PharmacyAdapter$OnPharmacyItemClickListener
- com.example.waste_drug.search.adapter.PharmacyAdapter$PharmacyViewHolder
- com.example.waste_drug.search.adapter.PharmacyAdapter$PharmacyViewHolder$1
+com/example/waste_drug/shipping/ShippingAdapter.java
+ com.example.waste_drug.shipping.ShippingAdapter
+ com.example.waste_drug.shipping.ShippingAdapter$ShippingViewHolder
+com/example/waste_drug/shipping/ShippingActivity.java
+ com.example.waste_drug.shipping.ShippingActivity
+ com.example.waste_drug.shipping.ShippingActivity$1GetRunnable
+com/example/waste_drug/data/SlideItem.java
+ com.example.waste_drug.data.SlideItem
+com/example/waste_drug/recycle/RecycleDetailActivity.java
+ com.example.waste_drug.recycle.RecycleDetailActivity
 com/example/waste_drug/db/AppDatabase.java
  com.example.waste_drug.db.AppDatabase
 com/example/waste_drug/Map1Activity.java
@@ -47,11 +52,8 @@ com/example/waste_drug/manage/MyDrugAdapter.java
  com.example.waste_drug.manage.MyDrugAdapter$2
  com.example.waste_drug.manage.MyDrugAdapter$MyDrugViewHolder
  com.example.waste_drug.manage.MyDrugAdapter$MyDrugViewHolder$1
-com/example/waste_drug/search/adapter/DrugBoxAdapter.java
- com.example.waste_drug.search.adapter.DrugBoxAdapter
- com.example.waste_drug.search.adapter.DrugBoxAdapter$DrugBoxViewHolder
- com.example.waste_drug.search.adapter.DrugBoxAdapter$DrugBoxViewHolder$1
- com.example.waste_drug.search.adapter.DrugBoxAdapter$OnDrugBoxItemClickListener
+com/example/waste_drug/slide/SlideActivity.java
+ com.example.waste_drug.slide.SlideActivity
 com/example/waste_drug/BuildConfig.java
  com.example.waste_drug.BuildConfig
 com/example/waste_drug/SplashActivity.java
@@ -62,7 +64,6 @@ com/example/waste_drug/recycle/RecycleActivity.java
  com.example.waste_drug.recycle.RecycleActivity$2
  com.example.waste_drug.recycle.RecycleActivity$3
  com.example.waste_drug.recycle.RecycleActivity$4
- com.example.waste_drug.recycle.RecycleActivity$5
 com/example/waste_drug/search/GpsTracker.java
  com.example.waste_drug.search.GpsTracker
 com/example/waste_drug/manage/RegisterActivity.java
@@ -81,20 +82,39 @@ com/example/waste_drug/manage/ManageActivity.java
  com.example.waste_drug.manage.ManageActivity
  com.example.waste_drug.manage.ManageActivity$1
  com.example.waste_drug.manage.ManageActivity$1GetRunnable
+ com.example.waste_drug.manage.ManageActivity$2
 com/example/waste_drug/search/adapter/OnPharmacyItemClickListener.java
  com.example.waste_drug.search.adapter.OnPharmacyItemClickListener
 com/example/waste_drug/db/DrugBox.java
  com.example.waste_drug.db.DrugBox
+com/example/waste_drug/slide/SliderAdapter.java
+ com.example.waste_drug.slide.SliderAdapter
+ com.example.waste_drug.slide.SliderAdapter$1
+ com.example.waste_drug.slide.SliderAdapter$SliderViewHolder
+ com.example.waste_drug.slide.SliderAdapter$SliderViewHolder$1
 com/example/waste_drug/data/Pharmacy.java
  com.example.waste_drug.data.Pharmacy
+com/example/waste_drug/search/adapter/DrugBoxAdapter.java
+ com.example.waste_drug.search.adapter.DrugBoxAdapter
+ com.example.waste_drug.search.adapter.DrugBoxAdapter$DrugBoxViewHolder
+ com.example.waste_drug.search.adapter.DrugBoxAdapter$DrugBoxViewHolder$1
+ com.example.waste_drug.search.adapter.DrugBoxAdapter$OnDrugBoxItemClickListener
+com/example/waste_drug/search/adapter/PharmacyAdapter.java
+ com.example.waste_drug.search.adapter.PharmacyAdapter
+ com.example.waste_drug.search.adapter.PharmacyAdapter$OnPharmacyItemClickListener
+ com.example.waste_drug.search.adapter.PharmacyAdapter$PharmacyViewHolder
+ com.example.waste_drug.search.adapter.PharmacyAdapter$PharmacyViewHolder$1
 com/example/waste_drug/MainActivity.java
  com.example.waste_drug.MainActivity
  com.example.waste_drug.MainActivity$1
+ com.example.waste_drug.MainActivity$10
  com.example.waste_drug.MainActivity$2
  com.example.waste_drug.MainActivity$3
  com.example.waste_drug.MainActivity$4
  com.example.waste_drug.MainActivity$5
  com.example.waste_drug.MainActivity$6
  com.example.waste_drug.MainActivity$7
+ com.example.waste_drug.MainActivity$8
+ com.example.waste_drug.MainActivity$9
 com/example/waste_drug/search/SearchActivity.java
  com.example.waste_drug.search.SearchActivity

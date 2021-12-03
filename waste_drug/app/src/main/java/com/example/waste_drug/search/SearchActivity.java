@@ -1,9 +1,12 @@
 package com.example.waste_drug.search;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
@@ -20,6 +23,7 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
         initViewPager();
+        setToolbar();
     }
 
     public void initViewPager() {
@@ -38,5 +42,13 @@ public class SearchActivity extends AppCompatActivity {
         tabs.selectTab(tabs.getTabAt(index));
         tabs.getTabAt(0).setIcon(R.drawable.box_icon);
         tabs.getTabAt(1).setIcon(R.drawable.pharmacy_icon);
+    }
+
+    private void setToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("수거함/약국 검색");
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
