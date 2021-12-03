@@ -83,8 +83,6 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
         makeDB();
         saveDB();
 
-
-
         firstDrugBoxList = drugBox.subList(0,20);
         firstDrugBox.addAll(firstDrugBoxList);
 
@@ -99,9 +97,9 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
 
         if (hasFineLocationPermission == PackageManager.PERMISSION_GRANTED && hasCoarseLocationPermission == PackageManager.PERMISSION_GRANTED) {
             show_loc.setOnClickListener(this);
-        } else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-            requestPermissions(new String[] {Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 1000);
-
+        } else {
+            requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 1000);
+        }
         return v;
     }
 
@@ -112,8 +110,10 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
             case R.id.button3:
             {
                 if (!checkLocationServicesStatus()) {
+                    Log.d("MAIN", "no grant");
                     showDialogForLocationService();
                 }else{
+                    Log.d("MAIN", "yes grant");
                     getSearchDrugBox();
                 }
             }

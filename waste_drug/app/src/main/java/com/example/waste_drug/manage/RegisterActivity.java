@@ -13,9 +13,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.Editable;
-import android.text.Selection;
 import android.text.TextWatcher;
-import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -27,13 +26,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.room.Room;
 
 import com.bumptech.glide.Glide;
 import com.example.waste_drug.R;
-import com.example.waste_drug.db.AppDatabase;
 import com.example.waste_drug.db.MyDrugDatabase;
 import com.example.waste_drug.db.MyDrugInfo;
 
@@ -55,6 +53,25 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         inputDrugInformation();
+        setToolbar();
+    }
+
+    private void setToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("개인 의약품 등록");
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: {
+                finish();
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void inputDrugInformation() {
@@ -230,9 +247,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void drugException() {
-        Log.d("MAIN", name + " " + date + " " + effect + " " + pic + " " + addInfo);
-
-        if(!name.equals("") && !date.equals("") && !effect.equals("") && !pic.equals("")) {
+        if (!name.equals("") && !date.equals("") && !effect.equals("") && !pic.equals("")) {
             registerButton.getBackground().setColorFilter(Color.parseColor("#e7d6af"), PorterDuff.Mode.MULTIPLY);
             registerButton.setEnabled(true);
         } else {
@@ -270,13 +285,13 @@ public class RegisterActivity extends AppCompatActivity {
         class InsertRunnable implements Runnable {
             @Override
             public void run() {
-                try{
-                   db.myDrugInfoDao().insertMyDrug(myDrugInfo);
+                try {
+                    db.myDrugInfoDao().insertMyDrug(myDrugInfo);
 
-                   Intent intent = new Intent(getApplicationContext(), ManageActivity.class);
-                   intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                   startActivity(intent);
-                } catch(Exception e) {
+                    Intent intent = new Intent(getApplicationContext(), ManageActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
