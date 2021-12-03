@@ -75,7 +75,7 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
         makeDB();
         saveDB();
 
-        firstDrugBoxList = drugBox.subList(0,20);
+        firstDrugBoxList = drugBox.subList(0,10);
         firstDrugBox.addAll(firstDrugBoxList);
 
         getDB(firstDrugBox);

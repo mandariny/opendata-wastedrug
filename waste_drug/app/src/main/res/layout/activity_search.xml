@@ -17,14 +17,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/font"
-            android:icon="@drawable/box_icon_resize"
             android:text="@string/text_drugBox" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab_pharmacy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:icon="@drawable/pharmacy_icon"
             android:text="@string/text_info_pharmacy" />
 
     </com.google.android.material.tabs.TabLayout>

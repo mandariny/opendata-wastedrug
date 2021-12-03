@@ -180,6 +180,10 @@
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
+        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_unselected_icon.png.flat",
+        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\drawable\\unselected_icon.png"
+    },
+    {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_recycle.xml.flat",
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\layout\\activity_recycle.xml"
     },
@@ -278,6 +282,10 @@
     {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_ddt.png.flat",
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_ddt.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_selected_icon.png.flat",
+        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\drawable\\selected_icon.png"
     },
     {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_add_image_background_border_style.xml.flat",

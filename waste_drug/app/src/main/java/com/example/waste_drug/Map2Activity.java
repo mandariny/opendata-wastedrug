@@ -97,12 +97,12 @@ public class Map2Activity extends AppCompatActivity implements MapView.POIItemEv
             markers[i].setItemName(titles.get(i));
             markers[i].setTag(i);
             markers[i].setMapPoint(MapPoint.mapPointWithGeoCoord(lat.get(i),lon.get(i)));
-            markers[i].setMarkerType(MapPOIItem.MarkerType.BluePin);
+            markers[i].setMarkerType(MapPOIItem.MarkerType.CustomImage);
+            markers[i].setCustomImageResourceId(R.drawable.unselected_icon);
             markers[i].setSelectedMarkerType(MapPOIItem.MarkerType.CustomImage);
-            markers[i].setCustomSelectedImageResourceId(R.drawable.marker);
+            markers[i].setCustomSelectedImageResourceId(R.drawable.selected_icon);
             markers[i].setCustomImageAutoscale(false);
-            //markers[i].setCustomImageAnchor(0.5f, 0.0f);
-            markers[i].setCustomImageAnchorPointOffset(new MapPOIItem.ImageOffset(120,0));
+            markers[i].setCustomImageAnchor(0.5f, 0.0f);
         }
 
         name.setText(titles.get(pos));
