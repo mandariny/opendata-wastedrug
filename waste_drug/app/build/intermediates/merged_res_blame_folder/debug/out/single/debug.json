@@ -20,10 +20,6 @@
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_pill.gif.flat",
-        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\drawable\\pill.gif"
-    },
-    {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_background_my_drug_item.xml.flat",
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\drawable\\background_my_drug_item.xml"
     },
@@ -88,6 +84,10 @@
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\layout\\shipping_item.xml"
     },
     {
+        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\raw_liquid.gif.flat",
+        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\raw\\liquid.gif"
+    },
+    {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_liquid1.png.flat",
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\drawable\\liquid1.png"
     },
@@ -116,16 +116,20 @@
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\layout\\fragment_pharmacy.xml"
     },
     {
-        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_liquid.gif.flat",
-        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\drawable\\liquid.gif"
-    },
-    {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_person.png.flat",
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\drawable\\person.png"
     },
     {
+        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\raw_ointment.gif.flat",
+        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\raw\\ointment.gif"
+    },
+    {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_qr.xml.flat",
+        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\layout\\activity_qr.xml"
     },
     {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_ddt_round.png.flat",
@@ -140,8 +144,16 @@
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\layout\\my_drug_item.xml"
     },
     {
+        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\raw_powder.gif.flat",
+        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\raw\\powder.gif"
+    },
+    {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_qr_img.png.flat",
+        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\drawable\\qr_img.png"
     },
     {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
@@ -172,10 +184,6 @@
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_ddt_round.png"
     },
     {
-        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ointment.gif.flat",
-        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\drawable\\ointment.gif"
-    },
-    {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_drugbox.xml.flat",
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\layout\\fragment_drugbox.xml"
     },
@@ -204,10 +212,6 @@
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\drawable-v24\\plus.png"
     },
     {
-        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_powder.gif.flat",
-        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\drawable\\powder.gif"
-    },
-    {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splash.xml.flat",
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\drawable\\splash.xml"
     },
@@ -234,6 +238,10 @@
     {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn_img.png.flat",
+        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\drawable\\btn_img.png"
     },
     {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_ddt_foreground.png.flat",
@@ -298,6 +306,10 @@
     {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_feed_big2.jpg.flat",
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\drawable\\feed_big2.jpg"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\raw_pill.gif.flat",
+        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\raw\\pill.gif"
     },
     {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_ddt_round.png.flat",

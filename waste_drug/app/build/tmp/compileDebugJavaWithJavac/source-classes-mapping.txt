@@ -42,6 +42,8 @@ com/example/waste_drug/Map1Activity.java
  com.example.waste_drug.Map1Activity
 com/example/waste_drug/manage/DetailActivity.java
  com.example.waste_drug.manage.DetailActivity
+com/example/waste_drug/QrActivity.java
+ com.example.waste_drug.QrActivity
 com/example/waste_drug/Map2Activity.java
  com.example.waste_drug.Map2Activity
 com/example/waste_drug/manage/MyDrugAdapter.java
@@ -52,12 +54,12 @@ com/example/waste_drug/manage/MyDrugAdapter.java
  com.example.waste_drug.manage.MyDrugAdapter$2
  com.example.waste_drug.manage.MyDrugAdapter$MyDrugViewHolder
  com.example.waste_drug.manage.MyDrugAdapter$MyDrugViewHolder$1
-com/example/waste_drug/slide/SlideActivity.java
- com.example.waste_drug.slide.SlideActivity
+com/example/waste_drug/search/SearchActivity.java
+ com.example.waste_drug.search.SearchActivity
 com/example/waste_drug/BuildConfig.java
  com.example.waste_drug.BuildConfig
-com/example/waste_drug/SplashActivity.java
- com.example.waste_drug.SplashActivity
+com/example/waste_drug/slide/SlideActivity.java
+ com.example.waste_drug.slide.SlideActivity
 com/example/waste_drug/recycle/RecycleActivity.java
  com.example.waste_drug.recycle.RecycleActivity
  com.example.waste_drug.recycle.RecycleActivity$1
@@ -116,5 +118,5 @@ com/example/waste_drug/MainActivity.java
  com.example.waste_drug.MainActivity$7
  com.example.waste_drug.MainActivity$8
  com.example.waste_drug.MainActivity$9
-com/example/waste_drug/search/SearchActivity.java
- com.example.waste_drug.search.SearchActivity
+com/example/waste_drug/SplashActivity.java
+ com.example.waste_drug.SplashActivity

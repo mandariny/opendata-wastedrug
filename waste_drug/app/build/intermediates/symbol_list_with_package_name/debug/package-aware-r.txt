@@ -1673,6 +1673,7 @@ drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
 drawable btn_checkbox_unchecked_to_checked_mtrl_animation
+drawable btn_img
 drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
@@ -1700,7 +1701,6 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable layout_line
-drawable liquid
 drawable liquid1
 drawable marker
 drawable material_cursor_drawable
@@ -1736,17 +1736,15 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
-drawable ointment
 drawable ointment1
 drawable outline_gps_fixed_24
 drawable person
 drawable pharmacy
 drawable pharmacy_icon
-drawable pill
 drawable pill1
 drawable plus
-drawable powder
 drawable powder1
+drawable qr_img
 drawable qrcode
 drawable recycle
 drawable recycle_detail_border
@@ -2099,10 +2097,12 @@ id pathRelative
 id peekHeight
 id percent
 id pin
+id point
 id position
 id postLayout
 id progress_circular
 id progress_horizontal
+id qr
 id radio
 id ratio
 id rectangles
@@ -2346,6 +2346,7 @@ layout activity_main
 layout activity_manage
 layout activity_map1
 layout activity_map2
+layout activity_qr
 layout activity_recycle
 layout activity_recycle_detail
 layout activity_register
@@ -2457,6 +2458,10 @@ mipmap ic_launcher_ddt_foreground
 mipmap ic_launcher_ddt_round
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+raw liquid
+raw ointment
+raw pill
+raw powder
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

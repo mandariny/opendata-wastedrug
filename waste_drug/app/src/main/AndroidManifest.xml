@@ -4,9 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -17,26 +17,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Waste_drug"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".recycle.RecycleDetailActivity"/>
+        <activity android:name=".QrActivity"></activity>
+        <activity android:name=".recycle.RecycleDetailActivity" />
         <activity android:name=".slide.SlideActivity" />
-        <activity android:name=".shipping.ShippingActivity"/>
+        <activity android:name=".shipping.ShippingActivity" />
         <activity android:name=".manage.DetailActivity" />
         <activity android:name=".manage.RegisterActivity" />
         <activity android:name=".manage.ManageActivity" />
-        <activity android:name=".recycle.RecycleActivity"/>
-        <activity android:name=".Map1Activity"></activity>
-        <activity android:name=".Map2Activity"></activity>
-        <activity android:name=".search.SearchActivity"
-            android:parentActivityName=".MainActivity">
-        </activity>
-        <activity android:name=".MainActivity" android:exported="true">
-
-        </activity>
-        <activity android:name=".SplashActivity"
+        <activity android:name=".recycle.RecycleActivity" />
+        <activity android:name=".Map1Activity" />
+        <activity android:name=".Map2Activity" />
+        <activity
+            android:name=".search.SearchActivity"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

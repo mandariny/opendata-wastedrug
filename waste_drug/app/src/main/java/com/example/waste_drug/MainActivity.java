@@ -212,7 +212,8 @@ public class MainActivity extends AppCompatActivity {
         benefitLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "benefit click!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), QrActivity.class);
+                startActivity(intent);
             }
         });
     }
