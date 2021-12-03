@@ -16,9 +16,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/text_name"
-            android:textColor="@color/black"
+            android:textColor="@color/blue"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="@font/font"/>
 
         <TextView
             android:id="@+id/tv_address"
@@ -27,7 +28,8 @@
             android:layout_marginTop="10dp"
             android:text="@string/text_address"
             android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:fontFamily="@font/font"/>
 
         <TextView
             android:id="@+id/tv_phone"
@@ -36,7 +38,8 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:textColor="@color/black"
-            android:text="@string/text_phone" />
+            android:text="@string/text_phone"
+            android:fontFamily="@font/font"/>
 
         <TextView
             android:id="@+id/tv_time"
@@ -47,7 +50,8 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="12sp"
-            tools:text="@string/text_time" />
+            tools:text="@string/text_time"
+            android:fontFamily="@font/font"/>
 
     </LinearLayout>
 

@@ -1,6 +1,7 @@
 package com.example.waste_drug.search.drugbox;
 
 import android.Manifest;
+import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -26,9 +27,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.waste_drug.MainActivity;
 import com.example.waste_drug.Map1Activity;
 import com.example.waste_drug.R;
 import com.example.waste_drug.db.AppDatabase;
@@ -97,6 +100,15 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
         return v;
     }
 
+//    @Override
+//    public void onResume(){
+//        super.onResume();
+//        FragmentActivity activity = getActivity();
+//        if(activity != null){
+//            ((MainActivity)activity).setActionBarTitle(("수거함/수거약국 검색"));
+//        }
+//    }
+
     @Override
     public void onClick(View v){
         switch(v.getId())
@@ -142,7 +154,7 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
         } catch (IOException e) {
             e.printStackTrace();
         } catch(Exception e){
-            Log.v("tag",e.getMessage());
+            Log.v("tag", e.getMessage());
         }
     }
 

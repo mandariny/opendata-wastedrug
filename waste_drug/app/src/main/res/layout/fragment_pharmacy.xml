@@ -14,13 +14,15 @@
         app:layout_constraintBottom_toTopOf="@id/rv_pharmacy_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/layout_line">
 
         <SearchView
             android:id="@+id/search_pharmacy_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@drawable/layout_line">
         </SearchView>
 
         <ImageButton

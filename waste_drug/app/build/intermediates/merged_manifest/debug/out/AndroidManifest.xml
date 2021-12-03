@@ -27,7 +27,6 @@
         android:testOnly="true"
         android:theme="@style/Theme.Waste_drug"
         android:usesCleartextTraffic="true" >
-        <activity android:name="com.example.waste_drug.manage.DetailActivity" />
         <activity android:name="com.example.waste_drug.manage.RegisterActivity" />
         <activity android:name="com.example.waste_drug.manage.ManageActivity" />
         <activity android:name="com.example.waste_drug.recycle.RecycleActivity" />
@@ -40,6 +39,10 @@
         <activity
             android:name="com.example.waste_drug.MainActivity"
             android:exported="true" >
+        </activity>
+        <activity
+            android:name="com.example.waste_drug.SplashActivity"
+            android:theme="@style/SplashTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -50,9 +53,6 @@
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="f708709920ae96f8ba2a25978fda5cb7" />
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
 
         <service
             android:name="androidx.room.MultiInstanceInvalidationService"

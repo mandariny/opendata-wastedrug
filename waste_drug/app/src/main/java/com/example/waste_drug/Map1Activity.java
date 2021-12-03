@@ -77,7 +77,11 @@ public class Map1Activity extends AppCompatActivity implements MapView.POIItemEv
             markers[i].setTag(i);
             markers[i].setMapPoint(MapPoint.mapPointWithGeoCoord(lat.get(i),lon.get(i)));
             markers[i].setMarkerType(MapPOIItem.MarkerType.BluePin);
-            markers[i].setSelectedMarkerType(MapPOIItem.MarkerType.RedPin);
+            markers[i].setSelectedMarkerType(MapPOIItem.MarkerType.CustomImage);
+            markers[i].setCustomSelectedImageResourceId(R.drawable.marker);
+            markers[i].setCustomImageAutoscale(false);
+            //markers[i].setCustomImageAnchor(0.5f, 0.0f);
+            //markers[i].setCustomImageAnchorPointOffset(new MapPOIItem.ImageOffset(120,0));
         }
 
         name.setText(titles.get(pos));

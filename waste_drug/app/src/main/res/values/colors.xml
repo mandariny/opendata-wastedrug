@@ -11,4 +11,6 @@
     <color name="grid_background_color">#32AAFF</color>
     <color name="textColor">#1d3646</color>
     <color name="backgroundColor">#efece5</color>
+    <color name="sky_blue">#8EB4D3</color>
+    <color name="blue">#0065AA</color>
 </resources>
