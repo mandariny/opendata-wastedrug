@@ -1041,6 +1041,7 @@ color foreground_material_light
 color grid_background_color
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_ddt_background
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1646,6 +1647,7 @@ drawable abc_vector_test
 drawable add_image_background_border_style
 drawable add_image_plus
 drawable addimage
+drawable app_icon
 drawable avd_hide_password
 drawable avd_show_password
 drawable background_my_drug_item
@@ -2400,6 +2402,9 @@ layout text_view_with_theme_line_height
 layout text_view_without_line_height
 menu popup_menu
 mipmap ic_launcher
+mipmap ic_launcher_ddt
+mipmap ic_launcher_ddt_foreground
+mipmap ic_launcher_ddt_round
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description
