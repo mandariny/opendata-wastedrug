@@ -52,44 +52,35 @@
         tools:text="타이레놀" />
 
     <TextView
-        android:id="@+id/tv_expiry_date"
+        android:id="@+id/tv_effect_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/lgsmhasb"
+        android:text="@string/shipping_item_tv_effect_text_string"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/cv_drug_photo"
+        app:layout_constraintTop_toBottomOf="@id/tv_drug_name" />
+
+    <TextView
+        android:id="@+id/tv_effect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:ems="15"
         android:fontFamily="@font/lgsmhasb"
-        android:textColor="#c9c9c9"
+        android:maxLines="1"
+        android:textColor="@color/blue"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/cv_drug_photo"
-        app:layout_constraintTop_toBottomOf="@id/tv_drug_name"
-        tools:text="유통기한 : 2021-11-29" />
-
-    <TextView
-        android:id="@+id/tv_subscribe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:fontFamily="@font/lgsmhasb"
-        android:text="@string/drug_item_tv_subscribe_string"
-        android:textColor="@color/red"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/cv_drug_photo"
-        app:layout_constraintTop_toBottomOf="@id/tv_expiry_date" />
-
-    <ImageButton
-        android:id="@+id/btn_option"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/selectableItemBackground"
-        android:padding="16dp"
-        android:src="@drawable/ic_more_vert_black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
+        app:layout_constraintTop_toBottomOf="@id/tv_effect_text"
+        tools:text="효능 및 효과" />
 
     <View
         android:id="@+id/view"

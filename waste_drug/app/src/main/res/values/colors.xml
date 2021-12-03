@@ -8,10 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="border_line">#E3E3E3</color>
+    <color name="border_line2">#0065AA</color>
     <color name="grid_background_color">#32AAFF</color>
     <color name="textColor">#1d3646</color>
     <color name="backgroundColor">#efece5</color>
     <color name="red">#eb0000</color>
     <color name="buttonEnableTrueBackgroundColor">#e7d6af</color>
     <color name="buttonEnableFalseBackgroundColor">#dcdcdc</color>
+    <color name="blue">#0065AA</color>
 </resources>
