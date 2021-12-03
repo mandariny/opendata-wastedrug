@@ -50,6 +50,10 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array com_google_android_gms_fonts_certs
+array com_google_android_gms_fonts_certs_dev
+array com_google_android_gms_fonts_certs_prod
+array preloaded_fonts
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -971,6 +975,7 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color black
+color blue
 color border_line
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
@@ -978,6 +983,8 @@ color bright_foreground_inverse_material_dark
 color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
+color buttonEnableFalseBackgroundColor
+color buttonEnableTrueBackgroundColor
 color button_material_dark
 color button_material_light
 color cardview_dark_background
@@ -1034,6 +1041,7 @@ color foreground_material_light
 color grid_background_color
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color ic_launcher_ddt_background
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1134,12 +1142,14 @@ color purple_200
 color purple_500
 color purple_700
 color radiobutton_themeable_attribute_color
+color red
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color sky_blue
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -1637,10 +1647,14 @@ drawable abc_vector_test
 drawable add_image_background_border_style
 drawable add_image_plus
 drawable addimage
+drawable app_icon
 drawable avd_hide_password
 drawable avd_show_password
+drawable background_my_drug_item
 drawable benefit
 drawable box
+drawable box_icon
+drawable box_icon_resize
 drawable btn_border_style
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -1661,11 +1675,14 @@ drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_more_vert_black
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable layout_line
 drawable liquid
+drawable marker
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1702,14 +1719,22 @@ drawable notify_panel_notification_icon_bg
 drawable ointment
 drawable outline_gps_fixed_24
 drawable pharmacy
+drawable pharmacy_icon
 drawable pill
 drawable plus
 drawable powder
 drawable recycle
+drawable selected_icon
 drawable shipping
+drawable splash
+drawable splash_img
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable unselected_icon
+font amaranth
+font font
+font lgsm
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -1775,6 +1800,8 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_popup_delete
+id action_popup_star
 id action_text
 id actions
 id activity_chooser_view_content
@@ -1791,6 +1818,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id background
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -1798,6 +1826,8 @@ id beginning
 id blocking
 id bottom
 id bounce
+id btn_date
+id btn_option
 id btn_register
 id button3
 id button4
@@ -1836,6 +1866,7 @@ id counterclockwise
 id custom
 id customPanel
 id cut
+id cv_drug_photo
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -1872,7 +1903,6 @@ id endToStart
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
-id et_date
 id et_effect
 id et_name
 id et_option
@@ -2169,23 +2199,29 @@ id triangle
 id tv_address
 id tv_benefit
 id tv_date
+id tv_date_text
 id tv_drug_name
 id tv_drug_note
 id tv_drug_recycle
 id tv_effect
+id tv_effect_text
 id tv_expiry_date
 id tv_image
 id tv_liquid
+id tv_main_effect
 id tv_manage
 id tv_name
+id tv_name_text
 id tv_ointment
 id tv_option
+id tv_option_text
 id tv_phone
 id tv_photo
 id tv_powder
 id tv_search_collection_box
 id tv_search_pharmacy
 id tv_shipping_service
+id tv_subscribe
 id tv_time
 id tv_title
 id unchecked
@@ -2193,6 +2229,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id view
 id view_offset_helper
 id visible
 id vp_view
@@ -2261,6 +2298,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_detail
 layout activity_main
 layout activity_manage
 layout activity_map1
@@ -2364,7 +2402,11 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+menu popup_menu
 mipmap ic_launcher
+mipmap ic_launcher_ddt
+mipmap ic_launcher_ddt_foreground
+mipmap ic_launcher_ddt_round
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description
@@ -2767,6 +2809,7 @@ style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year
 style ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox
 style ShapeAppearanceOverlay_TopLeftCut
 style ShapeAppearanceOverlay_TopRightDifferentCornerSize
+style SplashTheme
 style Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day
 style Test_Theme_MaterialComponents_MaterialCalendar
 style Test_Widget_MaterialComponents_MaterialCalendar
@@ -3196,6 +3239,7 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style tab_text
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

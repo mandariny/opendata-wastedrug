@@ -1,9 +1,8 @@
 package com.example.waste_drug;
 
 import android.content.Intent;
-import android.location.Address;
-import android.location.Geocoder;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -83,16 +82,10 @@ public class Map2Activity extends AppCompatActivity implements MapView.POIItemEv
         ArrayList<Double> lat = new ArrayList<>();
         ArrayList<Double> lon = new ArrayList<>();
 
-        Geocoder geocoder = new Geocoder(getApplicationContext());
-        try{
-            for(int i=0; i<pharmacyArrayList.size();i++){
-                List<Address> resultLocation = geocoder.getFromLocationName(arrs.get(i),1);
-                lat.add(resultLocation.get(0).getLatitude());
-                lon.add(resultLocation.get(0).getLongitude());
-            }
 
-        } catch (IOException e) {
-            e.printStackTrace();
+        for(int i=0; i<pharmacyArrayList.size();i++){
+            lat.add(Double.parseDouble(pharmacyArrayList.get(i).getWgs84Lat()));
+            lon.add(Double.parseDouble(pharmacyArrayList.get(i).getWgs84Lon()));
         }
 
         MapView mapView = new MapView(this);
@@ -104,8 +97,12 @@ public class Map2Activity extends AppCompatActivity implements MapView.POIItemEv
             markers[i].setItemName(titles.get(i));
             markers[i].setTag(i);
             markers[i].setMapPoint(MapPoint.mapPointWithGeoCoord(lat.get(i),lon.get(i)));
-            markers[i].setMarkerType(MapPOIItem.MarkerType.BluePin);
-            markers[i].setSelectedMarkerType(MapPOIItem.MarkerType.RedPin);
+            markers[i].setMarkerType(MapPOIItem.MarkerType.CustomImage);
+            markers[i].setCustomImageResourceId(R.drawable.unselected_icon);
+            markers[i].setSelectedMarkerType(MapPOIItem.MarkerType.CustomImage);
+            markers[i].setCustomSelectedImageResourceId(R.drawable.selected_icon);
+            markers[i].setCustomImageAutoscale(false);
+            markers[i].setCustomImageAnchor(0.5f, 0.0f);
         }
 
         name.setText(titles.get(pos));

@@ -91,11 +91,12 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
         int hasFineLocationPermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION);
         int hasCoarseLocationPermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION);
 
-
         if (hasFineLocationPermission == PackageManager.PERMISSION_GRANTED && hasCoarseLocationPermission == PackageManager.PERMISSION_GRANTED) {
-            show_loc.setOnClickListener(this);
+
         } else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
             requestPermissions(new String[] {Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 1000);
+
+        show_loc.setOnClickListener(this);
 
         return v;
     }
@@ -246,6 +247,8 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
                 boolean isDutyTimeSaturday = false;
                 boolean isDutyTimeSunday = false;
                 boolean isDutyTimeHoliday = false;
+                boolean isLon = false;
+                boolean isLat = false;
 
                 Pharmacy pharmacy = null;
                 int eventType = parser.getEventType();
@@ -320,6 +323,10 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
                                 case "dutyTime8c":
                                     isDutyTimeHoliday = true;
                                     break;
+                                case "wgs84Lon":
+                                    isLon = true;
+                                case "wgs84Lat":
+                                    isLat = true;
                             }
                             break;
                         case XmlPullParser.TEXT:
@@ -357,6 +364,12 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
                                 } else if (isDutyTimeHoliday) {
                                     pharmacy.setDutyTime8c(parser.getText());
                                     isDutyTimeHoliday = false;
+                                } else if(isLon){
+                                    pharmacy.setWgs84Lon(parser.getText());
+                                    isLon = false;
+                                } else if(isLat){
+                                    pharmacy.setWgs84Lat(parser.getText());
+                                    isLat = false;
                                 }
                             }
                             break;
@@ -372,9 +385,6 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-
-            //Log.v("tag", "PharmacyClickLiestener"+pharmacyArrayList.size()); //보여지는 애들
-
 
             PharmacyAdapter pharmacyAdapter = new PharmacyAdapter(getContext(), pharmacyArrayList);
             recyclerView.setAdapter(pharmacyAdapter);

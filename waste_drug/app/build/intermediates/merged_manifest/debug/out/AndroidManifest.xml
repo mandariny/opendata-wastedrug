@@ -19,10 +19,10 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:extractNativeLibs="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_ddt"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_ddt_round"
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Waste_drug"
@@ -39,6 +39,10 @@
         <activity
             android:name="com.example.waste_drug.MainActivity"
             android:exported="true" >
+        </activity>
+        <activity
+            android:name="com.example.waste_drug.SplashActivity"
+            android:theme="@style/SplashTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

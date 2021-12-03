@@ -36,5 +36,7 @@ public class SearchActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int index = intent.getIntExtra("index", -1);
         tabs.selectTab(tabs.getTabAt(index));
+        tabs.getTabAt(0).setIcon(R.drawable.box_icon);
+        tabs.getTabAt(1).setIcon(R.drawable.pharmacy_icon);
     }
 }

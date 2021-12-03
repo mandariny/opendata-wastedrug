@@ -7,9 +7,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.LocationManager;
-import android.net.ConnectivityManager;
-import android.net.Network;
-import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -23,6 +20,7 @@ import android.widget.SearchView;
 import android.location.Geocoder;
 import android.content.Context;
 import android.location.LocationManager;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -73,17 +71,11 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
 
         mContext = container.getContext();
 
-        boolean isConnected = isNetworkConnected();
-
-        if(!isConnected){
-            showDialogForNetwork();
-        }
-
         getInitDB();
         makeDB();
         saveDB();
 
-        firstDrugBoxList = drugBox.subList(0,20);
+        firstDrugBoxList = drugBox.subList(0,10);
         firstDrugBox.addAll(firstDrugBoxList);
 
         getDB(firstDrugBox);
@@ -96,10 +88,12 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
         int hasCoarseLocationPermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION);
 
         if (hasFineLocationPermission == PackageManager.PERMISSION_GRANTED && hasCoarseLocationPermission == PackageManager.PERMISSION_GRANTED) {
-            show_loc.setOnClickListener(this);
-        } else {
-            requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 1000);
-        }
+          
+        }  else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+            requestPermissions(new String[] {Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 1000);
+
+        show_loc.setOnClickListener(this);
+
         return v;
     }
 
@@ -143,9 +137,14 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
                 }
             }
 
+            if(searchDrugBox.size() ==0)
+                Toast.makeText(mContext, "검색 결과 없음", Toast.LENGTH_LONG).show();
+
             getDB(searchDrugBox);
         } catch (IOException e) {
             e.printStackTrace();
+        } catch(Exception e){
+            Log.v("tag",e.getMessage());
         }
     }
 
@@ -943,6 +942,7 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
         drugBox.add(new DrugBox(680, "서울특별시 송파구 백제고분로 381, 우성빌딩 (송파동)", "황제약국", "확인불가"));
         drugBox.add(new DrugBox(681, "서울특별시 송파구 마천로45길 15 (마천동)", "후생약국", "확인불가"));
         drugBox.add(new DrugBox(682, "서울특별시 송파구 중대로 68 (문정동, 훼미리샤르망 106호)", "훼미리약국", "확인불가"));
+        //drugBox.add(new DrugBox(682, "서울특별시 중랑구 겸재로 68 (면목동, 훼미리샤르망 106호)", "신성모약국", "확인불가"));
 
     }
 
@@ -964,41 +964,5 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
                 getActivity().finish();
             }
         }
-    }
-
-    public boolean isNetworkConnected(){
-        ConnectivityManager connectivityManager = (ConnectivityManager)mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
-//        NetworkInfo mobile = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-//        NetworkInfo wifi = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-//        NetworkInfo lte = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIMAX);
-//
-//        if(mobile != null || lte != null){
-//            if(mobile.isConnected() || wifi.isConnected() || lte.isConnected())
-//                return true;
-//        }else{
-//            if(wifi.isConnected())
-//        }
-
-        Network currentNetwork = connectivityManager.getActiveNetwork();
-
-        if(currentNetwork != null)
-            return true;
-        else
-            return false;
-    }
-
-    public void showDialogForNetwork(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-        builder.setTitle("네트워크 필요");
-        builder.setMessage("수거함 정보를 불러오기 위해서는 네트워크가 필요합니다 필요합니다.\n네트워크에 연결해주세요");
-        builder.setCancelable(true);
-        builder.setNegativeButton("메인으로 돌아가기", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-                getActivity().finish();
-            }
-        });
-        builder.create().show();
     }
 }
