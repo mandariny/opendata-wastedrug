@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.bumptech.glide.Glide;
 import com.example.waste_drug.R;
 
 public class RecycleDetailActivity extends AppCompatActivity {
@@ -53,16 +54,24 @@ public class RecycleDetailActivity extends AppCompatActivity {
         int index = intent.getIntExtra("index", -1);
 
         if (index == 0) {
-            poster.setImageResource(R.drawable.pill);
+            Glide.with(getApplicationContext())
+                    .load(R.raw.pill)
+                    .into(poster);
             content.setText(message[0]);
         } else if (index == 1) {
-            poster.setImageResource(R.drawable.powder);
+            Glide.with(getApplicationContext())
+                    .load(R.raw.powder)
+                    .into(poster);
             content.setText(message[1]);
         } else if (index == 2) {
-            poster.setImageResource(R.drawable.liquid);
+            Glide.with(getApplicationContext())
+                    .load(R.raw.liquid)
+                    .into(poster);
             content.setText(message[2]);
         } else if (index == 3) {
-            poster.setImageResource(R.drawable.ointment);
+            Glide.with(getApplicationContext())
+                    .load(R.raw.ointment)
+                    .into(poster);
             content.setText(message[3]);
         }
     }
