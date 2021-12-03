@@ -14,4 +14,8 @@
     <color name="red">#eb0000</color>
     <color name="buttonEnableTrueBackgroundColor">#e7d6af</color>
     <color name="buttonEnableFalseBackgroundColor">#dcdcdc</color>
+    <color name="sky_blue">#8EB4D3</color>
+    <color name="blue">#0065AA</color>
 </resources>
+
+

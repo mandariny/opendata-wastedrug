@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,18 +9,22 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:tabTextAppearance="@style/tab_text">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab_drug_box"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/font"
+            android:icon="@drawable/box_icon_resize"
             android:text="@string/text_drugBox" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab_pharmacy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:icon="@drawable/pharmacy_icon"
             android:text="@string/text_info_pharmacy" />
 
     </com.google.android.material.tabs.TabLayout>

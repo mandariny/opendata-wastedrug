@@ -975,6 +975,7 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color black
+color blue
 color border_line
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
@@ -1147,6 +1148,7 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color sky_blue
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -1649,6 +1651,8 @@ drawable avd_show_password
 drawable background_my_drug_item
 drawable benefit
 drawable box
+drawable box_icon
+drawable box_icon_resize
 drawable btn_border_style
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -1674,7 +1678,9 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable layout_line
 drawable liquid
+drawable marker
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1711,15 +1717,20 @@ drawable notify_panel_notification_icon_bg
 drawable ointment
 drawable outline_gps_fixed_24
 drawable pharmacy
+drawable pharmacy_icon
 drawable pill
 drawable plus
 drawable powder
 drawable recycle
 drawable shipping
+drawable splash
+drawable splash_img
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 font amaranth
+font font
+font lgsm
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -2791,6 +2802,7 @@ style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year
 style ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox
 style ShapeAppearanceOverlay_TopLeftCut
 style ShapeAppearanceOverlay_TopRightDifferentCornerSize
+style SplashTheme
 style Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day
 style Test_Theme_MaterialComponents_MaterialCalendar
 style Test_Widget_MaterialComponents_MaterialCalendar
@@ -3220,6 +3232,7 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style tab_text
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth
