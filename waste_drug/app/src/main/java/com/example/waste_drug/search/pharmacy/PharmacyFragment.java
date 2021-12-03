@@ -247,6 +247,8 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
                 boolean isDutyTimeSaturday = false;
                 boolean isDutyTimeSunday = false;
                 boolean isDutyTimeHoliday = false;
+                boolean isLon = false;
+                boolean isLat = false;
 
                 Pharmacy pharmacy = null;
                 int eventType = parser.getEventType();
@@ -321,6 +323,10 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
                                 case "dutyTime8c":
                                     isDutyTimeHoliday = true;
                                     break;
+                                case "wgs84Lon":
+                                    isLon = true;
+                                case "wgs84Lat":
+                                    isLat = true;
                             }
                             break;
                         case XmlPullParser.TEXT:
@@ -358,6 +364,12 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
                                 } else if (isDutyTimeHoliday) {
                                     pharmacy.setDutyTime8c(parser.getText());
                                     isDutyTimeHoliday = false;
+                                } else if(isLon){
+                                    pharmacy.setWgs84Lon(parser.getText());
+                                    isLon = false;
+                                } else if(isLat){
+                                    pharmacy.setWgs84Lat(parser.getText());
+                                    isLat = false;
                                 }
                             }
                             break;

@@ -6,7 +6,6 @@ com/example/waste_drug/search/drugbox/DrugBoxFragment.java
  com.example.waste_drug.search.drugbox.DrugBoxFragment$3
  com.example.waste_drug.search.drugbox.DrugBoxFragment$4
  com.example.waste_drug.search.drugbox.DrugBoxFragment$5
- com.example.waste_drug.search.drugbox.DrugBoxFragment$6
 com/example/waste_drug/db/MyDrugDatabase.java
  com.example.waste_drug.db.MyDrugDatabase
 com/example/waste_drug/db/MyDrugInfo.java
