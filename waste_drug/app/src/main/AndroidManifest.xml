@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Waste_drug"
         android:usesCleartextTraffic="true">
-        <activity android:name=".QrActivity"></activity>
+        <activity android:name=".QrActivity"
+            android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".recycle.RecycleDetailActivity" />
         <activity android:name=".slide.SlideActivity" />
         <activity android:name=".shipping.ShippingActivity" />

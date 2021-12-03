@@ -15,7 +15,7 @@
     <string name="detail_tv_effect_text_string">효능 및 효과</string>
     <string name="detail_tv_photo_string">사진 첨부</string>
     <string name="detail_tv_option_text_string">추가 정보</string>
-    <string name="main_tv_search_collection_box_string">수거함/수거약국 검색</string>
+    <string name="main_tv_search_collection_box_string">수거함 검색</string>
     <string name="main_tv_search_pharmacy_string">심야/휴일 약국 검색</string>
     <string name="main_tv_drug_recycle_string">폐의약품\n분리배출 방법\n</string>
     <string name="main_tv_drug_note_string">개인 의약품 관리</string>

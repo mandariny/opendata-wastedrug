@@ -27,7 +27,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.Waste_drug"
         android:usesCleartextTraffic="true" >
-        <activity android:name="com.example.waste_drug.QrActivity" />
+        <activity
+            android:name="com.example.waste_drug.QrActivity"
+            android:parentActivityName="com.example.waste_drug.MainActivity" />
         <activity android:name="com.example.waste_drug.recycle.RecycleDetailActivity" />
         <activity android:name="com.example.waste_drug.slide.SlideActivity" />
         <activity android:name="com.example.waste_drug.shipping.ShippingActivity" />

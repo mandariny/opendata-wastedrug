@@ -1745,6 +1745,7 @@ drawable pill1
 drawable plus
 drawable powder1
 drawable qr_img
+drawable qr_page
 drawable qrcode
 drawable recycle
 drawable recycle_detail_border
@@ -2097,7 +2098,6 @@ id pathRelative
 id peekHeight
 id percent
 id pin
-id point
 id position
 id postLayout
 id progress_circular

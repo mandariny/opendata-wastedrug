@@ -18,7 +18,7 @@ public class QrActivity extends AppCompatActivity {
 
     private void setToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("약 구독 서비스");
+        toolbar.setTitle("폐의약품 배출 QR 인증");
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

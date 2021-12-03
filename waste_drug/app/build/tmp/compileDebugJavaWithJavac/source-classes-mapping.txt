@@ -29,9 +29,18 @@ com/example/waste_drug/db/MyDrugInfoDao.java
 com/example/waste_drug/shipping/ShippingAdapter.java
  com.example.waste_drug.shipping.ShippingAdapter
  com.example.waste_drug.shipping.ShippingAdapter$ShippingViewHolder
-com/example/waste_drug/shipping/ShippingActivity.java
- com.example.waste_drug.shipping.ShippingActivity
- com.example.waste_drug.shipping.ShippingActivity$1GetRunnable
+com/example/waste_drug/MainActivity.java
+ com.example.waste_drug.MainActivity
+ com.example.waste_drug.MainActivity$1
+ com.example.waste_drug.MainActivity$10
+ com.example.waste_drug.MainActivity$2
+ com.example.waste_drug.MainActivity$3
+ com.example.waste_drug.MainActivity$4
+ com.example.waste_drug.MainActivity$5
+ com.example.waste_drug.MainActivity$6
+ com.example.waste_drug.MainActivity$7
+ com.example.waste_drug.MainActivity$8
+ com.example.waste_drug.MainActivity$9
 com/example/waste_drug/data/SlideItem.java
  com.example.waste_drug.data.SlideItem
 com/example/waste_drug/recycle/RecycleDetailActivity.java
@@ -58,8 +67,8 @@ com/example/waste_drug/search/SearchActivity.java
  com.example.waste_drug.search.SearchActivity
 com/example/waste_drug/BuildConfig.java
  com.example.waste_drug.BuildConfig
-com/example/waste_drug/slide/SlideActivity.java
- com.example.waste_drug.slide.SlideActivity
+com/example/waste_drug/SplashActivity.java
+ com.example.waste_drug.SplashActivity
 com/example/waste_drug/recycle/RecycleActivity.java
  com.example.waste_drug.recycle.RecycleActivity
  com.example.waste_drug.recycle.RecycleActivity$1
@@ -106,17 +115,8 @@ com/example/waste_drug/search/adapter/PharmacyAdapter.java
  com.example.waste_drug.search.adapter.PharmacyAdapter$OnPharmacyItemClickListener
  com.example.waste_drug.search.adapter.PharmacyAdapter$PharmacyViewHolder
  com.example.waste_drug.search.adapter.PharmacyAdapter$PharmacyViewHolder$1
-com/example/waste_drug/MainActivity.java
- com.example.waste_drug.MainActivity
- com.example.waste_drug.MainActivity$1
- com.example.waste_drug.MainActivity$10
- com.example.waste_drug.MainActivity$2
- com.example.waste_drug.MainActivity$3
- com.example.waste_drug.MainActivity$4
- com.example.waste_drug.MainActivity$5
- com.example.waste_drug.MainActivity$6
- com.example.waste_drug.MainActivity$7
- com.example.waste_drug.MainActivity$8
- com.example.waste_drug.MainActivity$9
-com/example/waste_drug/SplashActivity.java
- com.example.waste_drug.SplashActivity
+com/example/waste_drug/slide/SlideActivity.java
+ com.example.waste_drug.slide.SlideActivity
+com/example/waste_drug/shipping/ShippingActivity.java
+ com.example.waste_drug.shipping.ShippingActivity
+ com.example.waste_drug.shipping.ShippingActivity$1GetRunnable
