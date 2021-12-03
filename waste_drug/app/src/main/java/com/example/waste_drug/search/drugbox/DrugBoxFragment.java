@@ -73,17 +73,9 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
 
         mContext = container.getContext();
 
-        boolean isConnected = isNetworkConnected();
-
-        if(!isConnected){
-            showDialogForNetwork();
-        }
-
         getInitDB();
         makeDB();
         saveDB();
-
-
 
         firstDrugBoxList = drugBox.subList(0,20);
         firstDrugBox.addAll(firstDrugBoxList);
@@ -98,9 +90,11 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
         int hasCoarseLocationPermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION);
 
         if (hasFineLocationPermission == PackageManager.PERMISSION_GRANTED && hasCoarseLocationPermission == PackageManager.PERMISSION_GRANTED) {
-            show_loc.setOnClickListener(this);
+
         } else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
             requestPermissions(new String[] {Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 1000);
+
+        show_loc.setOnClickListener(this);
 
         return v;
     }
@@ -964,41 +958,5 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
                 getActivity().finish();
             }
         }
-    }
-
-    public boolean isNetworkConnected(){
-        ConnectivityManager connectivityManager = (ConnectivityManager)mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
-//        NetworkInfo mobile = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-//        NetworkInfo wifi = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-//        NetworkInfo lte = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIMAX);
-//
-//        if(mobile != null || lte != null){
-//            if(mobile.isConnected() || wifi.isConnected() || lte.isConnected())
-//                return true;
-//        }else{
-//            if(wifi.isConnected())
-//        }
-
-        Network currentNetwork = connectivityManager.getActiveNetwork();
-
-        if(currentNetwork != null)
-            return true;
-        else
-            return false;
-    }
-
-    public void showDialogForNetwork(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-        builder.setTitle("네트워크 필요");
-        builder.setMessage("수거함 정보를 불러오기 위해서는 네트워크가 필요합니다 필요합니다.\n네트워크에 연결해주세요");
-        builder.setCancelable(true);
-        builder.setNegativeButton("메인으로 돌아가기", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-                getActivity().finish();
-            }
-        });
-        builder.create().show();
     }
 }
