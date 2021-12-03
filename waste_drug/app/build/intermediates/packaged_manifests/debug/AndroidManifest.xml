@@ -27,6 +27,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.Waste_drug"
         android:usesCleartextTraffic="true" >
+        <activity android:name="com.example.waste_drug.manage.DetailActivity" />
         <activity android:name="com.example.waste_drug.manage.RegisterActivity" />
         <activity android:name="com.example.waste_drug.manage.ManageActivity" />
         <activity android:name="com.example.waste_drug.recycle.RecycleActivity" />
@@ -49,6 +50,9 @@
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="f708709920ae96f8ba2a25978fda5cb7" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
         <service
             android:name="androidx.room.MultiInstanceInvalidationService"
