@@ -6,15 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#8EB4D3"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
     <TextView
+        android:id="@+id/tv_recycle_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:fontFamily="@font/lgsmhasb"
         android:gravity="center_horizontal"
         android:padding="10dp"
-        android:text="아이콘을 클릭해 올바른 분리배출 방법을 확인해보세요!"
+        android:text="@string/recycle_tv_recycle_text_string"
         android:textColor="@color/textColor"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -36,14 +50,14 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
+            app:cardCornerRadius="10dp"
             app:cardElevation="10dp"
             app:cardMaxElevation="10dp">
 
             <RelativeLayout
                 android:id="@+id/rl_pill"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#efece5">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/tv_search_collection_box"
@@ -52,7 +66,8 @@
                     android:layout_below="@id/iv_pill"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
-                    android:text="알약"
+                    android:fontFamily="@font/lgsmhasb"
+                    android:text="@string/recycle_tv_search_collection_box_string"
                     android:textColor="@color/textColor"
                     android:textSize="16sp" />
 
@@ -63,7 +78,8 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="false"
                     android:layout_marginTop="15dp"
-                    app:srcCompat="@drawable/pill" />
+                    app:srcCompat="@drawable/pill1"
+                    tools:ignore="ContentDescription" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
@@ -72,14 +88,14 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
+            app:cardCornerRadius="10dp"
             app:cardElevation="10dp"
             app:cardMaxElevation="10dp">
 
             <RelativeLayout
                 android:id="@+id/rl_powder"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#efece5">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/tv_powder"
@@ -88,7 +104,8 @@
                     android:layout_below="@id/iv_powder"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
-                    android:text="가루약"
+                    android:fontFamily="@font/lgsmhasb"
+                    android:text="@string/recycle_tv_powder_string"
                     android:textColor="@color/textColor"
                     android:textSize="16sp" />
 
@@ -98,7 +115,8 @@
                     android:layout_height="75dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="15dp"
-                    app:srcCompat="@drawable/powder" />
+                    app:srcCompat="@drawable/powder1"
+                    tools:ignore="ContentDescription" />
 
             </RelativeLayout>
 
@@ -121,14 +139,14 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
+            app:cardCornerRadius="10dp"
             app:cardElevation="10dp"
             app:cardMaxElevation="10dp">
 
             <RelativeLayout
                 android:id="@+id/rl_liquid"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#efece5">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/tv_liquid"
@@ -137,7 +155,8 @@
                     android:layout_below="@id/iv_liquid"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
-                    android:text="물약"
+                    android:fontFamily="@font/lgsmhasb"
+                    android:text="@string/recycle_tv_liquid_string"
                     android:textColor="@color/textColor"
                     android:textSize="16sp" />
 
@@ -148,7 +167,9 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="false"
                     android:layout_marginTop="15dp"
-                    app:srcCompat="@drawable/liquid" />
+                    app:srcCompat="@drawable/liquid1"
+                    tools:ignore="ContentDescription" />
+
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
@@ -157,14 +178,14 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
+            app:cardCornerRadius="10dp"
             app:cardElevation="10dp"
             app:cardMaxElevation="10dp">
 
             <RelativeLayout
                 android:id="@+id/rl_ointment"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#efece5">
+                android:layout_height="match_parent">
 
                 <ImageView
                     android:id="@+id/iv_ointment"
@@ -172,7 +193,8 @@
                     android:layout_height="75dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="15dp"
-                    app:srcCompat="@drawable/ointment" />
+                    app:srcCompat="@drawable/ointment1"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:id="@+id/tv_ointment"
@@ -181,12 +203,11 @@
                     android:layout_below="@id/iv_ointment"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
-                    android:text="연고 / 안약"
+                    android:fontFamily="@font/lgsmhasb"
+                    android:text="@string/recycle_tv_ointment_string"
                     android:textColor="@color/textColor"
                     android:textSize="16sp" />
             </RelativeLayout>
-
         </androidx.cardview.widget.CardView>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

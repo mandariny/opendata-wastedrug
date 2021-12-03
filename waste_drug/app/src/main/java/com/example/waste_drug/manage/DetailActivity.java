@@ -1,12 +1,16 @@
 package com.example.waste_drug.manage;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
 import com.example.waste_drug.R;
@@ -23,6 +27,25 @@ public class DetailActivity extends AppCompatActivity {
 
         initViews();
         setViews();
+        setToolbar();
+    }
+
+    private void setToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("개인 의약품 관리");
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: {
+                finish();
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void initViews() {

@@ -1,47 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    >
+    android:background="@color/white">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp">
+        android:fillViewport="true">
 
-        <TextView
-            android:id="@+id/tv_manage"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="현재 가지고 있는 약을 입력하고 관리해보세요!"
-            android:textColor="@color/textColor"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/rv_manage"/>
+            android:layout_height="wrap_content">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_manage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_manage"
-            />
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#8EB4D3"
+                android:elevation="4dp"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <ImageView
-            android:id="@+id/iv_plus"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rv_manage"
-            app:srcCompat="@drawable/plus" />
+            <ImageView
+                android:id="@+id/iv_person"
+                android:layout_width="100dp"
+                android:layout_height="200dp"
+                android:background="@color/white"
+                android:src="@drawable/person"
+                app:layout_constraintBottom_toTopOf="@id/borderline"
+                app:layout_constraintEnd_toStartOf="@id/tv_manage"
+                app:layout_constraintTop_toBottomOf="@id/toolbar"
+                tools:ignore="ContentDescription" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            <TextView
+                android:id="@+id/tv_manage"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:background="@drawable/speech"
+                android:fontFamily="@font/lgsmhasb"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingEnd="60dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/borderline"
+                app:layout_constraintStart_toEndOf="@id/iv_person"
+                app:layout_constraintTop_toBottomOf="@id/toolbar"
+                tools:ignore="RtlSymmetry"
+                tools:text="복용 중인 의약품 : " />
+
+            <View
+                android:id="@+id/borderline"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/border_line"
+                app:layout_constraintBottom_toTopOf="@id/rv_manage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_manage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/borderline" />
+
+            <ImageView
+                android:id="@+id/iv_plus"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_manage"
+                app:srcCompat="@drawable/plus"
+                tools:ignore="ContentDescription" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

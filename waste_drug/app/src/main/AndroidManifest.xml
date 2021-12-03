@@ -18,6 +18,10 @@
         android:theme="@style/Theme.Waste_drug"
         android:usesCleartextTraffic="true">
 
+        <activity android:name=".recycle.RecycleDetailActivity"/>
+        <activity android:name=".slide.SlideActivity" />
+        <activity android:name=".shipping.ShippingActivity"/>
+        <activity android:name=".manage.DetailActivity" />
         <activity android:name=".manage.RegisterActivity" />
         <activity android:name=".manage.ManageActivity" />
         <activity android:name=".recycle.RecycleActivity"/>

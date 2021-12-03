@@ -1,122 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tv_title"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#8EB4D3"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:gravity="center"
-            android:text="입력하신 약의 정보입니다!"
-            android:textColor="@color/textColor"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tv_name_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="약 이름"
-            android:textColor="@color/textColor" />
-
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/et_background_style"
-            android:maxLength="30"
-            android:minHeight="48dp"
+            android:background="@color/white"
+            android:orientation="vertical"
             android:padding="10dp"
-            android:textSize="16sp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
 
-        <TextView
-            android:id="@+id/tv_date_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:text="유통기한"
-            android:textColor="@color/textColor" />
-
-        <TextView
-            android:id="@+id/tv_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/et_background_style"
-            android:gravity="start|center"
-            android:minHeight="48dp"
-            android:padding="10dp"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tv_effect_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:text="효능 및 효과"
-            android:textColor="@color/textColor" />
-
-        <TextView
-            android:id="@+id/tv_effect"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/et_background_style"
-            android:maxLength="100"
-            android:minHeight="48dp"
-            android:padding="10dp"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tv_photo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:text="사진 첨부"
-            android:textColor="@color/textColor" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/add_image_background_border_style"
-            android:gravity="center">
-
-            <ImageView
-                android:id="@+id/iv_drug_photo"
+            <TextView
+                android:id="@+id/tv_title"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="center" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/lgsmhasb"
+                android:gravity="center"
+                android:text="@string/detail_tv_title_string"
+                android:textColor="@color/textColor"
+                android:textSize="16sp" />
 
-        </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_name_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/lgsmhasb"
+                android:text="@string/detail_tv_name_text_string"
+                android:textColor="@color/textColor" />
 
-        <TextView
-            android:id="@+id/tv_option_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:text="추가 정보"
-            android:textColor="@color/textColor" />
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_background_style"
+                android:fontFamily="@font/lgsmhasb"
+                android:maxLength="30"
+                android:minHeight="48dp"
+                android:padding="10dp"
+                android:textColor="@color/textColor"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/tv_option"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/et_background_style"
-            android:maxLength="150"
-            android:minHeight="48dp"
-            android:padding="10dp"
-            android:textSize="16sp" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tv_date_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/lgsmhasb"
+                android:text="@string/detail_tv_date_text_string"
+                android:textColor="@color/textColor" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/et_background_style"
+                android:fontFamily="@font/lgsmhasb"
+                android:gravity="start|center"
+                android:minHeight="48dp"
+                android:padding="10dp"
+                android:textColor="@color/textColor"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_effect_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/detail_tv_effect_text_string"
+                android:textColor="@color/textColor" />
+
+            <TextView
+                android:id="@+id/tv_effect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_background_style"
+                android:fontFamily="@font/lgsmhasb"
+                android:maxLength="100"
+                android:minHeight="48dp"
+                android:padding="10dp"
+                android:textColor="@color/textColor"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/detail_tv_photo_string"
+                android:textColor="@color/textColor" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/add_image_background_border_style"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_drug_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="center"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_option_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/lgsmhasb"
+                android:text="@string/detail_tv_option_text_string"
+                android:textColor="@color/textColor" />
+
+            <TextView
+                android:id="@+id/tv_option"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_background_style"
+                android:fontFamily="@font/lgsmhasb"
+                android:maxLength="150"
+                android:minHeight="48dp"
+                android:padding="10dp"
+                android:textColor="@color/textColor"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </ScrollView>

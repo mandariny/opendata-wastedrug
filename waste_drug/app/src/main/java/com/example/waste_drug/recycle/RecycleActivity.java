@@ -1,26 +1,46 @@
 package com.example.waste_drug.recycle;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.waste_drug.R;
 
 public class RecycleActivity extends AppCompatActivity {
-    String[] title = {"알약 분리배출 방법", "가루약 분리배출 방법", "물약 분리배출 방법", "연고,안약 분리배출 방법"};
-    String[] message = {"포장된 비닐, 종이 등을 제거한 뒤 내용물만 모아 배출", "포장지를 뜯지 않고 그대로 배출", "한 병에 모을 수 있는 만큼 모아, 새지 않도록 밀봉하여 배출", "겉의 종이박스만 제거하고 용기째 배출"};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycle);
 
+        setToolbar();
         clickEvent();
+    }
+
+    private void setToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("폐의약품 분리배출 방법");
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: {
+                finish();
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void clickEvent() {
@@ -35,7 +55,7 @@ public class RecycleActivity extends AppCompatActivity {
         pillLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showAlertDialog(0);
+                showActivity(0);
             }
         });
     }
@@ -45,7 +65,7 @@ public class RecycleActivity extends AppCompatActivity {
         powderLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showAlertDialog(1);
+                showActivity(1);
             }
         });
     }
@@ -55,7 +75,7 @@ public class RecycleActivity extends AppCompatActivity {
         liquidLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showAlertDialog(2);
+                showActivity(2);
             }
         });
     }
@@ -65,23 +85,15 @@ public class RecycleActivity extends AppCompatActivity {
         ointmentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showAlertDialog(3);
+                showActivity(3);
             }
         });
     }
 
-    private void showAlertDialog(int index) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(RecycleActivity.this);
-        builder.setTitle(title[index]).setMessage(message[index])
-                .setPositiveButton("확인", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                    }
-                });
-
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
+    private void showActivity(int index) {
+        Intent intent = new Intent(getApplicationContext(), RecycleDetailActivity.class);
+        intent.putExtra("index", index);
+        startActivity(intent);
     }
 
 }

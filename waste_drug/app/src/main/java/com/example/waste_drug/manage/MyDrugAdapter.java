@@ -17,7 +17,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -27,7 +26,6 @@ import com.example.waste_drug.db.MyDrugInfo;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -48,7 +46,6 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
         Context context = parent.getContext();
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.my_drug_item, parent, false);
-
         return new MyDrugViewHolder(view);
     }
 
@@ -64,12 +61,10 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
             e.printStackTrace();
         }
 
-
         if (diffDays < 7) {
-            Log.d("MAIN", myDrugInfo.uid + " " + String.valueOf(diffDays) + " " + myDrugInfo.name + " " + myDrugInfo.date + " " + position);
             holder.expiryDate.setTextColor(Color.parseColor("#eb0000"));
         } else {
-            holder.expiryDate.setTextColor(Color.parseColor("#0a6e0a"));
+            holder.expiryDate.setTextColor(Color.parseColor("#0065AA"));
         }
 
         holder.name.setText(myDrugInfo.name);
@@ -79,7 +74,7 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
                 .centerCrop()
                 .into(holder.picture);
 
-        if(myDrugInfo.subscribe == 1) {
+        if (myDrugInfo.subscribe == 1) {
             holder.subscribe.setVisibility(View.VISIBLE);
         } else {
             holder.subscribe.setVisibility(View.INVISIBLE);
@@ -109,12 +104,12 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
         return diffSec / (24 * 60 * 60);
     }
 
-    public void showPopup(@NonNull final MyDrugViewHolder holder,  View v, int position) {
+    public void showPopup(@NonNull final MyDrugViewHolder holder, View v, int position) {
         PopupMenu popupMenu = new PopupMenu(mContext, holder.option);
         popupMenu.inflate(R.menu.popup_menu);
         Menu menu = popupMenu.getMenu();
 
-        if(myDrugList.get(position).subscribe == 1) {
+        if (myDrugList.get(position).subscribe == 1) {
             menu.getItem(1).setTitle("구독 취소");
         } else {
             menu.getItem(1).setTitle("구독 하기");
@@ -130,7 +125,7 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
                         Toast.makeText(mContext, "삭제 완료!", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.action_popup_star:
-                        if(myDrugList.get(position).subscribe == 0) {
+                        if (myDrugList.get(position).subscribe == 0) {
                             subscribeDrugInfo(v, position, true);
                             Toast.makeText(mContext, "구독 완료!", Toast.LENGTH_SHORT).show();
                         } else {
@@ -156,9 +151,9 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
         class removeRunnable implements Runnable {
             @Override
             public void run() {
-                try{
+                try {
                     db.myDrugInfoDao().deleteMyDrug(drugInfo);
-                } catch(Exception e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -167,13 +162,14 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
         removeRunnable removeRunnable = new removeRunnable();
         Thread thread = new Thread(removeRunnable);
         thread.start();
+
     }
 
     @SuppressLint("NotifyDataSetChanged")
     public void subscribeDrugInfo(View v, int position, boolean idx) {
         MyDrugDatabase db = MyDrugDatabase.getInstance(v.getContext());
 
-        if(idx) {
+        if (idx) {
             myDrugList.get(position).subscribe = 1;
         } else {
             myDrugList.get(position).subscribe = 0;
@@ -183,10 +179,10 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
         class subscribeRunnable implements Runnable {
             @Override
             public void run() {
-                try{
+                try {
                     db.myDrugInfoDao().updateMyDrug(myDrugList.get(position));
                     myDrugList = db.myDrugInfoDao().getAll();
-                } catch(Exception e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }

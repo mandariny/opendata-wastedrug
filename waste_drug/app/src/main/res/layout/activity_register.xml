@@ -1,146 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tv_title"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#8EB4D3"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:gravity="center"
-            android:text="가지고 있는 약의 정보들을 입력해주세요!"
-            android:textColor="@color/textColor"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="약 이름"
-            android:textColor="@color/textColor" />
-
-        <EditText
-            android:id="@+id/et_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/et_background_style"
-            android:maxLength="30"
-            android:minHeight="48dp"
+            android:orientation="vertical"
             android:padding="10dp"
-            android:textCursorDrawable="@color/black" />
-
-        <TextView
-            android:id="@+id/tv_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:text="유통기한"
-            android:textColor="@color/textColor" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_date"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/et_background_style"
-            android:gravity="start|center"
-            android:minHeight="48dp"
-            android:padding="10dp" />
-
-        <TextView
-            android:id="@+id/tv_effect"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:text="효능 및 효과"
-            android:textColor="@color/textColor" />
-
-        <EditText
-            android:id="@+id/et_effect"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/et_background_style"
-            android:maxLength="100"
-            android:minHeight="48dp"
-            android:padding="10dp"
-            android:textCursorDrawable="@color/black" />
-
-        <TextView
-            android:id="@+id/tv_photo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:text="사진 첨부"
-            android:textColor="@color/textColor" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/add_image_background_border_style"
-            android:gravity="center">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
 
             <TextView
-                android:id="@+id/tv_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@id/iv_drug_photo"
-                android:layout_alignTop="@id/iv_drug_photo"
-                android:layout_alignEnd="@id/iv_drug_photo"
-                android:layout_alignBottom="@id/iv_drug_photo"
-                android:gravity="center"
-                android:text="클릭해서 이미지를 가져오세요!"
-                android:textColor="#48433c" />
-
-            <ImageView
-                android:id="@+id/iv_drug_photo"
+                android:id="@+id/tv_title"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="center" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:gravity="center"
+                android:text="@string/register_tv_title_string"
+                android:textColor="@color/textColor"
+                android:textSize="16sp" />
 
-        </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/register_tv_name_string"
+                android:textColor="@color/textColor" />
 
-        <TextView
-            android:id="@+id/tv_option"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:text="추가 정보 (선택)"
-            android:textColor="@color/textColor" />
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_background_style"
+                android:maxLength="30"
+                android:minHeight="48dp"
+                android:padding="10dp"
+                android:textCursorDrawable="@color/black"
+                tools:ignore="Autofill,LabelFor,TextFields" />
 
-        <EditText
-            android:id="@+id/et_option"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/et_background_style"
-            android:maxLength="150"
-            android:minHeight="48dp"
-            android:padding="10dp"
-            android:textCursorDrawable="@color/black" />
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/register_tv_date_string"
+                android:textColor="@color/textColor" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_register"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/et_background_style"
-            android:backgroundTint="@color/buttonEnableFalseBackgroundColor"
-            android:enabled="false"
-            android:minHeight="48dp"
-            android:text="등록"
-            android:textColor="@color/textColor" />
-    </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_date"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/et_background_style"
+                android:gravity="start|center"
+                android:minHeight="48dp"
+                android:padding="10dp" />
 
+            <TextView
+                android:id="@+id/tv_effect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/register_tv_effect"
+                android:textColor="@color/textColor" />
+
+            <EditText
+                android:id="@+id/et_effect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_background_style"
+                android:maxLength="100"
+                android:minHeight="48dp"
+                android:padding="10dp"
+                android:textCursorDrawable="@color/black"
+                tools:ignore="Autofill,LabelFor,TextFields" />
+
+            <TextView
+                android:id="@+id/tv_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/register_tv_photo_string"
+                android:textColor="@color/textColor" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/add_image_background_border_style"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/iv_drug_photo"
+                    android:layout_alignTop="@id/iv_drug_photo"
+                    android:layout_alignEnd="@id/iv_drug_photo"
+                    android:layout_alignBottom="@id/iv_drug_photo"
+                    android:gravity="center"
+                    android:text="@string/register_tv_image_string"
+                    android:textColor="#48433c" />
+
+                <ImageView
+                    android:id="@+id/iv_drug_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="center"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_option"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/register_tv_option_string"
+                android:textColor="@color/textColor" />
+
+            <EditText
+                android:id="@+id/et_option"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/et_background_style"
+                android:maxLength="150"
+                android:minHeight="48dp"
+                android:padding="10dp"
+                android:textCursorDrawable="@color/black"
+                tools:ignore="Autofill,LabelFor,TextFields" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/et_background_style"
+                android:backgroundTint="@color/buttonEnableFalseBackgroundColor"
+                android:enabled="false"
+                android:minHeight="48dp"
+                android:text="@string/register_btn_register_string"
+                android:textColor="@color/textColor" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
