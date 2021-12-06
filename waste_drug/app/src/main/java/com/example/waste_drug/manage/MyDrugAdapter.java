@@ -67,6 +67,7 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
             holder.expiryDate.setTextColor(Color.parseColor("#0065AA"));
         }
 
+        makeDateFormat(myDrugInfo);
         holder.name.setText(myDrugInfo.name);
         holder.expiryDate.setText("유통기한 : " + myDrugInfo.date);
         Glide.with(holder.itemView.getContext())
@@ -88,7 +89,7 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
         });
     }
 
-    public long getDiffTime(String date) throws ParseException {
+    private long getDiffTime(String date) throws ParseException {
         Calendar todayDate = Calendar.getInstance();
         todayDate.setTime(new Date());
 
@@ -104,7 +105,19 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
         return diffSec / (24 * 60 * 60);
     }
 
-    public void showPopup(@NonNull final MyDrugViewHolder holder, View v, int position) {
+    @SuppressLint("SimpleDateFormat")
+    private void makeDateFormat(MyDrugInfo info) {
+        try {
+            SimpleDateFormat targetFormat = new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat newFormat = new SimpleDateFormat("yyyy-MM-dd");
+            Date formatDate = targetFormat.parse(info.date);
+            info.date = newFormat.format(formatDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void showPopup(@NonNull final MyDrugViewHolder holder, View v, int position) {
         PopupMenu popupMenu = new PopupMenu(mContext, holder.option);
         popupMenu.inflate(R.menu.popup_menu);
         Menu menu = popupMenu.getMenu();
@@ -143,7 +156,7 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    public void deleteDrugInfo(View v, int position) {
+    private void deleteDrugInfo(View v, int position) {
         MyDrugDatabase db = MyDrugDatabase.getInstance(v.getContext());
         MyDrugInfo drugInfo = myDrugList.remove(position);
         notifyDataSetChanged();
@@ -166,7 +179,7 @@ public class MyDrugAdapter extends RecyclerView.Adapter<MyDrugAdapter.MyDrugView
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    public void subscribeDrugInfo(View v, int position, boolean idx) {
+    private void subscribeDrugInfo(View v, int position, boolean idx) {
         MyDrugDatabase db = MyDrugDatabase.getInstance(v.getContext());
 
         if (idx) {
