@@ -18,6 +18,7 @@ com/example/waste_drug/search/pharmacy/PharmacyFragment.java
  com.example.waste_drug.search.pharmacy.PharmacyFragment$4
  com.example.waste_drug.search.pharmacy.PharmacyFragment$MyAsyncTask
  com.example.waste_drug.search.pharmacy.PharmacyFragment$MyAsyncTask$1
+ com.example.waste_drug.search.pharmacy.PharmacyFragment$MyAsyncTask$2
 com/example/waste_drug/waste_drug_box.java
  com.example.waste_drug.waste_drug_box
 com/example/waste_drug/db/DrugBoxDao.java

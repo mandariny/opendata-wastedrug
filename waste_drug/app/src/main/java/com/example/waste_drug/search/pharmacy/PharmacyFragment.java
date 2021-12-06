@@ -13,6 +13,8 @@ import android.net.Network;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,6 +24,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.SearchView;
 import android.location.Geocoder;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -130,7 +133,8 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
             address = geocoder.getFromLocation(latitude, longitude, 1);
             add = address.get(0);
 
-            String s = add.getThoroughfare().toString();
+            //String s = add.getThoroughfare().toString();
+            String s = add.getSubLocality().toString();
 
             isSearch = true;
             isGps = true;
@@ -226,7 +230,7 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
                 isSearch = false;
             }
             else{
-                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=" + APIKEY[0] + "&QN=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
+                requestUrl = "http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyListInfoInqire?serviceKey=" + APIKEY[0] + "&Q0=" + searchText + "&ORD=NAME&pageNo=1&numOfRows=50";
                 isSearch = false;
             }
             try {
@@ -376,8 +380,19 @@ public class PharmacyFragment extends Fragment implements View.OnClickListener{
                     }
                     eventType = parser.next();
                 }
+                if(pharmacyArrayList.size() ==0)
+                    Toast.makeText(mContext, "검색 결과 없음", Toast.LENGTH_LONG).show();
             } catch (Exception e) {
                 e.printStackTrace();
+                Handler handler = new Handler(Looper.getMainLooper());
+
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(pharmacyArrayList.size() ==0)
+                            Toast.makeText(mContext, "검색 결과 없음", Toast.LENGTH_LONG).show();
+                    }
+                });
             }
             return null;
         }
