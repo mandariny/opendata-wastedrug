@@ -943,7 +943,8 @@ public class DrugBoxFragment extends Fragment implements View.OnClickListener{
         drugBox.add(new DrugBox(681, "서울특별시 송파구 마천로45길 15 (마천동)", "후생약국", "확인불가"));
         drugBox.add(new DrugBox(682, "서울특별시 송파구 중대로 68 (문정동, 훼미리샤르망 106호)", "훼미리약국", "확인불가"));
         //drugBox.add(new DrugBox(682, "서울특별시 중랑구 겸재로 68 (면목동, 훼미리샤르망 106호)", "신성모약국", "확인불가"));
-
+        drugBox.add(new DrugBox(683, "서울특별시 도봉구 방학로3길 117 도봉구보건소 5층 조제실 (쌍문동)", "도봉구보건소", "02-2091-4600"));
+        drugBox.add(new DrugBox(684, "서울특별시 도봉구 덕릉로59길 73-3 창동보건지소 (창동)", " 창동보건지소", "02-2091-5454"));
     }
 
     @Override

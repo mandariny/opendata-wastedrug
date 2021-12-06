@@ -12,12 +12,12 @@
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\drawable\\outline_gps_fixed_24.xml"
     },
     {
-        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
-    },
-    {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\font_font.xml.flat",
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\font\\font.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_background_my_drug_item.xml.flat",
@@ -92,12 +92,12 @@
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\raw\\liquid.gif"
     },
     {
-        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shipping1.png.flat",
-        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\drawable\\shipping1.png"
-    },
-    {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_liquid1.png.flat",
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\drawable\\liquid1.png"
+    },
+    {
+        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shipping1.png.flat",
+        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\drawable\\shipping1.png"
     },
     {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_slide_item_container.xml.flat",
@@ -136,16 +136,16 @@
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\layout\\activity_qr.xml"
     },
     {
-        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_my_drug_item.xml.flat",
-        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\layout\\my_drug_item.xml"
+        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_ddt_round.png.flat",
+        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_ddt_round.png"
     },
     {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_shipping.xml.flat",
         "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\layout\\activity_shipping.xml"
     },
     {
-        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_ddt_round.png.flat",
-        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_ddt_round.png"
+        "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\layout_my_drug_item.xml.flat",
+        "source": "D:\\AndroidStudio\\waste_drug\\app\\src\\main\\res\\layout\\my_drug_item.xml"
     },
     {
         "merged": "D:\\AndroidStudio\\waste_drug\\app\\build\\intermediates\\res\\merged\\debug\\raw_powder.gif.flat",
